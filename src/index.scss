@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-family: "Open Sans", sans-serif;
+    box-sizing: border-box;
+}
+
+button,
+a.btn {
+    transition: opacity 0.2s, transform 0.1s;
+}
+
+button:hover,
+a.btn:hover {
+    cursor: pointer;
+    opacity: 0.8;
+    transform: scale(1.01);
+}
+
+button:active,
+a[class=btn]:active {
+    opacity: 1;
+    transform: scale(0.99);
+}
+
+a {
+    text-decoration: none;
+}

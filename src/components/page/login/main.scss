@@ -1,0 +1,192 @@
+$fontsize: 1vw;
+$submit_color: #7efc65;
+$submit1_color: #ff9645;
+
+$textcolor1: rgb(60, 60, 60);
+$textcolor2: white;
+
+$background_color: rgb(0, 67, 126);
+$body_background_color: rgb(255, 255, 255);
+
+div#comp_Login {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: $background_color;
+
+    font-size: $fontsize;
+    color: $textcolor1;
+
+    .body {
+        position: relative;
+        width: 25%;
+        max-height: 80%;
+
+        border-radius: 1vw;
+        font-size: 1em;
+        background-color: $body_background_color;
+        border: 0.1vw solid rgb(65, 65, 65);
+
+        padding: 2% 2%;
+        color: $textcolor1;
+    }
+
+    #comp_Middle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        #icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 1% 2%;
+
+            border-radius: 0.5vw;
+
+            img {
+                width: 40%;
+            }
+        }
+
+        p {
+            text-align: center;
+            text-wrap: wrap;
+
+            margin: 5% 0;
+            font-size: 1em;
+        }
+
+        #buttons {
+            display: flex;
+            flex-direction: column;
+            font-size: 1em;
+
+            a {
+                width: 100%;
+                padding: 1% 2%;
+
+                font-size: 1em;
+
+                border-radius: 1vw;
+
+                text-align: center;
+                color: $textcolor2;
+            }
+
+            a+a {
+                margin-top: 2%;
+            }
+
+            #signin {
+                background-color: $submit_color;
+            }
+
+            #signup {
+                background-color: $submit1_color;
+            }
+        }
+
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 1em;
+        h1{
+            position: relative;
+            width: 100%;
+            height: max-content;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.3em;
+            img{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: calc(2*$fontsize);
+
+                margin-left: 2%;
+            }
+        }
+
+        .input_block{
+            width: 100%;
+            display: grid;
+            grid-template-columns: 10% 90%;
+            background-color: rgb(255, 255, 255);
+            padding: 1% 2%;
+            margin-top: 5%;
+
+            font-size: 1em;
+            border: 0.07vw solid black;
+            border-radius: 1vw;
+
+            label{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                font-size: 1.2em;
+            }
+
+            input{
+                font-size: 1em;
+            }
+    
+
+        }
+
+        #err{
+            margin-top: 2%;
+            color: red;
+
+            padding: 0.5% 2%;
+            border-radius: 0.5vw;
+        }
+
+        #block_container{
+            position: relative;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 47.5% 5% 47.5%;
+            margin-top: 10%;
+            button, a{
+                width: 100%;
+                height: max-content;
+                margin-top: 2%;
+    
+                border-radius: 1vw;
+                padding: 1% 2%;
+
+                text-align: center;
+                text-wrap: nowrap;
+    
+                font-size: 1em;
+                color: $textcolor2;
+            }
+    
+            .submit{
+                background-color: $submit_color;
+            }
+    
+            .change{
+                background-color: $submit1_color;
+            }   
+        }
+
+    }
+
+    #comp_SignIn {}
+
+    #comp_SignUn {}
+}

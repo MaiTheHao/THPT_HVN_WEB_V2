@@ -1,17 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import "./index.scss";
+import AppContextProvider from './Context/AppContextProvider';
+import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+	<React.StrictMode>
+		<BrowserRouter>
+			<AppContextProvider>
+				<App></App>
+			</AppContextProvider>
+		</BrowserRouter>
+	</React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// Quy ước đặt tên id cho thẻ định danh một component: comp_[name] (name viết hoa chữ cái đầu mỗi từ), VD: comp_Login, comp_ShowSubject
