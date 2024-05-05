@@ -10,7 +10,7 @@ import { routes } from "./Routes";
 
 function App() {
 	return (
-		<BrowserRouter>
+		<BrowserRouter basename="/HVNREACTCLIENT">
 			<Routes>
 				<Route path="/" element={<Navigate to="/home" />}></Route>
 				<Route path="/hvnclient" element={<Navigate to="/home" />}></Route>
