@@ -1,10 +1,4 @@
-$fontsize: 1vw;
-$submit_color: #7efc65;
-$submit1_color: #ff9645;
-
-$textcolor1: rgb(60, 60, 60);
-$textcolor2: white;
-
+@import "../../../root.scss";
 $background_color: rgb(0, 67, 126);
 $body_background_color: rgb(255, 255, 255);
 
@@ -20,8 +14,8 @@ div#comp_Login {
 
     background-color: $background_color;
 
-    font-size: $fontsize;
-    color: $textcolor1;
+    font-size: var(--fontsize);
+    color: var(--textcolor1);
 
     .body {
         position: relative;
@@ -34,7 +28,7 @@ div#comp_Login {
         border: 0.1vw solid rgb(65, 65, 65);
 
         padding: 2% 2%;
-        color: $textcolor1;
+        color: var(--textcolor1);
     }
 
     #comp_Middle {
@@ -78,7 +72,7 @@ div#comp_Login {
                 border-radius: 1vw;
 
                 text-align: center;
-                color: $textcolor2;
+                color: var(--textcolor2);
             }
 
             a+a {
@@ -113,7 +107,7 @@ div#comp_Login {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                height: calc(2*$fontsize);
+                height: calc(2*var(--fontsize));
 
                 margin-left: 2%;
             }
@@ -172,7 +166,7 @@ div#comp_Login {
                 text-wrap: nowrap;
     
                 font-size: 1em;
-                color: $textcolor2;
+                color: var(--textcolor2);
             }
     
             .submit{

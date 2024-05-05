@@ -1,0 +1,72 @@
+@import "../../root.scss";
+$web_sidebar_container_width: 15vw;
+
+#webHeader {
+	position: fixed;
+	left: 0;
+	right: 0;
+
+	z-index: 1;
+}
+
+#webBody {
+	position: relative;
+	top: var(--webheader_height);
+}
+
+#webFooter {
+	position: relative;
+}
+
+#ly1 {
+	#webHeader {
+	}
+
+	#webBody {
+		display: grid;
+		grid-template-columns: 15% 85%;
+	}
+
+	#webSideBar {
+		position: relative;
+
+		#sidebar_container {
+			left: 0;
+			top: var(--webheader_height);
+			bottom: 0;
+			width: $web_sidebar_container_width;
+			background-color: rgb(245, 245, 245);
+			padding-bottom: calc(var(--webheader_height) * 333 / 100);
+
+			z-index: 1;
+		}
+
+		#sidebar_container::-webkit-scrollbar {
+			background-color: rgb(255, 255, 255);
+			width: calc(3 * $web_sidebar_container_width / 100);
+		}
+
+		#sidebar_container::-webkit-scrollbar-thumb {
+			background-color: rgb(200, 200, 200);
+			border-radius: 0.5vw;
+		}
+
+	}
+
+	#sidebar_container {
+		position: fixed;
+		background-color: rgb(255, 255, 255);
+
+		overflow-y: scroll;
+		overflow-x: hidden;
+	}
+}
+
+#ly2 {
+	#webHeader {
+	}
+
+	#webBody {
+		color: rgb(0, 0, 0);
+	}
+}

@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import axios from 'axios';
 import useAppContext from '../../../Context/UseAppContext'
 
-function Signin({ baseUrl, HVNICON, from }) {
+function Signin({ baseUrl, ICON, from }) {
     const navigate = useNavigate();
     const [loginerr, setLoginerr] = useState('')
 
@@ -38,6 +38,7 @@ function Signin({ baseUrl, HVNICON, from }) {
             // Xử lý kết quả đăng nhập
             if (response?.data?.loginsuccess) {
                 setAuth({
+                    userName: response.data?.userName,
                     loginsuccess: true,
                 })
                 navigate(from || "/home", { replace: true });
@@ -55,7 +56,7 @@ function Signin({ baseUrl, HVNICON, from }) {
 
     return (
         <form id="comp_SignIn" className='body' onSubmit={(e) => handleSubmit(e)}>
-            <h1>LOGIN <img alt="Icon trường THPT Huỳnh Văn NGhệ" src={HVNICON}></img></h1>
+            <h1>LOGIN <img alt="Icon trường THPT Huỳnh Văn NGhệ" src={ICON}></img></h1>
             <div className="input_block">
                 <label htmlFor='account'><FontAwesomeIcon icon={faUser} /></label>
                 <input type="text" id="account" name="account" value={values.account} onChange={setValuesFunc} placeholder='Account...'></input>

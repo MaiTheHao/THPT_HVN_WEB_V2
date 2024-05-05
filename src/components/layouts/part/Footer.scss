@@ -1,0 +1,140 @@
+@import "../../../root.scss";
+$webfooter_background_color: linear-gradient(0, rgb(18, 15, 105), rgb(30, 26, 146));
+
+#webFooter {
+	position: relative;
+	height: max-content;
+	display: flex;
+	flex-direction: column;
+	background-image: $webfooter_background_color;
+	color: var(--textcolor2);
+
+	font-size: var(--fontsize);
+
+	#webFooter-top {
+		position: relative;
+		height: max-content;
+
+		display: flex;
+		align-items: center;
+		font-size: inherit;
+
+		.footer-top__part {
+			padding: 1% 2%;
+
+			.des_title {
+				font-size: 1em;
+				text-align: center;
+				text-wrap: nowrap;
+			}
+
+			.des_content {
+				font-size: 0.9em;
+			}
+		}
+
+		.content {
+			position: relative;
+			flex: 6;
+			height: max-content;
+			display: flex;
+
+			.content_part {
+				.des_title {
+					font-size: 1em;
+					text-align: center;
+					text-wrap: nowrap;
+				}
+
+				.des_content {
+					font-size: 0.9em;
+				}
+			}
+
+			.contact {
+				flex: 7;
+				display: flex;
+				flex-direction: column;
+
+				p {
+					line-height: calc(var(--fontsize) * 1.25);
+					strong {
+						margin-right: 2%;
+					}
+
+					a {
+						color: var(--textcolor2);
+						text-decoration: underline;
+					}
+				}
+			}
+
+			.icons {
+				flex: 3;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				padding: 0% 5%;
+
+				h2 {
+					font-size: 0.7em;
+					text-align: center;
+				}
+
+				div {
+					display: flex;
+					justify-content: center;
+					margin-top: 2%;
+					img {
+						height: calc(var(--fontsize) * 3);
+					}
+
+					img + img {
+						margin-left: 20%;
+					}
+				}
+			}
+		}
+
+		.social {
+			position: relative;
+			flex: 4;
+			height: max-content;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-wrap: wrap;
+
+			a {
+				color: var(--textcolor2);
+				font-size: 1.4em;
+
+				transition: transform 0.1s, color 0.2s;
+			}
+
+			a + a {
+				margin-left: 5%;
+			}
+
+			a:hover {
+				cursor: pointer;
+				transform: scale(1.1);
+			}
+
+			a:active {
+				transform: scale(0.98);
+				color: black;
+			}
+		}
+	}
+
+	.line {
+		width: 100%;
+		background-color: rgb(0, 30, 90);
+		height: calc(2vw);
+	}
+
+	.star_icon {
+		color: yellow;
+	}
+}

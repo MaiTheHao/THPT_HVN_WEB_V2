@@ -2,7 +2,8 @@ import React from 'react'
 
 function Introduce() {
   return (
-    <div>Introduce</div>
+    <h1>Introduce
+    </h1>
   )
 }
 

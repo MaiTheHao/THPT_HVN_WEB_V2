@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
 
-function Signup({ baseUrl, HVNICON }) {
+function Signup({ baseUrl, ICON }) {
     const [loginerr, setLoginerr] = useState('')
     const [values, setValues] = useState({ account: '', password: '', cpassword: '' });
     const setValuesFunc = ({ target: { name, value } }) => setValues(prev => ({ ...prev, [name]: value }));
@@ -50,7 +50,7 @@ function Signup({ baseUrl, HVNICON }) {
 
     return (
         <form id="comp_SignUp" className='body' onSubmit={handleSubmit}>
-            <h1>SIGN UP <img alt="Icon trường THPT Huỳnh Văn NGhệ" src={HVNICON}></img></h1>
+            <h1>SIGN UP <img alt="Icon trường THPT Huỳnh Văn NGhệ" src={ICON}></img></h1>
             <div className="input_block">
                 <label htmlFor='account'><FontAwesomeIcon icon={faUser} /></label>
                 <input type="text" id="account" name="account" onChange={setValuesFunc} placeholder='Account...'></input>
