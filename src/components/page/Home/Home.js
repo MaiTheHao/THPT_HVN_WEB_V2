@@ -1,6 +1,8 @@
 import React from "react";
 import "./Home.scss";
 import { foundingDate } from "../../reusable-web-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCrown, faRankingStar } from "@fortawesome/free-solid-svg-icons";
 
 function HomeHeader() {
 	const headerContext = {
@@ -30,11 +32,39 @@ function Home() {
 			<div className="body">
 				<div className="bodyContainer">
 					<div className="container-child">
-						<div className="child__header">
-							<h3>CHILD HEADER</h3>
+						<div className="child__header" id="rank_students">
+							<FontAwesomeIcon className="rankIcon" icon={faRankingStar} />
+							<h3>XẾP HẠNG HỌC SINH</h3>
 						</div>
 						<div className="child__body">
-							<p>CHILD BODY</p>
+							<ul>
+								<li></li>
+							</ul>
+						</div>
+					</div>
+					<div className="container-child" id="rank_classes">
+						<div className="child__header">
+							<FontAwesomeIcon className="rankIcon" icon={faRankingStar} />
+							<h3>XẾP HẠNG LỚP HỌC</h3>
+						</div>
+						<div className="child__body">
+							<ul>
+								<li className="top top1"><FontAwesomeIcon icon={faCrown} /><span>LỚP 1</span><FontAwesomeIcon icon={faCrown} /></li>
+								<li className="top top2"><FontAwesomeIcon icon={faCrown} /><span>LỚP 1</span><FontAwesomeIcon icon={faCrown} /></li>
+								<li className="top top3"><FontAwesomeIcon icon={faCrown} /><span>LỚP 1</span><FontAwesomeIcon icon={faCrown} /></li>
+								<li>LOP1</li>
+							</ul>
+						</div>
+					</div>
+					<div className="container-child" id="rank_groups">
+						<div className="child__header">
+							<FontAwesomeIcon className="rankIcon" icon={faRankingStar} />
+							<h3>XẾP HẠNG NHÓM</h3>
+						</div>
+						<div className="child__body">
+							<ul>
+								<li></li>
+							</ul>
 						</div>
 					</div>
 				</div>

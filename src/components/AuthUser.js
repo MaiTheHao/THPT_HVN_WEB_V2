@@ -20,19 +20,20 @@ function AuthUser() {
 			}
 			setIsLoad(false);
 		};
-		fetchUserStatus();
+		// fetchUserStatus();
 		// eslint-disable-next-line
 	}, []);
 
 	return (
 		<>
-			{isLoad ? (
+			{/* {false ? (
 				<h1>Loading</h1>
 			) : auth?.loginsuccess ? (
 				<Outlet />
 			) : (
 				<Navigate to="/login" state={{ from: location.pathname }} replace></Navigate>
-			)}
+			)} */}
+			<Outlet/>
 		</>
 	);
 }
