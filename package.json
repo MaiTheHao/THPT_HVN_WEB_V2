@@ -1,5 +1,5 @@
 {
-    "homepage": "http://MaiTheHao.github.io/HVN_CLIENT",
+    "homepage": "http://MaiTheHao.github.io/hvnclient",
     "proxy": "http://localhost:4000",
     "name": "client",
     "version": "0.1.0",
