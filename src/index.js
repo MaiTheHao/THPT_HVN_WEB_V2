@@ -16,4 +16,4 @@ root.render(
     </React.StrictMode>
 );
 
-// Quy ước đặt tên id cho thẻ định danh một component: comp_[name] (name viết hoa chữ cái đầu mỗi từ), VD: comp_Login, comp_ShowSubject
+// Quy ước đặt tên id cho thẻ định danh một component: comp_[name] (name viết hoa chữ cái đầu mỗi từ), VD: comp_Login, comp_ShowSubject.
