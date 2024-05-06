@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import USRAVT from "../../../pic/userPic.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
@@ -57,11 +57,6 @@ function Content({ HVNICON }) {
 }
 
 function NavBar() {
-	const [activeElement, setActiveElement] = useState(routes[0].id)
-	const handleClick = (e) => {
-		setActiveElement(e.id)
-	};
-
 	const navBarElementClassName = "navbar__element";
 	const Links = routes.map((route) => ({ props: { to: route.path, id: route.id }, title: route.title }));
 	return (
@@ -70,8 +65,6 @@ function NavBar() {
 				<Link
 					key={link.title}
 					{...link.props}
-					style={link.props.id===activeElement?{backgroundColor: "rgba(185, 185, 185, 0.511)"}:{}}
-					onClick={(e) => handleClick(e.target)}
 					className={navBarElementClassName}
 				>
 					{link.title}
