@@ -82,7 +82,6 @@ function NavBar() {
 }
 
 function Header({ HVNICON }) {
-	console.log("RERENDER");
 	return (
 		<header id="webHeader">
 			<Content HVNICON={HVNICON} />
