@@ -13,7 +13,6 @@ function App() {
 		<BrowserRouter basename="/HVNREACTCLIENT">
 			<Routes>
 				<Route path="/" element={<Navigate to="/home" />}></Route>
-				<Route path="/hvnclient" element={<Navigate to="/home" />}></Route>
 				<Route path="/login/*" element={<Login baseUrl={"/login/"} ICON={ICON} />}></Route>
 				<Route element={<AuthUser />}>
 					{routes.map(({ path, Component, Layout }) => (
