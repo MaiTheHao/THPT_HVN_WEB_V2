@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/HVNREACTCLIENT/static/css/main.d9d9a502.css",
-    "main.js": "/HVNREACTCLIENT/static/js/main.28634004.js",
+    "main.js": "/HVNREACTCLIENT/static/js/main.c69d626c.js",
     "static/media/userPic.jpg": "/HVNREACTCLIENT/static/media/userPic.1a752268d117b861377a.jpg",
     "static/media/HVN_pic1.jpg": "/HVNREACTCLIENT/static/media/HVN_pic1.83944625bcd6dff31f25.jpg",
     "static/media/HVN_icon.jpg": "/HVNREACTCLIENT/static/media/HVN_icon.509919ef2598a92448f0.jpg",
@@ -9,10 +9,10 @@
     "static/media/HVN_banner-trs.jpg": "/HVNREACTCLIENT/static/media/HVN_banner-trs.bf02b84492021b80ba22.jpg",
     "index.html": "/HVNREACTCLIENT/index.html",
     "main.d9d9a502.css.map": "/HVNREACTCLIENT/static/css/main.d9d9a502.css.map",
-    "main.28634004.js.map": "/HVNREACTCLIENT/static/js/main.28634004.js.map"
+    "main.c69d626c.js.map": "/HVNREACTCLIENT/static/js/main.c69d626c.js.map"
   },
   "entrypoints": [
     "static/css/main.d9d9a502.css",
-    "static/js/main.28634004.js"
+    "static/js/main.c69d626c.js"
   ]
 }
