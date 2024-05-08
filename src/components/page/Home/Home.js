@@ -2,7 +2,7 @@ import React from "react";
 import "./Home.scss";
 import { foundingDate } from "../../reusable-web-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCrown, faRankingStar, faStar } from "@fortawesome/free-solid-svg-icons";
+import { faCrown, faNewspaper, faRankingStar, faStar } from "@fortawesome/free-solid-svg-icons";
 
 function HomeHeader() {
 	const headerContext = {
@@ -26,6 +26,7 @@ function HomeHeader() {
 }
 
 function Container() {
+	// ######################################################## NEED DATA FROM SERVER
 	const classRanks = [
 		{ name: "12.9", score: 300 },
 		{ name: "10.10", score: 299 },
@@ -80,7 +81,29 @@ function Container() {
 		{ name: "Đội Quân Bất Bại", score: 107 },
 	];
 
-	const listContainer = [
+	const studentRanks = [
+		{ name: "Nguyễn Hoàng Nam - 11.6", score: 300},
+		{ name: "Trần Lê Tú Anh - 10.9", score: 245},
+		{ name: "Phạm Nguyễn Quỳnh Hoa - 10.4", score: 215},
+		{ name: "Lê Thị Ngọc Mai - 10.2", score: 200},
+		{ name: "Vũ Văn Minh Quân - 12.1", score: 189},
+		{ name: "Đinh Thị Thu Trang - 12.1", score: 188},
+		{ name: "Bùi Thanh Hiền - 12.8", score: 165},
+		{ name: "Dương Kim Lan - 11.6", score: 155},
+		{ name: "Đỗ Thị Ngọc Hạnh - 11.3", score: 143},
+		{ name: "Lê Quang Huy - 12.6", score: 133},
+		{ name: "Nguyễn Thị Mai Linh - 11.5", score: 130},
+		{ name: "Phạm Kim Ngân - 10.3", score: 124},
+		{ name: "Trần Thị Thu Hà - 10.1", score: 120},
+		{ name: "Vũ Thị Lan Anh - 10.2", score: 116},
+		{ name: "Đinh Thị Mỹ Linh - 11.1", score: 114},
+		{ name: "Bùi Văn Minh - 11.1", score: 107},
+	];
+
+	// TYPES: rank, list, para
+	// ######################################################## NEED DATA FROM SERVER
+
+	const listRankContainer = [
 		{
 			type: "rank",
 			id: "rank_classes",
@@ -95,7 +118,7 @@ function Container() {
 			headName: null,
 			title: "XẾP HẠNG HỌC SINH",
 			inputIcon: faRankingStar,
-			listObj: null,
+			listObj: studentRanks,
 		},
 		{
 			type: "rank",
@@ -110,30 +133,32 @@ function Container() {
 	const CreateListRank = ({ headName, listObj }) => {
 		return (
 			<ul>
-				{listObj?
-				(listObj.map(({ name, score }, index) => (
-					<li key={index} className={`top ${index < 3 ? "top" + (index + 1) : "none"}`}>
-						<div>
-							<FontAwesomeIcon icon={index < 3 ? faCrown : faStar} />
-							<h4>{`TOP ${index + 1}`}</h4>
-							<FontAwesomeIcon icon={index < 3 ? faCrown : faStar} />
-						</div>
-						<span className="rank__name">{`${headName ? headName.toUpperCase() + " " : ""}${name}`}</span>
-						<span className="rank__score">ĐIỂM: {score}</span>
-					</li>
-				)))
-				:
-				(<h4>...NO DATA...</h4>)
-				}
+				{listObj ? (
+					listObj.map(({ name, score }, index) => (
+						<li key={index} className={`top ${index < 3 ? "top" + (index + 1) : "none"}`}>
+							<div>
+								<FontAwesomeIcon icon={index < 3 ? faCrown : faStar} />
+								<h4>{`TOP ${index + 1}`}</h4>
+								<FontAwesomeIcon icon={index < 3 ? faCrown : faStar} />
+							</div>
+							<span className="rank__name">{`${
+								headName ? headName.toUpperCase() + " " : ""
+							}${name}`}</span>
+							<span className="rank__score">ĐIỂM: {score}</span>
+						</li>
+					))
+				) : (
+					<h4>...NO DATA...</h4>
+				)}
 			</ul>
 		);
 	};
 
-	const ContainerElement = ({ id, inputIcon, title, children }) => {
+	const ContainerElement = ({type, id, inputIcon, title, children }) => {
 		return (
 			<div className="container-child" id={id}>
 				<div className="child__header">
-					<FontAwesomeIcon className="rankIcon" icon={inputIcon} />
+					<FontAwesomeIcon className={`${type}Icon`} icon={inputIcon} />
 					<h3>{title}</h3>
 				</div>
 				<div className="child__body">{children}</div>
@@ -143,9 +168,14 @@ function Container() {
 
 	return (
 		<div className="bodyContainer">
-			{listContainer.map(({ type, id, headName, inputIcon, title, listObj }) => (
-				<ContainerElement key={id} id={id} inputIcon={inputIcon} title={title}>
-					{type === "rank" ? <CreateListRank headName={headName} listObj={listObj} /> : null}
+			<ContainerElement type="list" id={null} inputIcon={faNewspaper} title={"HOẠT ĐỘNG NỔI BẬT"}>
+					<ul>
+						<a>Tình nguyện dọn dẹp vệ sinh sân trường.</a>
+					</ul>
+			</ContainerElement>
+			{listRankContainer.map(({ type, id, headName, inputIcon, title, listObj }) => (
+				<ContainerElement key={id} type="rank" id={id} inputIcon={inputIcon} title={title}>
+					<CreateListRank headName={headName} listObj={listObj} />
 				</ContainerElement>
 			))}
 		</div>
