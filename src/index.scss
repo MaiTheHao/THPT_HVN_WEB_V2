@@ -31,3 +31,24 @@ a.btn:active {
 a {
 	text-decoration: none;
 }
+
+.scrollY::-webkit-scrollbar {
+	width: calc(var(--fontsize) * 0.3);
+	background-color: rgb(230, 230, 230);
+}
+
+.scrollY::-webkit-scrollbar-thumb {
+	background-color: rgb(135, 135, 135);
+	border-radius: 0.5vw;
+}
+
+.scrollX::-webkit-scrollbar {
+	background-color: rgb(98, 98, 98);
+	height: calc(var(--fontsize) * 0.35);
+}
+
+.scrollX::-webkit-scrollbar-thumb {
+	background-color: var(--textcolor2);
+	border-radius: 0.5vw;
+	border: calc(var(--fontsize) * 0.1) solid rgb(98, 98, 98);
+}

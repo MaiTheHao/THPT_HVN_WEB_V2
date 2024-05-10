@@ -1,0 +1,244 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCrown, faFire, faNewspaper, faRankingStar, faStar } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
+import HVNBANNER from "../../../../pic/HVN_banner-trs.jpg";
+
+export const ContainerElementColumn = ({ type, id, inputIcon, title, children }) => {
+	return (
+		<div className="container-child--Column" id={id}>
+			<div className="child__header">
+				<FontAwesomeIcon className={`${type}Icon`} icon={inputIcon} />
+				<h3>{title}</h3>
+			</div>
+			<div className="child__body scrollY">{children}</div>
+		</div>
+	);
+};
+
+export const ContainerElementRow = ({ id, headerTitle, icon, sourceData }) => {
+	const Header = ({ headerTitle, icon }) => (
+		<div className="child__header">
+			<FontAwesomeIcon icon={icon} />
+			<h3>{headerTitle}</h3>
+		</div>
+	);
+
+	const Body = ({ children }) => <div className="child__body">{children}</div>;
+
+	return (
+		<div className="container-child--Row" id={id}>
+			<Header headerTitle={headerTitle} icon={icon}></Header>
+			<Body>
+				{sourceData?.map((obj) => (
+					<ContainerElementRowChild {...obj} />
+				))}
+			</Body>
+		</div>
+	);
+};
+
+export const ContainerNoticeElement = () => {
+	const listNoticeContainer = [
+		{
+			id: "hoat_dong_noi_bat",
+			headerTitle: "CÁC HOẠT ĐỘNG NỔI BẬT",
+			icon: faFire,
+			sourceData: [
+				{
+					id: "hdnb1",
+					finalPath: null,
+					title: "CHUYẾN ĐI CỦA THANH XUÂN K11 - 2024",
+					description:
+						"Nhằm giáo dục truyền thống yêu nước, tự hào dân tộc, trường THPT Huỳnh Văn Nghệ đã tổ chức hoạt động về nguồn cho học sinh khối 11 tại khu di tích địa đạo Bến Cát vào ngày 25 tháng 11 năm 2024. Hoạt động thu hút 200 học sinh khối 11 tham gia theo hình thức toàn khối. Đến với khu di tích, học sinh được tham quan, tìm hiểu về lịch sử hào hùng của dân tộc, những chiến công oanh liệt của các thế hệ cha ông trong công cuộc đấu tranh giành độc lập, tự do. Sau đó, các em đã dâng hương tưởng nhớ các anh hùng liệt sĩ đã hy sinh vì Tổ quốc. Tiếp theo, học sinh được giao lưu với cán bộ ветеран, lắng nghe những câu chuyện về chiến tranh, về những hy sinh thầm lặng của các anh hùng liệt sĩ. Ngoài ra, học sinh còn tham gia thi viết cảm nhận về khu di tích và tham gia các trò chơi dân gian. Kết thúc hoạt động, học sinh đã có những bài viết cảm nhận sâu sắc về lịch sử, về những hy sinh của các anh hùng liệt sĩ. Các em cũng bày tỏ lòng biết ơn đối với các thế hệ cha ông đã dành trọn cuộc đời cho sự nghiệp giải phóng dân tộc và hứa sẽ cố gắng học tập và rèn luyện tốt để góp phần xây dựng và bảo vệ Tổ quốc. Hoạt động về nguồn đã diễn ra thành công tốt đẹp, góp phần giáo dục cho học sinh lòng yêu nước, tự hào dân tộc, ý thức trách nhiệm đối với cộng đồng. Đây là một hoạt động truyền thống cần được duy trì và phát huy trong nhà trường.",
+					picSrc: "https://scontent.fsgn5-10.fna.fbcdn.net/v/t39.30808-6/438773509_1363781274565891_4183176311858210197_n.jpg?stp=c159.0.640.640a_dst-jpg_p640x640&_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_ohc=S3wtTGtL2eoQ7kNvgGE92XT&_nc_ht=scontent.fsgn5-10.fna&oh=00_AYCKTGpflAGDAYmcAfTxt0gkOeugC9k2ad61496JGNmbhA&oe=66443C8E",
+					alt: null,
+				},
+				{
+					id: "hdnb2",
+					finalPath: null,
+					title: "TIẾN HÀNH ĐĂNG KÍ THI THPTQT 2024",
+					description:
+						"Thí sinh đăng ký thi tốt nghiệp THPT từ ngày 2/5 Học sinh lớp 12 đăng ký thi tốt nghiệp từ ngày 2/5 đến 17h ngày 10/5, theo kế hoạch của Bộ Giáo dục và Đào tạo. Theo đó, thí sinh truy cập hệ thống quản lý thi của Bộ tại địa chỉ: http://thisinh.thitotnghiepthpt.edu.vn để điền thông tin theo yêu cầu. Kỳ thi tốt nghiệp THPT 2024 diễn ra vào ngày 26-28/6. Thí sinh làm thủ tục dự thi ngày 26/6, làm bài thi Ngữ văn và Toán hôm 27/6. Ngày 28/6, thí sinh thi Ngoại ngữ và một trong hai bài thi tổ hợp là Khoa học tự nhiên (Vật lý, Hóa học, Sinh học) và Khoa học xã hội (Lịch sử, Địa lý, Giáo dục công dân với giáo dục phổ thông; hoặc Lịch sử, Địa lý với giáo dục thường xuyên).",
+					picSrc: "https://th.bing.com/th/id/OIP.lL0jBFMkxoV98cgUmvUMswHaEc?w=304&h=182&c=7&r=0&o=5&dpr=2.5&pid=1.7",
+					alt: null,
+				},
+			],
+		},
+		{
+			id: "tin_tuc_moi",
+			headerTitle: "TIN TỨC MỚI",
+			icon: faNewspaper,
+			sourceData: [
+				{
+					id: "ttm1",
+					finalPath: null,
+					title: "HỘI TRẠI TRUYỀN THỐNG 'KHI TÔI 18' TRƯỜNG THPT HUỲNH VĂN NGHỆ NGÀY 12 - 13/5/2024",
+					description: "",
+					picSrc: "https://scontent.fsgn5-15.fna.fbcdn.net/v/t39.30808-6/438300558_1374323826844969_1338205988310739339_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=5f2048&_nc_ohc=LrgL0Z5R4MQQ7kNvgH3JaNB&_nc_ht=scontent.fsgn5-15.fna&oh=00_AYAkVaMy__JXMcmDdagNRiz_l4iDG4tETqcCl3XVLMpjZw&oe=66445C60",
+					alt: null,
+				},
+			],
+		},
+		{
+			id: "tin_tuc_tuyen_sinh",
+			headerTitle: "TIN TỨC TUYỂN SINH 2024-2025",
+			icon: faNewspaper,
+			sourceData: [
+				{
+					id: "ttts1",
+					finalPath: null,
+					title: "THÔNG TIN KỲ THI TUYỂN SINH LỚP 10 NĂM 2024-2025",
+					description: `
+                        Đăng ký dự thi trực tuyến (Từ ngày 13/5-18/5/2024), Tham gia dự thi (Từ ngày 22/5-03/6/2024), Xem kết quả thi và phúc khảo bài thi (Từ ngày 20/6), Nộp hồ sơ xét tuyển và rút hồ sơ (Từ ngày 15/7-20/7/2024), Xem kết quả trúng tuyển và đăng ký nhập học (Từ ngày 26/7/2024) 
+                        `,
+					picSrc: null,
+					alt: null,
+				},
+			],
+		},
+	];
+
+	return (
+		<>
+			{listNoticeContainer.map((obj) => (
+				<ContainerElementRow {...obj}></ContainerElementRow>
+			))}
+		</>
+	);
+};
+
+export const ContainerRankElement = () => {
+	const classRanks = [
+		{ name: "12.9", score: 300 },
+		{ name: "10.10", score: 299 },
+		{ name: "12.11", score: 298 },
+		{ name: "11.8", score: 297 },
+		{ name: "10.4", score: 296 },
+		{ name: "12.10", score: 295 },
+		{ name: "10.8", score: 294 },
+		{ name: "12.6", score: 293 },
+		{ name: "11.9", score: 291 },
+		{ name: "10.3", score: 292 },
+	];
+
+	const groupRanks = [
+		{ name: "Tuổi Trẻ Huỳnh Văn Nghệ", score: 300 },
+		{ name: "Học Bá Tứ Hùng", score: 245 },
+		{ name: "Dân Chơi Học Vần", score: 215 },
+		{ name: "Băng Hậu Chém Gió", score: 200 },
+		{ name: "F4 Học Đường", score: 189 },
+		{ name: "Thánh Nhây Hội", score: 188 },
+		{ name: "Chuyên Gia Chém Gió", score: 165 },
+		{ name: "Bà Tám Học Đường", score: 155 },
+		{ name: "Hội Chị Em Cà Khịa", score: 143 },
+		{ name: "Bộ Ba Siêu Quậy", score: 133 },
+	];
+
+	const studentRanks = [
+		{ name: "Nguyễn Hoàng Nam - 11.6", score: 300 },
+		{ name: "Trần Lê Tú Anh - 10.9", score: 245 },
+		{ name: "Phạm Nguyễn Quỳnh Hoa - 10.4", score: 215 },
+		{ name: "Lê Thị Ngọc Mai - 10.2", score: 200 },
+		{ name: "Vũ Văn Minh Quân - 12.1", score: 189 },
+		{ name: "Đinh Thị Thu Trang - 12.1", score: 188 },
+		{ name: "Bùi Thanh Hiền - 12.8", score: 165 },
+		{ name: "Dương Kim Lan - 11.6", score: 155 },
+		{ name: "Đỗ Thị Ngọc Hạnh - 11.3", score: 143 },
+		{ name: "Lê Quang Huy - 12.6", score: 133 },
+	];
+	// Các đối tượng trên cần data từ server, và cần thiết lập api để trỏ tới đối tượng top
+
+	const listRankContainer = [
+		{
+			type: "rank",
+			id: "rank_classes",
+			headName: "lớp",
+			title: "LỚP HỌC XUẤT SẮC",
+			inputIcon: faRankingStar,
+			listObj: classRanks,
+		},
+		{
+			type: "rank",
+			id: "rank_students",
+			headName: null,
+			title: "HỌC SINH XUẤT SẮC",
+			inputIcon: faRankingStar,
+			listObj: studentRanks,
+		},
+		{
+			type: "rank",
+			id: "rank_groups",
+			headName: null,
+			title: "NHÓM NỔI TIẾNG",
+			inputIcon: faRankingStar,
+			listObj: groupRanks,
+		},
+	];
+
+	const CreateListRank = ({ headName, listObj }) => {
+		return (
+			<ul>
+				{listObj ? (
+					listObj.map(({ name, score }, index) => (
+						<li key={index} className={`top ${index < 3 ? "top" + (index + 1) : "none"}`}>
+							<div>
+								<FontAwesomeIcon icon={index < 3 ? faCrown : faStar} />
+								<h4>{`TOP ${index + 1}`}</h4>
+								<FontAwesomeIcon icon={index < 3 ? faCrown : faStar} />
+							</div>
+							<Link to={null} className="rank__name">{`${
+								headName ? headName.toUpperCase() + " " : ""
+							}${name}`}</Link>
+							<span className="rank__score">ĐIỂM: {score}</span>
+						</li>
+					))
+				) : (
+					<h4>...NO DATA...</h4>
+				)}
+			</ul>
+		);
+	};
+
+	return (
+		<>
+			{listRankContainer.map(({ id, headName, inputIcon, title, listObj }) => (
+				<ContainerElementColumn key={id} type="rank" id={id} inputIcon={inputIcon} title={title}>
+					<CreateListRank headName={headName} listObj={listObj} />
+				</ContainerElementColumn>
+			))}
+		</>
+	);
+};
+
+export const ContainerElementRowChild = ({ id, finalPath, title, description, picSrc }) => {
+	const BoxImg = () => (
+		<div className="box-img">
+			<img alt={"Ảnh miêu tả"} src={picSrc || HVNBANNER}></img>
+		</div>
+	);
+
+	const BoxText = () => {
+		return (
+			<div className="box-text">
+				<InnerText {...{ title, description }} />
+				<Link className="box-text__more" to={finalPath}>
+					Xem thêm
+				</Link>
+			</div>
+		);
+	};
+
+	const InnerText = ({ title, description }) => (
+		<div className="inner-text scrollY">
+			<h5>{title || "Tiêu đề"}</h5>
+			<div className="line"></div>
+			<p className="description">{description || "Không có nội dung"}</p>
+		</div>
+	);
+	return (
+		<div className="linkbox" id={id}>
+			<BoxImg></BoxImg>
+			<BoxText></BoxText>
+		</div>
+	);
+};
