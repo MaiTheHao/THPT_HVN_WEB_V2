@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCrown, faFire, faNewspaper, faRankingStar, faStar } from "@fortawesome/free-solid-svg-icons";
+import { faCrown, faFire, faGraduationCap, faNewspaper, faRankingStar, faStar } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import HVNBANNER from "../../../../pic/HVN_banner-trs.jpg";
 
@@ -82,7 +82,7 @@ export const ContainerNoticeElement = () => {
 		{
 			id: "tin_tuc_tuyen_sinh",
 			headerTitle: "TIN TỨC TUYỂN SINH 2024-2025",
-			icon: faNewspaper,
+			icon: faGraduationCap,
 			sourceData: [
 				{
 					id: "ttts1",
