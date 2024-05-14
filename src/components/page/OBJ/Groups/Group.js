@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import Search from "../MainComponent/Search";
-import Info from '../MainComponent/Info';
+import Info from "../MainComponent/Info";
 import { FilterChoice, FilterChoiceOption } from "../MainComponent/Filter";
 
 function Group() {
 	const [isSearch, setIsSearch] = useState(true);
 	const apiData = "/group";
+	const [groupData, setGroupData] = useState({});
+	const handleData = (obj) => {
+		setGroupData(obj);
+		setIsSearch(false);
+	};
 
 	const FilField = () => (
 		<select className="scrollY">
@@ -33,18 +38,46 @@ function Group() {
 			children: <FilMemberCount />,
 		},
 	];
+
+	const infoForm = [
+		{ title: "Tên nhóm", value: groupData?.name },
+		{ title: "Ngày thành lập", value: groupData?.birth },
+		{ title: "Số lượng thành viên", value: groupData?.totalMember },
+		{ title: "Lãnh đạo", value: groupData?.monitor },
+		{ title: "Lĩnh vực", value: groupData?.field },
+		{ title: "mục tiêu", value: groupData?.goal },
+	];
+
+	const advancedInfo = [
+		{ title: "Danh sách thành viên", component: null },
+		{ title: "Hoạt động", component: null },
+		{ title: "Thành tích", component: null },
+	];
+
 	return (
-		<div id="comp_Member" className="obj_Component">
+		<div id="comp_Group" className="obj_Component">
 			{isSearch ? (
-				<Search apiData={apiData}>
-					<FilterChoice title="Thông tin nhóm">
-						{filterOption.map((obj, index) => (
-							<FilterChoiceOption key={index} {...obj} />
-						))}
-					</FilterChoice>
-				</Search>
+				<Search
+					handleData={handleData}
+					apiData={apiData}
+					filter_children={
+						<FilterChoice title="Thông tin lớp học">
+							{filterOption.map((obj, index) => (
+								<FilterChoiceOption key={index} {...obj} />
+							))}
+						</FilterChoice>
+					}
+				></Search>
 			) : (
-				<Info />
+				<Info
+					setUpForm={infoForm}
+					setUpNav={advancedInfo}
+					name={groupData?.name}
+					avatar={null}
+					role={groupData?.role}
+					fb={groupData?.fb}
+					ins={groupData?.ins}
+				/>
 			)}
 		</div>
 	);

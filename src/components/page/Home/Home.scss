@@ -7,9 +7,9 @@
 	$container-child--column_width: 25%;
 	$container-child--row_width: 100%;
 	$container-child--row-child_maxHeight: 10vw;
+	$container-child--row-child__space: calc(var(--fontsize) / 2.5);
 	$box-text__more_backgroundColor: rgba(207, 207, 207, 0.5);
 	$box-text__more_textColor: rgb(55, 30, 255);
-	$container-child--row-child__space: calc(var(--fontsize) / 2.5);
 	$top1_color: rgb(255, 234, 47);
 	$top1_background: rgb(255, 95, 95);
 	$top2_color: rgb(255, 255, 255);

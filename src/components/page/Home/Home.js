@@ -34,7 +34,6 @@ function Container() {
 }
 
 function Home() {
-	console.log("render Home");
 	return (
 		<div id="comp_Home">
 			<HomeHeader />

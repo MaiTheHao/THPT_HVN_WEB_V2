@@ -8,8 +8,22 @@
 	$unacceptFilter_backgroundColor: rgb(255, 140, 70);
 	$boxShadow: 0 0 0.5vw 0 rgba(0, 0, 0, 0.2);
 	$containerResult_maxHeight: 80%;
+	$mygray: rgb(165, 165, 165);
+	$infoObjForm_backgroundColor: rgb(245, 245, 255);
+	$infoObjForm_tableSpace: calc(var(--fontsize));
+	$infoObjForm_advanced_navbarBtn_backgroundColor: rgb(80, 205, 255);
+	$container-child--row-child_maxHeight: 10vw;
+	$container-child--row-child__space: calc(var(--fontsize) / 2.5);
+	$box-text__more_backgroundColor: rgba(207, 207, 207, 0.5);
+	$box-text__more_textColor: rgb(55, 30, 255);
 
 	font-size: var(--fontsize);
+	.UPDATELATER{
+		font-size: calc(var(--fontsize) * 1.2);
+		padding: 1% 2%;
+		text-align: center;
+		color: $mygray;
+	}	
 	#searchObjForm {
 		display: flex;
 		flex-direction: column;
@@ -26,7 +40,7 @@
 			width: 30%;
 			padding: 1% 0;
 
-			form {
+			.input_form {
 				width: 70%;
 				height: 100%;
 				border-radius: 0.2vw;
@@ -209,12 +223,12 @@
 
 						margin-left: 2%;
 
-						.Name-Type{
+						.Name-Type {
 							font-size: 1em;
-							color: var(--textcolor1)
+							color: var(--textcolor1);
 						}
 
-						.OtherProps{
+						.OtherProps {
 							font-size: 0.8em;
 							color: var(--textcolor1);
 
@@ -227,7 +241,7 @@
 					margin-top: calc(var(--fontsize));
 				}
 
-				.searchResult:hover{
+				.searchResult:hover {
 					padding: 0.5% 2%;
 					border-radius: 0.5vw;
 					background-color: rgb(220, 220, 220, 0.25);
@@ -236,5 +250,240 @@
 		}
 	}
 	#infoObjForm {
+		position: relative;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+
+		align-items: center;
+		padding: 1% 0;
+		background-color: $infoObjForm_backgroundColor;
+		font-size: 1em;
+
+		.container {
+			position: relative;
+			width: 80%;
+			display: grid;
+			grid-template-columns: 25% 75%;
+			background-color: transparent;
+
+			font-size: var(--fontsize);
+
+			.container-left {
+				box-shadow: $boxShadow;
+				background-color: white;
+
+				.box-img {
+					position: relative;
+					height: calc(var(--fontsize) * 8);
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					padding: 1% 2%;
+					margin-top: calc(var(--fontsize) * 2);
+					img {
+						border-radius: 50%;
+						border: calc(var(--fontsize) / 8) solid black;
+						height: 100%;
+						width: auto;
+						object-fit: cover;
+					}
+				}
+
+				.box-text {
+					font-size: 1em;
+					text-align: center;
+
+					#obj-name {
+						font-weight: 500;
+						font-size: 1.2em;
+					}
+
+					#obj-role {
+						color: $mygray;
+						font-weight: 400;
+						font-size: 0.9em;
+					}
+				}
+			}
+
+			.container-right {
+				font-size: 1em;
+				box-shadow: $boxShadow;
+				margin-left: $infoObjForm_tableSpace;
+				background-color: white;
+
+				padding: 1% 2%;
+				padding-bottom: 5%;
+
+				.ObjProp {
+					display: grid;
+					grid-template-columns: 40% 60%;
+					border-bottom: calc(var(--fontsize) / 15) solid $mygray;
+
+					font-size: 1em;
+
+					h5 {
+						font-size: 1em;
+						font-weight: 600;
+					}
+
+					p {
+						font-size: 0.9em;
+						color: $mygray;
+					}
+				}
+
+				.ObjProp + .ObjProp {
+					margin-top: 2%;
+				}
+			}
+		}
+
+		.container + .container {
+			margin-top: $infoObjForm_tableSpace;
+		}
+
+		#container-advanced {
+			font-size: 1em;
+			.container-left{
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				padding: calc(var(--fontsize)) 1%;
+
+				p{
+					color: $mygray;
+				}
+
+				a{
+					font-size: 1.1em;
+
+					svg{
+						margin-right: calc(var(--fontsize) / 2);
+					}
+				}
+
+				.fb{
+					color: blue;
+				}
+
+				.ins{
+					color: rgb(118, 92, 205)
+				}
+			}
+
+			.container-right {
+				font-size: 1em;
+				padding-bottom: 1%;
+				#container-right-navbar {
+					font-size: 1em;
+					position: relative;
+					display: flex;
+					overflow-x: auto;
+
+					border: calc(0.06 * var(--fontsize)) solid $mygray;
+					padding: 0.5% 2%;
+					border-radius: 0.2vw;
+
+					button {
+						font-size: 0.9em;
+						background-color: $infoObjForm_advanced_navbarBtn_backgroundColor;
+						color: var(--textcolor2);
+						padding: 0.25% 2%;
+						text-wrap: nowrap;
+
+						border-radius: 0.2vw;
+					}
+
+					button + button {
+						margin-left: 1%;
+					}
+
+					button:hover {
+						transform: none;
+						background-color: rgb(230, 230, 230);
+						color: var(--textcolor1);
+					}
+				}
+
+				#container-right-context {
+					.linkbox {
+						font-size: 1em;
+						display: grid;
+						grid-template-columns: 15% 85%;
+						margin: $container-child--row-child__space;
+						margin-bottom: calc($container-child--row-child__space/2);
+						border: calc(var(--fontsize) / 10) solid gray;
+
+						background-color: white;
+						.box-img {
+							position: relative;
+							width: 100%;
+							height: 100%;
+							max-height: $container-child--row-child_maxHeight;
+							display: flex;
+
+							padding: calc(var(--fontsize) / 4);
+							img {
+								object-fit: cover;
+								height: auto;
+								width: 100%;
+							}
+						}
+
+						.box-text {
+							font-size: 0.7em;
+							position: relative;
+							max-height: $container-child--row-child_maxHeight;
+
+							display: flex;
+							flex-direction: column;
+
+							color: var(--textcolor2);
+							.inner-text {
+								font-size: 1em;
+								overflow-y: auto;
+								padding-left: 1%;
+								padding-bottom: calc(var(--fontsize) * 2);
+
+								h5 {
+									position: relative;
+									width: 100%;
+									height: max-content;
+									font-size: 1.2em;
+									background-color: rgb(45, 90, 165);
+									padding: 0.5% 2%;
+								}
+
+								div {
+									margin: calc(var(--fontsize) / 2) 0;
+								}
+
+								.description {
+									position: relative;
+									font-size: 0.85em;
+
+									color: var(--textcolor1);
+									padding: 0 0;
+									text-align: justify;
+								}
+							}
+
+							.box-text__more {
+								font-size: 0.7em;
+								position: absolute;
+								right: calc(var(--fontsize) / 1.5);
+								bottom: 0;
+								padding: 0 2%;
+								text-align: center;
+								color: $box-text__more_textColor;
+								background-color: $box-text__more_backgroundColor;
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }

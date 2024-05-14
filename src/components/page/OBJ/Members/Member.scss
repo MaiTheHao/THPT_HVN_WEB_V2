@@ -1,4 +1,72 @@
-#comp_Member{
-    #memberSearch{}
-    #memberInfo{}
+#comp_Member {
+    $userAdvancedTable_maxHeight: 25vw;
+    .userAdvancedTable1{
+        position: relative;
+		max-height: $userAdvancedTable_maxHeight;
+		background-color: rgb(255, 255, 255);
+		border-radius: 0.5vw;
+		padding: 1% 2%;
+		overflow-y: auto;
+
+		font-size: 1em;
+    }
+	#userGroups{
+		.userGroup {
+			position: relative;
+			height: 8%;
+			display: flex;
+			padding: 0.5% 2%;
+			font-size: 0.9em;
+            background-color: rgba(240, 240, 240, 0.5);
+
+			.box-img {
+				position: relative;
+				height: 100%;
+				width: 10%;
+				display: flex;
+				align-items: center;
+
+				img {
+					object-fit: cover;
+					height: auto;
+					width: 100%;
+
+					border-radius: 50%;
+					border: calc(var(--fontsize) / 10) solid black;
+				}
+			}
+
+			.box-text {
+				font-size: 1em;
+				position: relative;
+				width: 90%;
+
+				margin-left: 2%;
+
+				.Name-Type {
+					font-size: 1em;
+					color: var(--textcolor1);
+				}
+
+				.OtherProps {
+					font-size: 0.8em;
+					color: var(--textcolor1);
+
+					list-style: none;
+				}
+			}
+		}
+
+        .userGroup + .userGroup{
+            margin-top: 1.5em;
+        }
+	}
+    #userRecentActs{
+        .userRecentAct{
+        }
+
+        .userRecentAct + .userRecentAct{
+            margin-top: 1.5em !important;
+        }
+    }
 }

@@ -6,6 +6,11 @@ import { FilterChoice, FilterChoiceOption } from "../MainComponent/Filter";
 function Class() {
 	const [isSearch, setIsSearch] = useState(true);
 	const apiData = "/class";
+	const [classData, setClassData] = useState({});
+	const handleData = (obj) => {
+		setClassData(obj);
+		setIsSearch(false);
+	};
 
 	const FilGrade = () => (
 		<select className="scrollY">
@@ -35,18 +40,40 @@ function Class() {
 			children: <FilMemberCount/>,
 		},
 	];
+
+	const infoForm = [
+		{ title: "Lớp", value: classData?.name },
+		{ title: "Năm học", value: classData?.studyYear },
+		{ title: "Số lượng học sinh", value: classData?.totalStudent },
+		{ title: "Tỉ lệ nam/ nữ", value: classData?.boyOnGirl},
+		{ title: "Khối", value: classData?.field },
+		{ title: "Chủ nhiệm", value: classData?.teacher },
+		{ title: "Lớp trưởng", value: classData?.monitor },
+		{ title: "Lớp phó", value: classData?.viceMonitor },
+	];
+
+	const advancedInfo = [
+		{ title: "Danh sách học sinh", component: null },
+		{ title: "Sơ đồ lớp", component: null },
+		{ title: "Thi đua", component: null },
+	];
+
 	return (
-		<div id="comp_Member" className="obj_Component">
+		<div id="comp_Class" className="obj_Component">
 			{isSearch ? (
-				<Search apiData={apiData}>
-					<FilterChoice title="Thông tin nhóm">
-						{filterOption.map((obj, index) => (
-							<FilterChoiceOption key={index} {...obj} />
-						))}
-					</FilterChoice>
-				</Search>
+				<Search
+					handleData={handleData}
+					apiData={apiData}
+					filter_children={
+						<FilterChoice title="Thông tin lớp học">
+							{filterOption.map((obj, index) => (
+								<FilterChoiceOption key={index} {...obj} />
+							))}
+						</FilterChoice>
+					}
+				></Search>
 			) : (
-				<Info />
+				<Info setUpForm={infoForm} setUpNav={advancedInfo} name={classData?.name} avatar={null} role={classData?.role} fb={classData?.fb} ins={classData?.ins}/>
 			)}
 		</div>
 	);

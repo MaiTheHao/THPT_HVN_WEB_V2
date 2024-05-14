@@ -1,5 +1,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCrown, faFire, faGraduationCap, faNewspaper, faRankingStar, faStar } from "@fortawesome/free-solid-svg-icons";
+import {
+	faCrown,
+	faFire,
+	faGraduationCap,
+	faNewspaper,
+	faRankingStar,
+	faStar,
+} from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import HVNBANNER from "../../../../pic/HVN_banner-trs.jpg";
 
@@ -29,8 +36,8 @@ export const ContainerElementRow = ({ id, headerTitle, icon, sourceData }) => {
 		<div className="container-child--Row" id={id}>
 			<Header headerTitle={headerTitle} icon={icon}></Header>
 			<Body>
-				{sourceData?.map((obj) => (
-					<ContainerElementRowChild {...obj} />
+				{sourceData?.map((obj, index) => (
+					<ContainerElementRowChild key={`ContainerElementRowChild_${index}`} {...obj} />
 				))}
 			</Body>
 		</div>
@@ -100,8 +107,8 @@ export const ContainerNoticeElement = () => {
 
 	return (
 		<>
-			{listNoticeContainer.map((obj) => (
-				<ContainerElementRow {...obj}></ContainerElementRow>
+			{listNoticeContainer.map((obj, index) => (
+				<ContainerElementRow key={`ContainerElementRow_${index}`} {...obj}></ContainerElementRow>
 			))}
 		</>
 	);
@@ -202,7 +209,13 @@ export const ContainerRankElement = () => {
 	return (
 		<>
 			{listRankContainer.map(({ id, headName, inputIcon, title, listObj }) => (
-				<ContainerElementColumn key={id} type="rank" id={id} inputIcon={inputIcon} title={title}>
+				<ContainerElementColumn
+					key={`ContainerElementColumn_${id}`}
+					type="rank"
+					id={id}
+					inputIcon={inputIcon}
+					title={title}
+				>
 					<CreateListRank headName={headName} listObj={listObj} />
 				</ContainerElementColumn>
 			))}
@@ -210,7 +223,7 @@ export const ContainerRankElement = () => {
 	);
 };
 
-export const ContainerElementRowChild = ({ id, finalPath, title, description, picSrc }) => {
+export const ContainerElementRowChild = ({ id, finalPath, title, description, picSrc, addClass = ""}) => {
 	const BoxImg = () => (
 		<div className="box-img">
 			<img alt={"Ảnh miêu tả"} src={picSrc || HVNBANNER}></img>
@@ -221,9 +234,11 @@ export const ContainerElementRowChild = ({ id, finalPath, title, description, pi
 		return (
 			<div className="box-text">
 				<InnerText {...{ title, description }} />
-				<Link className="box-text__more" to={finalPath}>
-					Xem thêm
-				</Link>
+				{finalPath && (
+					<Link className="box-text__more" to={finalPath}>
+						Xem thêm
+					</Link>
+				)}
 			</div>
 		);
 	};
@@ -236,7 +251,7 @@ export const ContainerElementRowChild = ({ id, finalPath, title, description, pi
 		</div>
 	);
 	return (
-		<div className="linkbox" id={id}>
+		<div className={`linkbox ${addClass}`} id={id}>
 			<BoxImg></BoxImg>
 			<BoxText></BoxText>
 		</div>
