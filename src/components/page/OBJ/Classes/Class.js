@@ -63,6 +63,7 @@ function Class() {
 			{isSearch ? (
 				<Search
 					handleData={handleData}
+					placeholder={"Tìm kiếm lớp học"}
 					apiData={apiData}
 					filter_children={
 						<FilterChoice title="Thông tin lớp học">

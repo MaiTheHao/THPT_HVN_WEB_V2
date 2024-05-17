@@ -6,9 +6,9 @@ import { SearchObjContext } from './Search';
 
 function Form({ apiData }) {
 	const TEST = true;
-	const container = { placeholder: "Tìm kiếm", icon: faMagnifyingGlass };
+	const { setResults, placeholder } = useContext(SearchObjContext);
+	const container = { placeholder: placeholder, icon: faMagnifyingGlass };
 
-	const { setResults } = useContext(SearchObjContext);
 	const [searchName, setSearchName] = useState("");
 
 	const searchObj = (inputName, listObj) => {
@@ -39,10 +39,10 @@ function Form({ apiData }) {
 			// TEST SEARCH
 			if (apiData === "/member") {
 				searchObj(inputValue, [
-					{class: "12.11",role: "Học sinh",type:"Cá nhân", name: "Nguyễn Văn An", id: "01", sex: "Nam", doanvien: true, birth: "20/05/2006", email: "userexampleemail@gmail.com", phone: "0192847261"},
-					{class: null,role: "Cán bộ",type:"Cá nhân", name: "Trần Thị Bình", id: "02", sex: "Nữ", doanvien: true, birth: "22/01/1994", email: "userexampleemail@gmail.com", phone: "0192847261"},
-					{class: null,role: "Giáo viên",type:"Cá nhân", name: "Lê Văn Cường", id: "03", sex: "Nam", doanvien: true, birth: "06/12/1990", email: "userexampleemail@gmail.com", phone: "0192847261"},
-					{class: "10.7",role: "học sinh",type:"Cá nhân", name: "Phạm Thị Dũng", id: "04", sex: "Nữ", doanvien: false, birth: "10/11/2008", email: "userexampleemail@gmail.com", phone: "0192847261"},
+					{class: "12.11",role: "Học sinh",type:"Cá nhân", name: "Nguyễn Văn An", id: "01", sex: "Nam", doanvien: true, birth: "20/05/2006", email: "userexampleemail@gmail.com", phone: "0192847261", fb: "userexamplefblink", ins: "userexampleinslink",},
+					{class: "11.5",role: "Cán bộ",type:"Cá nhân", name: "Trần Thị Bình", id: "02", sex: "Nữ", doanvien: true, birth: "22/01/1994", email: "userexampleemail@gmail.com", phone: "0192847261", fb: "userexamplefblink", ins: "userexampleinslink",},
+					{class: "12.4",role: "Giáo viên",type:"Cá nhân", name: "Lê Văn Cường", id: "03", sex: "Nam", doanvien: true, birth: "06/12/1990", email: "userexampleemail@gmail.com", phone: "0192847261", fb: "userexamplefblink", ins: "userexampleinslink",},
+					{class: "10.7",role: "học sinh",type:"Cá nhân", name: "Phạm Thị Dũng", id: "04", sex: "Nữ", doanvien: false, birth: "10/11/2008", email: "userexampleemail@gmail.com", phone: "0192847261", fb: "userexamplefblink", ins: "userexampleinslink",},
 				]);
 			} else {
 				if (apiData === "/group") {

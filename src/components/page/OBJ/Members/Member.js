@@ -6,6 +6,7 @@ import UserGroups from "./UserGroups";
 import UserRecentAct from "./UserRecentAct";
 import "./Member.scss";
 import Document from "./Document";
+import useAppContext from "../../../../Context/UseAppContext";
 
 const FilGender = () => (
 	<select className="scrollY">
@@ -36,15 +37,17 @@ const FilBirth = () => {
 };
 
 function Member() {
+	const { auth } = useAppContext();
 	const apiData = "/member";
-	const [isSearch, setIsSearch] = useState(true);
+	const [isSearch, setIsSearch] = useState(!auth?.loginsuccess);
 	const [userData, setUserData] = useState({
-		name: null,
-		sex: null,
-		birth: null,
-		doanvien: null,
-		email: null,
-		phone: null,
+		name: auth?.userName,
+		sex: auth?.userSex,
+		birth: auth?.userBirth,
+		doanvien: auth?.userDoanVien,
+		email: auth?.userEmail,
+		phone: auth?.userPhone,
+		role: auth?.userRole,
 	});
 	const filterOption = [
 		{
@@ -86,6 +89,7 @@ function Member() {
 			{isSearch ? (
 				<Search
 					handleData={handleData}
+					placeholder={"Tìm kiếm thành viên"}
 					apiData={apiData}
 					filter_children={
 						<FilterChoice title="Thông tin thành viên">
@@ -96,7 +100,15 @@ function Member() {
 					}
 				></Search>
 			) : (
-				<Info setUpForm={infoForm} setUpNav={advancedInfo} name={userData?.name} avatar={null} role={userData?.role} fb={userData?.fb} ins={userData?.ins}/>
+				<Info
+					setUpForm={infoForm}
+					setUpNav={advancedInfo}
+					name={userData?.name}
+					avatar={null}
+					role={userData?.role}
+					fb={userData?.fb}
+					ins={userData?.ins}
+				/>
 			)}
 		</div>
 	);

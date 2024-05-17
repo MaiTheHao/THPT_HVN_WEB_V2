@@ -12,6 +12,8 @@ $web_sidebar_container_width: 15vw;
 #webBody {
 	position: relative;
 	top: var(--webheader_height);
+
+	background-color: rgb(245, 250, 255);
 }
 
 #webFooter {

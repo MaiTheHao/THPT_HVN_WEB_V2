@@ -1,0 +1,143 @@
+#comp_Exam {
+	display: flex;
+	justify-content: center;
+	font-size: var(--fontsize);
+    background-color: rgb(245, 245, 255);
+
+    $container_backgroundColor: rgb(255, 255, 255);
+	$searchForm_backgroundColor: rgb(255, 255, 255);
+	$exam_backgroundColor: rgb(210, 230, 255);
+    $exam-icon_backgroundColor:rgb(0, 30, 115);
+
+	#UNDERICON {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+
+		img {
+			width: 35%;
+		}
+	}
+
+	#examContainer {
+		width: 80%;
+		background-color: $container_backgroundColor;
+        box-shadow: var(--boxShadow);
+		font-size: 1em;
+		#searchExam {
+			display: flex;
+			justify-content: center;
+            align-items: center;
+
+			font-size: 1em;
+            margin-top: 1em;
+
+			#searchForm {
+				position: relative;
+				width: 30%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background-color: $searchForm_backgroundColor;
+				border: 0.1vw solid black;
+				border-radius: 0.2vw;
+
+                font-size: 1em;
+
+				input {
+					width: 85%;
+					background-color: transparent;
+					padding: 1% 2%;
+                    font-size: 1em;
+				}
+				svg {
+					font-size: 1.2em;
+					width: 15%;
+				}
+			}
+
+            #searchField {
+                color: var(--textcolor2);
+                background-color: blue;
+                margin-left: 1em;
+                text-align: center;
+                padding: 0.25% 0.5%;
+                border-radius: 0.2vw;
+                position: relative;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                text-overflow: "";
+                font-size: 1em;
+
+                option{
+                    background-color: rgb(49, 49, 49);
+                    text-align: center;
+                    font-size: 0.8em;
+                }
+
+                option:hover{
+                    cursor: pointer;
+                }
+            }
+
+            #searchField:hover{
+                cursor: pointer;
+            }
+		}
+
+        #listExams{
+            font-size: 1em;
+            padding: 1% 2%;
+            height: 120vh;
+            overflow-y: auto;
+            ul{
+                display: flex;
+                flex-wrap: wrap;
+                list-style: none;
+                font-size: 1em;
+
+                a.exam{
+                    position: relative;
+                    display: flex;
+                    width: 24%;
+                    margin: 0.5% calc(4%/8);
+                    padding: 0.25% 1%;
+
+                    border-radius: 0.2vw;
+                    border: 0.07vw solid black;
+                    
+                    background-color: $exam_backgroundColor;
+                    font-size: 1em;
+                    .exam-icon{
+                        position: relative;
+                        width: 10%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 2em;
+
+                        margin-right: 0.5em;
+                        color: $exam-icon_backgroundColor;
+                    }
+
+                    .exam-intro{
+                        width: 90%;
+                        display: flex;
+                        flex-direction: column;
+                        font-size: 0.8em;
+                        color: var(--textcolor1);
+
+                        *{
+                            text-wrap: nowrap;
+                            overflow-x: hidden;
+                            text-overflow: ellipsis;
+                        }
+                    }
+                }
+            }
+        }
+	}
+}

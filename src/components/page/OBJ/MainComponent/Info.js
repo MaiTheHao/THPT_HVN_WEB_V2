@@ -55,25 +55,30 @@ function Info({ setUpForm, setUpNav, avatar, name, role, fb, ins }) {
 						<p>Không có liên kết MXH</p>
 					) : (
 						<>
-							{fb ?? (
+							{fb ? (
 								<a href={fb} className="fb btn">
 									<FontAwesomeIcon icon={faSquareFacebook} />
 									Facebook
 								</a>
-							)}
-							{ins ?? (
+							) : null}
+							{ins ? (
 								<a href={ins} className="ins btn">
 									<FontAwesomeIcon icon={faSquareInstagram} />
 									Instagram
 								</a>
-							)}
+							) : null}
 						</>
 					)}
 				</div>
 				<div className="container-right">
 					<div id="container-right-navbar" className="scrollX">
 						{setUpNav.map((e, index) => (
-							<button key={`container-advanced-right-navbar_${index}`} onClick={() => setAdvancedPage(e?.component)}>{e?.title}</button>
+							<button
+								key={`container-advanced-right-navbar_${index}`}
+								onClick={() => setAdvancedPage(e?.component)}
+							>
+								{e?.title}
+							</button>
 						))}
 					</div>
 					<div id="container-right-context">{advancedPage ? advancedPage : null}</div>

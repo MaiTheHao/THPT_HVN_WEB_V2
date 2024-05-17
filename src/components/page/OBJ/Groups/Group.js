@@ -59,6 +59,7 @@ function Group() {
 			{isSearch ? (
 				<Search
 					handleData={handleData}
+					placeholder={"Tìm kiếm nhóm"}
 					apiData={apiData}
 					filter_children={
 						<FilterChoice title="Thông tin lớp học">

@@ -32,6 +32,14 @@ a {
 	text-decoration: none;
 }
 
+.scrollY{
+	overflow-y: auto;
+	padding-bottom: 50% !important;
+}
+.scrollX{
+	overflow-x: auto;
+}
+
 .scrollY::-webkit-scrollbar {
 	width: calc(var(--fontsize) * 0.3);
 	background-color: rgb(230, 230, 230);
@@ -51,4 +59,17 @@ a {
 	background-color: var(--textcolor2);
 	border-radius: 0.5vw;
 	border: calc(var(--fontsize) * 0.1) solid rgb(98, 98, 98);
+}
+
+.HIDE_SCHOOL_ICON{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	img{
+		width: 70%;
+		height: auto;
+		object-fit: cover;
+		opacity: 0.05;
+	}
 }

@@ -45,6 +45,11 @@
 				font-family: "Sedan SC", serif !important;
 			}
 		}
+
+		#guildBtn{
+			position: relative;
+			bottom: 2em;
+		}
 	}
 
 	.body {
@@ -58,7 +63,7 @@
 			.container-child--Column {
 				position: relative;
 				width: $container-child--column_width;
-				height: 35vw;
+				height: 30vw;
 				display: grid;
 				grid-template-rows: 20% 80%;
 
@@ -119,7 +124,7 @@
 						width: 100%;
 
 						li {
-							margin-top: calc(var(--fontsize) / 1.2);
+							margin-top: 2.5em;
 						}
 
 						li.top {

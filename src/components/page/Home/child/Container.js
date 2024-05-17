@@ -119,39 +119,18 @@ export const ContainerRankElement = () => {
 		{ name: "12.9", score: 300 },
 		{ name: "10.10", score: 299 },
 		{ name: "12.11", score: 298 },
-		{ name: "11.8", score: 297 },
-		{ name: "10.4", score: 296 },
-		{ name: "12.10", score: 295 },
-		{ name: "10.8", score: 294 },
-		{ name: "12.6", score: 293 },
-		{ name: "11.9", score: 291 },
-		{ name: "10.3", score: 292 },
 	];
 
 	const groupRanks = [
 		{ name: "Tuổi Trẻ Huỳnh Văn Nghệ", score: 300 },
 		{ name: "Học Bá Tứ Hùng", score: 245 },
 		{ name: "Dân Chơi Học Vần", score: 215 },
-		{ name: "Băng Hậu Chém Gió", score: 200 },
-		{ name: "F4 Học Đường", score: 189 },
-		{ name: "Thánh Nhây Hội", score: 188 },
-		{ name: "Chuyên Gia Chém Gió", score: 165 },
-		{ name: "Bà Tám Học Đường", score: 155 },
-		{ name: "Hội Chị Em Cà Khịa", score: 143 },
-		{ name: "Bộ Ba Siêu Quậy", score: 133 },
 	];
 
 	const studentRanks = [
 		{ name: "Nguyễn Hoàng Nam - 11.6", score: 300 },
 		{ name: "Trần Lê Tú Anh - 10.9", score: 245 },
 		{ name: "Phạm Nguyễn Quỳnh Hoa - 10.4", score: 215 },
-		{ name: "Lê Thị Ngọc Mai - 10.2", score: 200 },
-		{ name: "Vũ Văn Minh Quân - 12.1", score: 189 },
-		{ name: "Đinh Thị Thu Trang - 12.1", score: 188 },
-		{ name: "Bùi Thanh Hiền - 12.8", score: 165 },
-		{ name: "Dương Kim Lan - 11.6", score: 155 },
-		{ name: "Đỗ Thị Ngọc Hạnh - 11.3", score: 143 },
-		{ name: "Lê Quang Huy - 12.6", score: 133 },
 	];
 	// Các đối tượng trên cần data từ server, và cần thiết lập api để trỏ tới đối tượng top
 
@@ -160,7 +139,7 @@ export const ContainerRankElement = () => {
 			type: "rank",
 			id: "rank_classes",
 			headName: "lớp",
-			title: "LỚP HỌC XUẤT SẮC",
+			title: "LỚP XUẤT SẮC NHẤT",
 			inputIcon: faRankingStar,
 			listObj: classRanks,
 		},
@@ -168,7 +147,7 @@ export const ContainerRankElement = () => {
 			type: "rank",
 			id: "rank_students",
 			headName: null,
-			title: "HỌC SINH XUẤT SẮC",
+			title: "HỌC SINH XUẤT SẮC NHẤT",
 			inputIcon: faRankingStar,
 			listObj: studentRanks,
 		},
@@ -176,7 +155,7 @@ export const ContainerRankElement = () => {
 			type: "rank",
 			id: "rank_groups",
 			headName: null,
-			title: "NHÓM NỔI TIẾNG",
+			title: "NHÓM NỔI TIẾNG NHẤT",
 			inputIcon: faRankingStar,
 			listObj: groupRanks,
 		},

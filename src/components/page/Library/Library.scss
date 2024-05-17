@@ -1,0 +1,181 @@
+#comp_Library {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	font-size: var(--fontsize);
+	background-color: rgb(245, 245, 255);
+
+	$container_backgroundColor: rgb(255, 255, 255);
+	$searchForm_backgroundColor: rgb(255, 255, 255);
+	$document_gridTemplateRows: 35% 50% 15%;
+	$document_backgroundColor: rgb(245, 250, 255);
+	$document-meta_backgroundColor: rgb(220, 235, 255);
+
+	#UNDERICON {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+
+		img {
+			width: 35%;
+		}
+	}
+
+	#libraryContainer {
+		position: relative;
+		width: 80%;
+		background-color: $container_backgroundColor;
+		font-size: 1em;
+		box-shadow: var(--boxShadow);
+		padding: 0.5% 1%;
+
+		#searchDocument {
+			display: flex;
+			justify-content: center;
+
+			font-size: 1em;
+			margin-top: 1em;
+
+			#searchForm {
+				position: relative;
+				width: 30%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background-color: $searchForm_backgroundColor;
+				border: 0.1vw solid black;
+				border-radius: 0.2vw;
+
+				input {
+					width: 85%;
+					background-color: transparent;
+					padding: 1% 2%;
+					font-size: 1em;
+				}
+				svg {
+					font-size: 1.2em;
+					width: 15%;
+				}
+			}
+		}
+
+		#listDocument {
+			position: relative;
+			height: 120vh;
+            overflow-y: auto;
+			font-size: 1em;
+			margin-top: 2em;
+
+			ul {
+				position: relative;
+				display: flex;
+				flex-wrap: wrap;
+
+				list-style: none;
+				font-size: 1em;
+
+				li {
+					position: relative;
+					width: 25%;
+					height: 29vw;
+					display: grid;
+					grid-template-rows: $document_gridTemplateRows;
+					margin: 2% calc(25% / 6);
+					font-size: 1em;
+					border-radius: 0.2vw;
+					border: 0.07vw solid black;
+					background-color: $document_backgroundColor;
+
+					div {
+						padding: 1% 2%;
+					}
+
+					.document-picture {
+						display: flex;
+						justify-content: center;
+						border-radius: 0.2vw 0.2vw 0 0;
+						padding: 0;
+
+						img {
+							width: 100%;
+							height: auto;
+							object-fit: cover;
+							border-radius: inherit;
+						}
+					}
+
+					.document-intro {
+						overflow-y: auto;
+
+						h5 {
+							font-size: 0.8em;
+							text-align: justify;
+							padding: 0 3%;
+							margin-top: 1em;
+							margin-bottom: 1em;
+						}
+						p {
+							font-size: 0.7em;
+							text-align: justify;
+							padding: 1% 5%;
+						}
+					}
+
+					.document-meta {
+						font-size: 0.7em;
+						display: flex;
+						flex-direction: column;
+						border-top: 0.05vw solid black;
+						background-color: $document-meta_backgroundColor;
+
+						div {
+							display: grid;
+							font-size: 1em;
+
+							* {
+								text-wrap: nowrap;
+								font-size: 1em;
+								text-align: justify;
+
+								overflow-x: hidden;
+								text-overflow: ellipsis;
+							}
+						}
+
+						.meta1 {
+							grid-template-columns: 50% 5% 45%;
+						}
+
+						.meta2 {
+							grid-template-columns: 50% 5% 45%;
+
+							.documentAction {
+                                display: flex;
+                                justify-content: space-evenly;
+
+                                button{ 
+                                    color: var(--textcolor2);
+									text-align: center;
+									padding: 0.5% 2%;
+									border-radius: 0.2vw;
+                                }
+
+								.documentDownload {
+                                    width: 40%;
+									background-color: blue;
+								}
+
+                                .documentMore{
+                                    width: 50%;
+                                    background-color: rgb(255, 155, 80);
+                                }
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

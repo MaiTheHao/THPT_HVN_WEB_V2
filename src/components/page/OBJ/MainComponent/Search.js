@@ -4,6 +4,7 @@ import Form from "./Form";
 import { Link } from "react-router-dom";
 import HVNBANNER from "../../../../pic/HVN_banner-trs.jpg";
 import "./MainComponent.scss";
+import Blank from "./Blank";
 export const SearchObjContext = createContext();
 
 const ContainerResult = ({ results }) => {
@@ -82,14 +83,14 @@ const FilterPannel = ({ isFil }) => {
 	);
 };
 
-function Search({ apiData, handleData, filter_children }) {
+function Search({ apiData, handleData, filter_children, placeholder }) {
 	const [isFil, setIsFil] = useState(false);
 	const [results, setResults] = useState([]);
 	const listYearAcceptable = Array.from({ length: new Date().getFullYear() - 2000 + 1 }, (_, i) => 2000 + i);
 
 	return (
 		<SearchObjContext.Provider
-			value={{ results, setResults, handleData, filter_children, listYearAcceptable }}
+			value={{ results, setResults, handleData, placeholder, filter_children, listYearAcceptable }}
 		>
 			<div id="searchObjForm">
 				<div className="header">
@@ -99,7 +100,7 @@ function Search({ apiData, handleData, filter_children }) {
 					</button>
 					<FilterPannel isFil={isFil} />
 				</div>
-				<div className="body">{results.length > 0 ? <ContainerResult results={results} /> : null}</div>
+				<div className="body">{results.length > 0 ? <ContainerResult results={results} /> : <Blank/>}</div>
 			</div>
 		</SearchObjContext.Provider>
 	);
