@@ -34,10 +34,12 @@ a {
 
 .scrollY{
 	overflow-y: auto;
-	padding-bottom: 50% !important;
 }
 .scrollX{
 	overflow-x: auto;
+}
+.paddingBottom{
+	padding-bottom: 50% !important;
 }
 
 .scrollY::-webkit-scrollbar {

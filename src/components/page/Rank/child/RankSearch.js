@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Input1 from "../../../reusable-components/Input1";
 
 function RankSearch({ field, setField }) {
-  const [selectedValue, setSelectedValue] = useState(''); // Initial state
+  const [selectedValue, setSelectedValue] = useState(field); // Initial state
 
   const handleSelectChange = (event) => {
     setSelectedValue(event.target.value);
@@ -19,6 +19,7 @@ function RankSearch({ field, setField }) {
 		{ name: "Thành viên", value: "member" },
 		{ name: "Nhóm", value: "group" },
 		{ name: "Lớp học", value: "class" },
+		{ name: "Học sinh", value: "student" },
 	];
 
 
@@ -26,7 +27,6 @@ function RankSearch({ field, setField }) {
 		<div id="searchObj">
 			<Input1 inputId={"search"} placeholder={targetText[field] || "Tìm kiếm"} />
       <select id="searchField" name="field" value={selectedValue} onChange={handleSelectChange}>
-				<option> Chọn đối tượng </option>
 				{listObj.map((obj) => (
 					<option  key={obj?.name} value={obj?.value}>
 						{obj.name}

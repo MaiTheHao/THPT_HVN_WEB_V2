@@ -3,7 +3,7 @@ import HVNBANNER from "../../../../pic/HVN_banner-trs.jpg";
 
 function Obj({top, avatar, name, type, prop}) {
 	return (
-		<li>
+		<li className="obj-rank">
 			<div className={`box-top top${top}`}>
 				<span>#{top}</span>
 			</div>

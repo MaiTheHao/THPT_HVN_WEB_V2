@@ -1,10 +1,14 @@
-import React from 'react'
+import React from "react";
+import "./Introduce.scss";
+import Container from "./child/Container";
 
 function Introduce() {
-  return (
-    <h1>Introduce
-    </h1>
-  )
+	return (
+		<div id="comp_Introduce">
+			<Container></Container>
+			<Container></Container>
+		</div>
+	);
 }
 
-export default Introduce
+export default Introduce;

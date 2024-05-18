@@ -19,4 +19,4 @@ function Exam() {
 	);
 }
 
-export default Exam;
+export default React.memo(Exam);

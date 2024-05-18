@@ -1,5 +1,5 @@
 import React, { useEffect,useState } from "react";
-import { GetClass, GetGroup, GetMember } from "./API";
+import { GetClass, GetGroup, GetMember, GetStudent } from "./API";
 import Obj from "./Obj";
 
 function RankTable({ field }) {
@@ -11,6 +11,8 @@ function RankTable({ field }) {
 			GetGroup(setData);
 		} else if(field === "class"){
 			GetClass(setData);
+		} else if(field === "student"){
+			GetStudent(setData);
 		}
 		//eslint-disable-next-line
 	}, [field])

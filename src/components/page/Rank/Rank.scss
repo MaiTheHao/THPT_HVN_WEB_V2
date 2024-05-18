@@ -107,7 +107,7 @@
 					font-size: 1em;
 					list-style: none;
 
-					li {
+					.obj-rank {
 						position: relative;
 						height: calc(var(--fontsize) * 5);
 						display: flex;
@@ -191,7 +191,7 @@
 						}
 					}
 
-					li + li {
+					.obj-rank + .obj-rank {
 						margin-top: 1.5em;
 					}
 				}

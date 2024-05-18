@@ -19,4 +19,4 @@ function Rank() {
 	);
 }
 
-export default Rank;
+export default React.memo(Rank);

@@ -1,0 +1,111 @@
+#comp_Introduce {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-size: var(--fontsize);
+	padding: 2% 0;
+
+    $IntroduceContainer-header_backgroundColor: rgb(0, 0, 165);
+    $IntroduceContainer-body_backgroundColor: rgb(255, 255, 255);
+
+    $paraContainer-title_backgroundColor: rgb(0, 0, 250);
+    $paraContainerChild_backgroundColor: rgb(245, 246, 255);
+
+	.Introduce-container {
+		position: relative;
+		width: 80%;
+		background-color: transparent;
+		border-radius: 1vw;
+        font-size: 1em;
+        box-shadow: var(--boxShadow);
+		.container-header {
+			position: relative;
+			height: calc(var(--fontsize) * 5);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-wrap: nowrap;
+			padding: 0.7% 2%;
+			font-size: 1em;
+			border-radius: 0.5vw 0.5vw 0 0;
+            color: var(--textcolor2);
+
+			background-color: $IntroduceContainer-header_backgroundColor;
+
+			h2 {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				text-align: justify;
+				font-size: 1.8em;
+				margin: 0 2em;
+			}
+
+			img {
+				height: 100%;
+				width: auto;
+				object-fit: cover;
+			}
+		}
+		.container-body {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            font-size: 1em;
+
+            background-color: $IntroduceContainer-body_backgroundColor;
+
+            .container-element{
+                padding: 2%;
+            }
+
+            .para{
+                .title{
+                    background-color: $paraContainer-title_backgroundColor;
+                    color: var(--textcolor2);
+                    text-align: justify;
+                    font-size: 1.2em;
+                    padding: 0.5% 2%;
+
+                    border-radius: 0.2vw 0.2vw 0 0;
+                }
+                .content{
+                    font-size: 0.8em;
+                    padding-bottom: 2em;
+                    background-color: $paraContainerChild_backgroundColor;
+
+                    .para-child{
+                        padding: 0.5% 2%;
+                        font-size: 1em;
+
+                        .inner-title{
+                            font-size: 1.2em;
+                            font-weight: 600;
+                        }
+
+                        .inner-content{
+                            font-size: 1em;
+                            text-align: justify;
+                            padding: 1% 2%;
+                        }
+                    }
+                }
+            }
+
+            .icon-star{
+                color: rgb(255, 255, 0);
+            }
+            .icon-heart{
+                color: rgb(255, 72, 133);
+            }
+            .icon-fire{
+                color: rgb(255, 191, 88)
+            }
+		}
+	}
+
+	.Introduce-container + .Introduce-container {
+		margin-top: 2em;
+	}
+}
