@@ -1,5 +1,5 @@
 {
-    "homepage": "https://MaiTheHao.github.io/THPT_HVN",
+    "homepage": "http://MaiTheHao.github.io/THPT_HVN",
     "proxy": "http://localhost:8000",
     "name": "client",
     "version": "0.1.0",

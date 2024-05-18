@@ -72,25 +72,44 @@
                 }
                 .content{
                     font-size: 0.8em;
-                    padding-bottom: 2em;
+                    padding-bottom: 1em;
                     background-color: $paraContainerChild_backgroundColor;
+                    box-shadow: var(--boxShadow);
 
                     .para-child{
                         padding: 0.5% 2%;
                         font-size: 1em;
-
+                        
                         .inner-title{
                             font-size: 1.2em;
                             font-weight: 600;
+                            padding: 0.25% 2%;
+
+                            background-color: rgb(255, 220, 190);
                         }
 
                         .inner-content{
                             font-size: 1em;
                             text-align: justify;
                             padding: 1% 2%;
+                            background-color: rgb(255, 245, 240);
+
+                            .lineData{  
+                                line-height: 2em;
+                                font-weight: 400;
+                                color: var(--textcolor1)
+                            }
+
+                            .lineData + .lineData{
+                                margin-top: 1em;
+                            }
                         }
                     }
                 }
+            }
+
+            .innericon{
+                margin-left: 0.25em;
             }
 
             .icon-star{

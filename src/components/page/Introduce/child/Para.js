@@ -1,17 +1,15 @@
 import React from "react";
 import ParaChild from "./ParaChild";
 
-function Para({icon}) {
+function Para({title, listPara, icon}) {
 
 	return (
 		<div className="para container-element">
 			<h3 className="title">
-				PARA TITLE {icon}
+				{title} {icon}
 			</h3>
 			<div className="content">
-				<ParaChild></ParaChild>
-				<ParaChild></ParaChild>
-				<ParaChild></ParaChild>
+				{listPara?.map((para, index) => <ParaChild key={`para-content_${index}`} title={para?.title} description={para?.description}/>)}
 			</div>
 		</div>
 	);
