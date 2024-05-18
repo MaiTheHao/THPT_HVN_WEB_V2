@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import HVNBANNER from "../../../../pic/HVN_banner-trs.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSquareFacebook, faSquareInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 const Avatar = ({ avatar }) => {
 	return (
@@ -43,7 +44,7 @@ const ContainerInfo = ({ avatar, name, role, setUpForm }) => {
 	);
 };
 
-function Info({ setUpForm, setUpNav, avatar, name, role, fb, ins }) {
+function Info({ setUpForm, setUpNav, avatar, name, role, fb, ins, email, setIsSearch }) {
 	const [advancedPage, setAdvancedPage] = useState(null);
 	return (
 		<div id="infoObjForm">
@@ -56,15 +57,21 @@ function Info({ setUpForm, setUpNav, avatar, name, role, fb, ins }) {
 					) : (
 						<>
 							{fb ? (
-								<a href={fb} className="fb btn">
+								<a target="_blank" rel="noreferrer" href={fb} className="fb btn">
 									<FontAwesomeIcon icon={faSquareFacebook} />
-									Facebook
+									<span>Facebook</span>
 								</a>
 							) : null}
 							{ins ? (
-								<a href={ins} className="ins btn">
+								<a target="_blank" rel="noreferrer" href={ins} className="ins btn">
 									<FontAwesomeIcon icon={faSquareInstagram} />
-									Instagram
+									<span>Instagram</span>
+								</a>
+							) : null}
+							{email ? (
+								<a target="_blank" rel="noreferrer" href={ins} className="email btn">
+									<FontAwesomeIcon icon={faEnvelope} />
+									<span>Email</span>
 								</a>
 							) : null}
 						</>
@@ -73,17 +80,24 @@ function Info({ setUpForm, setUpNav, avatar, name, role, fb, ins }) {
 				<div className="container-right">
 					<div id="container-right-navbar" className="scrollX">
 						{setUpNav.map((e, index) => (
-							<button
-								key={`container-advanced-right-navbar_${index}`}
-								onClick={() => setAdvancedPage(e?.component)}
-							>
-								{e?.title}
-							</button>
+							<React.Fragment key={`container-advanced-right-navbar_${index}`}>
+								{e?.accept === role || !e?.accept ? (
+									<button
+										onClick={() => setAdvancedPage(e?.component)}
+									>
+										{e?.title}
+									</button>
+								) : null}
+							</React.Fragment>
 						))}
 					</div>
 					<div id="container-right-context">{advancedPage ? advancedPage : null}</div>
 				</div>
 			</div>
+
+			<button id="infoObjFormReturn" onClick={() => setIsSearch(true)}>
+				QUAY LẠI TÌM KIẾM
+			</button>
 		</div>
 	);
 }

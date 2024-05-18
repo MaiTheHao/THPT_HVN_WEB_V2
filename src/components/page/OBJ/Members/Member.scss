@@ -1,7 +1,7 @@
 #comp_Member {
-    $userAdvancedTable_maxHeight: 25vw;
-    .userAdvancedTable1{
-        position: relative;
+	$userAdvancedTable_maxHeight: 27vw;
+	.userAdvancedTable1 {
+		position: relative;
 		max-height: $userAdvancedTable_maxHeight;
 		background-color: rgb(255, 255, 255);
 		border-radius: 0.5vw;
@@ -9,15 +9,15 @@
 		overflow-y: auto;
 
 		font-size: 1em;
-    }
-	#userGroups{
+	}
+	#userGroups {
 		.userGroup {
 			position: relative;
 			height: 8%;
 			display: flex;
 			padding: 0.5% 2%;
 			font-size: 0.9em;
-            background-color: rgba(240, 240, 240, 0.5);
+			background-color: rgba(240, 240, 240, 0.5);
 
 			.box-img {
 				position: relative;
@@ -57,16 +57,114 @@
 			}
 		}
 
-        .userGroup + .userGroup{
-            margin-top: 1.5em;
-        }
+		.userGroup + .userGroup {
+			margin-top: 1.5em;
+		}
 	}
-    #userRecentActs{
-        .userRecentAct{
-        }
+	#userRecentActs {
+		.userRecentAct {
+		}
 
-        .userRecentAct + .userRecentAct{
-            margin-top: 1.5em !important;
-        }
-    }
+		.userRecentAct + .userRecentAct {
+			margin-top: 1.5em !important;
+		}
+	}
+	#userScoreBoard {
+		position: relative;
+		font-size: 1em;
+
+		#lableChoseTable {
+			position: relative;
+			display: flex;
+			justify-content: right;
+			align-items: center;
+			font-size: 1em;
+
+			#choseTable {
+				font-size: 1em;
+				background-color: rgb(133, 133, 133);
+				padding: 0.25% 2%;
+
+				select{
+					option{
+						background-color: rgb(30, 30, 30);
+					}
+
+					margin-right: 1.5em;
+				}
+
+				select:hover{
+					cursor: pointer;
+				}
+
+				* {
+					color: var(--textcolor2);
+					font-size: 1em;
+					background-color: transparent;
+				}
+			}
+		}
+
+		h5 {
+			font-size: 1.3em;
+			text-align: center;
+			font-weight: 600;
+			background-color: rgb(0, 20, 110);
+			color: var(--textcolor2);
+			padding: 0.5% 0;
+			margin-bottom: 0.6em;
+		}
+
+		table {
+			width: 100%;
+			border-spacing: 0em;
+			background-color: rgb(230, 240, 255);
+
+			thead {
+				color: var(--textcolor2);
+
+				tr {
+					position: relative;
+					background-color: rgb(12, 2, 205);
+					padding: 0.5% 1%;
+
+					th {
+						font-weight: 500;
+						border: 0.05em solid rgb(0, 0, 0);
+					}
+
+					#scoreBoard-subject {
+						width: 20%;
+					}
+				}
+			}
+
+			tbody {
+				td {
+					border: 0.05em solid black;
+					font-weight: 350;
+				}
+
+				.TX-score{
+					span{
+						margin: 0 0.3em;
+					}
+				}
+
+				.subject {
+					font-weight: 400;
+					background-color: rgb(225, 255, 241);
+				}
+
+				.DTBHK-score {
+					background-color: rgb(255, 239, 227);
+				}
+			}
+
+			th,
+			td {
+				text-align: center;
+			}
+		}
+	}
 }

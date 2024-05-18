@@ -25,12 +25,12 @@ function Form({ apiData }) {
 
 		if (!TEST) {
 			try {
-				const {
-					data: { listObj },
-				} = await axios.get(`/searchObj${apiData}`, {
+				const response = await axios.get(`/searchObj${apiData}`, {
 					params: { inputValue: inputValue },
-				});
-				// Update UI or perform actions with listObj
+				  });
+				  
+				console.log(response);
+
 			} catch (error) {
 				console.error("Error fetching data:", error);
 				// Display error message to the user (optional)
@@ -47,7 +47,7 @@ function Form({ apiData }) {
 			} else {
 				if (apiData === "/group") {
 					searchObj(inputValue, [
-						{role: "Nhóm thuộc quyền quản lí của nhà trường",type:"Nhóm", name: "Tuổi Trẻ Huỳnh Văn Nghệ", score: 300, id: "05", birth: "07/05/2024", totalMember: 789, monitor: "Nguyễn Văn K", field: "Các lĩnh vực/ chuyên ngành", goal: "Mục tiêu/ mục đích thành lập" },
+						{role: "Nhóm thuộc quyền quản lí của nhà trường",type:"Nhóm", name: "Tuổi Trẻ Huỳnh Văn Nghệ", score: 300, id: "05", birth: "07/05/2024", totalMember: 789, monitor: "Nguyễn Văn K", field: "Các lĩnh vực/ chuyên ngành", goal: "Mục tiêu/ mục đích thành lập", fb: "https://www.facebook.com/people/Tu%E1%BB%95i-tr%E1%BA%BB-THPT-Hu%E1%BB%B3nh-V%C4%83n-Ngh%E1%BB%87/100028020954560/?mibextid=ZbWKwL" },
 						{role: "Nhóm thuộc quyền quản lí của nhà trường",type:"Nhóm", name: "Học Bá Tứ Hùng", score: 245, id: "06", birth: "07/05/2024", totalMember: 670, monitor: "Nguyễn Văn K", field: "Các lĩnh vực/ chuyên ngành", goal: "Mục tiêu/ mục đích thành lập" },
 						{role: "Nhóm thuộc quyền quản lí của học sinh",type:"Nhóm", name: "Dân Chơi Học Vần", score: 215, id: "07", birth: "07/05/2024", totalMember: 320, monitor: "Nguyễn Văn K", field: "Các lĩnh vực/ chuyên ngành", goal: "Mục tiêu/ mục đích thành lập" },
 						{role: "Nhóm thuộc quyền quản lí của học sinh",type:"Nhóm", name: "Băng Hậu Chém Gió", score: 200, id: "63", birth: "07/05/2024", totalMember: 310, monitor: "Nguyễn Văn K", field: "Các lĩnh vực/ chuyên ngành", goal: "Mục tiêu/ mục đích thành lập" },

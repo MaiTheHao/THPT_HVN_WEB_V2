@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import HVNBANNER from "../../../../pic/HVN_banner-trs.jpg";
 import "./MainComponent.scss";
 import Blank from "./Blank";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export const SearchObjContext = createContext();
 
 const ContainerResult = ({ results }) => {
@@ -83,7 +84,7 @@ const FilterPannel = ({ isFil }) => {
 	);
 };
 
-function Search({ apiData, handleData, filter_children, placeholder }) {
+function Search({ apiData, handleData, filter_children, placeholder, icon }) {
 	const [isFil, setIsFil] = useState(false);
 	const [results, setResults] = useState([]);
 	const listYearAcceptable = Array.from({ length: new Date().getFullYear() - 2000 + 1 }, (_, i) => 2000 + i);
@@ -94,13 +95,16 @@ function Search({ apiData, handleData, filter_children, placeholder }) {
 		>
 			<div id="searchObjForm">
 				<div className="header">
+					<div className="headerIcon">
+						<FontAwesomeIcon icon={icon} />
+					</div>
 					<Form apiData={apiData} />
 					<button className="filter" onClick={() => setIsFil(!isFil)}>
 						Lọc Tìm Kiếm
 					</button>
 					<FilterPannel isFil={isFil} />
 				</div>
-				<div className="body">{results.length > 0 ? <ContainerResult results={results} /> : <Blank/>}</div>
+				<div className="body">{results.length > 0 ? <ContainerResult results={results} /> : <Blank />}</div>
 			</div>
 		</SearchObjContext.Provider>
 	);

@@ -4,10 +4,10 @@ $webheader_nav_height: calc(30 * var(--webheader_height) / 100);
 
 $webheader_iconborder_color: rgb(66, 66, 66);
 $webheader_nav_background_color: rgb(0, 7, 79);
-$webheader_background_color: linear-gradient(0, rgb(18, 15, 105), rgb(30, 26, 146));
+$webheader_background_color: linear-gradient(0, rgb(30, 30, 130), rgb(20, 35, 145));
 $webheader_icon_color: rgb(50, 50, 50);
 
-$webheader_content_grid_template_colums: 10% 60% 13% 17%;
+$webheader_content_grid_template_colums: 10% 50% 15% 25%;
 
 #webHeader {
     position: relative;
@@ -50,7 +50,7 @@ $webheader_content_grid_template_colums: 10% 60% 13% 17%;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 1.4em;
+            font-size: 1.2em;
         }
 
         .header-social {
@@ -161,9 +161,10 @@ $webheader_content_grid_template_colums: 10% 60% 13% 17%;
             align-items: center;
             padding: 0% 2%;
             color: inherit;
-            font-size: 1em;
+            font-size: 0.9em;
 
             text-wrap: nowrap;
+            text-align: justify;
 
             transition: background-color 0.1s, color 0.1s, transition 0.1s;
         }
@@ -187,7 +188,7 @@ $webheader_content_grid_template_colums: 10% 60% 13% 17%;
 
     .navbar::-webkit-scrollbar {
         background-color: rgb(98, 98, 98);
-        height: calc($webheader_nav_height/4);
+        height: calc($webheader_nav_height/7);
     }
 
     .navbar::-webkit-scrollbar-thumb {

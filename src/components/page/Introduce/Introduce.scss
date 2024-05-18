@@ -11,6 +11,8 @@
 
     $paraContainer-title_backgroundColor: rgb(0, 0, 250);
     $paraContainerChild_backgroundColor: rgb(245, 246, 255);
+    $paraContainer-innerTitle_backgroundColor: rgb(250, 230, 200);
+    $paraContainer-innerContent_backgroundColor: rgb(255, 245, 240);
 
 	.Introduce-container {
 		position: relative;
@@ -85,14 +87,14 @@
                             font-weight: 600;
                             padding: 0.25% 2%;
 
-                            background-color: rgb(255, 220, 190);
+                            background-color: $paraContainer-innerTitle_backgroundColor;
                         }
 
                         .inner-content{
                             font-size: 1em;
                             text-align: justify;
                             padding: 1% 2%;
-                            background-color: rgb(255, 245, 240);
+                            background-color: $paraContainer-innerContent_backgroundColor;
 
                             .lineData{  
                                 line-height: 2em;

@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 import Search from "../MainComponent/Search";
-import Info from '../MainComponent/Info';
+import Info from "../MainComponent/Info";
 import { FilterChoice, FilterChoiceOption } from "../MainComponent/Filter";
+import { faPeopleRoof } from "@fortawesome/free-solid-svg-icons";
 
 function Class() {
 	const [isSearch, setIsSearch] = useState(true);
@@ -33,11 +34,11 @@ function Class() {
 	const filterOption = [
 		{
 			title: "Lĩnh vực",
-			children: <FilGrade/>,
+			children: <FilGrade />,
 		},
 		{
 			title: "Số thành viên",
-			children: <FilMemberCount/>,
+			children: <FilMemberCount />,
 		},
 	];
 
@@ -45,7 +46,7 @@ function Class() {
 		{ title: "Lớp", value: classData?.name },
 		{ title: "Năm học", value: classData?.studyYear },
 		{ title: "Số lượng học sinh", value: classData?.totalStudent },
-		{ title: "Tỉ lệ nam/ nữ", value: classData?.boyOnGirl},
+		{ title: "Tỉ lệ nam/ nữ", value: classData?.boyOnGirl },
 		{ title: "Khối", value: classData?.field },
 		{ title: "Chủ nhiệm", value: classData?.teacher },
 		{ title: "Lớp trưởng", value: classData?.monitor },
@@ -65,6 +66,7 @@ function Class() {
 					handleData={handleData}
 					placeholder={"Tìm kiếm lớp học"}
 					apiData={apiData}
+					icon={faPeopleRoof}
 					filter_children={
 						<FilterChoice title="Thông tin lớp học">
 							{filterOption.map((obj, index) => (
@@ -74,10 +76,19 @@ function Class() {
 					}
 				></Search>
 			) : (
-				<Info setUpForm={infoForm} setUpNav={advancedInfo} name={classData?.name} avatar={null} role={classData?.role} fb={classData?.fb} ins={classData?.ins}/>
+				<Info
+					setUpForm={infoForm}
+					setUpNav={advancedInfo}
+					name={classData?.name}
+					avatar={null}
+					role={classData?.role}
+					fb={classData?.fb}
+					ins={classData?.ins}
+					setIsSearch={setIsSearch}
+				/>
 			)}
 		</div>
 	);
 }
 
-export default Class
+export default Class;

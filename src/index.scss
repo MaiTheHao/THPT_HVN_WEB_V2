@@ -75,3 +75,13 @@ a {
 		opacity: 0.05;
 	}
 }
+
+
+.selectR{
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	text-overflow: "";
+	text-indent: 0.01px; /* Removes default arrow from firefox*/
+	text-overflow: ""; /*Removes default arrow from firefox*/
+}

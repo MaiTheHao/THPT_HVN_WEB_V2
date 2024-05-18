@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Search from "../MainComponent/Search";
 import Info from "../MainComponent/Info";
 import { FilterChoice, FilterChoiceOption } from "../MainComponent/Filter";
+import { faPeopleGroup } from "@fortawesome/free-solid-svg-icons";
 
 function Group() {
 	const [isSearch, setIsSearch] = useState(true);
@@ -61,6 +62,7 @@ function Group() {
 					handleData={handleData}
 					placeholder={"Tìm kiếm nhóm"}
 					apiData={apiData}
+					icon = {faPeopleGroup}
 					filter_children={
 						<FilterChoice title="Thông tin lớp học">
 							{filterOption.map((obj, index) => (
@@ -78,6 +80,7 @@ function Group() {
 					role={groupData?.role}
 					fb={groupData?.fb}
 					ins={groupData?.ins}
+					setIsSearch={setIsSearch}
 				/>
 			)}
 		</div>

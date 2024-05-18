@@ -7,6 +7,8 @@ import UserRecentAct from "./UserRecentAct";
 import "./Member.scss";
 import Document from "./Document";
 import useAppContext from "../../../../Context/UseAppContext";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import ScoreBoard from "./ScoreBoard";
 
 const FilGender = () => (
 	<select className="scrollY">
@@ -48,6 +50,8 @@ function Member() {
 		email: auth?.userEmail,
 		phone: auth?.userPhone,
 		role: auth?.userRole,
+		fb: auth?.userFb,
+		ins: auth?.userIns,
 	});
 	const filterOption = [
 		{
@@ -79,9 +83,10 @@ function Member() {
 	];
 
 	const advancedInfo = [
-		{ title: "Hoạt động gần đây", component: <UserRecentAct /> },
-		{ title: "Nhóm", component: <UserGroups /> },
-		{ title: "Tài liệu", component: <Document /> },
+		{ title: "Hoạt động gần đây", component: <UserRecentAct />},
+		{ title: "Nhóm", component: <UserGroups />},
+		{ title: "Bảng điểm", component: <ScoreBoard/>, accept: "Học sinh" },
+		{ title: "Tài liệu", component: <Document />, accept: "Học sinh" },
 	];
 
 	return (
@@ -90,6 +95,7 @@ function Member() {
 				<Search
 					handleData={handleData}
 					placeholder={"Tìm kiếm thành viên"}
+					icon={faUser}
 					apiData={apiData}
 					filter_children={
 						<FilterChoice title="Thông tin thành viên">
@@ -108,6 +114,8 @@ function Member() {
 					role={userData?.role}
 					fb={userData?.fb}
 					ins={userData?.ins}
+					email={userData?.email}
+					setIsSearch={setIsSearch}
 				/>
 			)}
 		</div>
