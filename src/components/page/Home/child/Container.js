@@ -9,6 +9,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import HVNBANNER from "../../../../pic/HVN_banner-trs.jpg";
+import ACT from "../../../../pic/ACT_1.jpg";
+import ACT2 from "../../../../pic/ACT_2.jpg";
 
 export const ContainerElementColumn = ({ type, id, inputIcon, title, children }) => {
 	return (
@@ -57,7 +59,7 @@ export const ContainerNoticeElement = () => {
 					title: "CHUYẾN ĐI CỦA THANH XUÂN K11 - 2024",
 					description:
 						"Nhằm giáo dục truyền thống yêu nước, tự hào dân tộc, trường THPT Huỳnh Văn Nghệ đã tổ chức hoạt động về nguồn cho học sinh khối 11 tại khu di tích địa đạo Bến Cát vào ngày 25 tháng 11 năm 2024. Hoạt động thu hút 200 học sinh khối 11 tham gia theo hình thức toàn khối. Đến với khu di tích, học sinh được tham quan, tìm hiểu về lịch sử hào hùng của dân tộc, những chiến công oanh liệt của các thế hệ cha ông trong công cuộc đấu tranh giành độc lập, tự do. Sau đó, các em đã dâng hương tưởng nhớ các anh hùng liệt sĩ đã hy sinh vì Tổ quốc. Tiếp theo, học sinh được giao lưu với cán bộ ветеран, lắng nghe những câu chuyện về chiến tranh, về những hy sinh thầm lặng của các anh hùng liệt sĩ. Ngoài ra, học sinh còn tham gia thi viết cảm nhận về khu di tích và tham gia các trò chơi dân gian. Kết thúc hoạt động, học sinh đã có những bài viết cảm nhận sâu sắc về lịch sử, về những hy sinh của các anh hùng liệt sĩ. Các em cũng bày tỏ lòng biết ơn đối với các thế hệ cha ông đã dành trọn cuộc đời cho sự nghiệp giải phóng dân tộc và hứa sẽ cố gắng học tập và rèn luyện tốt để góp phần xây dựng và bảo vệ Tổ quốc. Hoạt động về nguồn đã diễn ra thành công tốt đẹp, góp phần giáo dục cho học sinh lòng yêu nước, tự hào dân tộc, ý thức trách nhiệm đối với cộng đồng. Đây là một hoạt động truyền thống cần được duy trì và phát huy trong nhà trường.",
-					picSrc: "https://scontent.fsgn5-10.fna.fbcdn.net/v/t39.30808-6/438773509_1363781274565891_4183176311858210197_n.jpg?stp=c159.0.640.640a_dst-jpg_p640x640&_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_ohc=S3wtTGtL2eoQ7kNvgGE92XT&_nc_ht=scontent.fsgn5-10.fna&oh=00_AYCKTGpflAGDAYmcAfTxt0gkOeugC9k2ad61496JGNmbhA&oe=66443C8E",
+					picSrc: ACT,
 					alt: null,
 				},
 				{
@@ -81,7 +83,7 @@ export const ContainerNoticeElement = () => {
 					finalPath: null,
 					title: "HỘI TRẠI TRUYỀN THỐNG 'KHI TÔI 18' TRƯỜNG THPT HUỲNH VĂN NGHỆ NGÀY 12 - 13/5/2024",
 					description: "",
-					picSrc: "https://scontent.fsgn5-15.fna.fbcdn.net/v/t39.30808-6/438300558_1374323826844969_1338205988310739339_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=5f2048&_nc_ohc=LrgL0Z5R4MQQ7kNvgH3JaNB&_nc_ht=scontent.fsgn5-15.fna&oh=00_AYAkVaMy__JXMcmDdagNRiz_l4iDG4tETqcCl3XVLMpjZw&oe=66445C60",
+					picSrc: ACT2,
 					alt: null,
 				},
 			],

@@ -10,11 +10,12 @@
 	$containerResult_maxHeight: 80%;
 	$infoObjForm_backgroundColor: rgb(245, 245, 255);
 	$infoObjForm_tableSpace: calc(var(--fontsize));
-	$infoObjForm_advanced_navbarBtn_backgroundColor: rgb(80, 205, 255);
+	$infoObjForm_advanced_navbarBtn_backgroundColor: rgb(42, 113, 255);
 	$container-child--row-child_maxHeight: 10vw;
 	$container-child--row-child__space: calc(var(--fontsize) / 2.5);
 	$box-text__more_backgroundColor: rgba(207, 207, 207, 0.5);
 	$box-text__more_textColor: rgb(55, 30, 255);
+	$infoObjFormReturn_backgroundColor: rgb(255, 155, 25);
 
 	font-size: var(--fontsize);
 	.UPDATELATER{
@@ -288,7 +289,8 @@
 			position: relative;
 			font-size: 0.8em;
 			font-weight: 300;
-			background-color: rgb(255, 170, 60);
+			background-color: $infoObjFormReturn_backgroundColor;
+			color: var(--textcolor2);
 			padding: 0.25% 1%;
 			border-radius: 0.2vw;
 			margin-top: 1em;

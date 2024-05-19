@@ -1,9 +1,18 @@
 #comp_Member {
 	$userAdvancedTable_maxHeight: 27vw;
+	$userAdvancedTable_backgroundColor: rgb(255, 255, 255);
+	$scoreBoard-choseTable_backgroundColor: rgb(77, 77, 77);
+	$scoreBoard-choseTable-option_backgroundColor: rgb(24, 24, 24);
+	$scoreBoard-Table_backgroundColor: rgb(245, 250, 255);
+	$scoreBoard-Table-head_backgroundColor: rgb(12, 2, 205);
+	$scoreBoard-Table-caption_backgroundColor: rgb(0, 20, 110);
+	$scoreBoard-Table-subject_backgroundColor: rgb(225, 255, 241);
+	$scoreBoard-Table-DTBHK_backgroundColor: rgb(255, 239, 227);
+	$userGroup_backgroundColor: rgba(240, 240, 240, 0.5);
 	.userAdvancedTable1 {
 		position: relative;
 		max-height: $userAdvancedTable_maxHeight;
-		background-color: rgb(255, 255, 255);
+		background-color: $userAdvancedTable_backgroundColor;
 		border-radius: 0.5vw;
 		padding: 1% 2%;
 		overflow-y: auto;
@@ -17,7 +26,7 @@
 			display: flex;
 			padding: 0.5% 2%;
 			font-size: 0.9em;
-			background-color: rgba(240, 240, 240, 0.5);
+			background-color: $userGroup_backgroundColor;
 
 			.box-img {
 				position: relative;
@@ -82,12 +91,12 @@
 
 			#choseTable {
 				font-size: 1em;
-				background-color: rgb(133, 133, 133);
+				background-color: $scoreBoard-choseTable_backgroundColor;
 				padding: 0.25% 2%;
 
 				select{
 					option{
-						background-color: rgb(30, 30, 30);
+						background-color: $scoreBoard-choseTable-option_backgroundColor;
 					}
 
 					margin-right: 1.5em;
@@ -109,7 +118,7 @@
 			font-size: 1.3em;
 			text-align: center;
 			font-weight: 600;
-			background-color: rgb(0, 20, 110);
+			background-color: $scoreBoard-Table-caption_backgroundColor;
 			color: var(--textcolor2);
 			padding: 0.5% 0;
 			margin-bottom: 0.6em;
@@ -118,14 +127,14 @@
 		table {
 			width: 100%;
 			border-spacing: 0em;
-			background-color: rgb(230, 240, 255);
+			background-color: $scoreBoard-Table_backgroundColor;
 
 			thead {
 				color: var(--textcolor2);
 
 				tr {
 					position: relative;
-					background-color: rgb(12, 2, 205);
+					background-color: $scoreBoard-Table-head_backgroundColor;
 					padding: 0.5% 1%;
 
 					th {
@@ -153,11 +162,11 @@
 
 				.subject {
 					font-weight: 400;
-					background-color: rgb(225, 255, 241);
+					background-color: $scoreBoard-Table-subject_backgroundColor;
 				}
 
 				.DTBHK-score {
-					background-color: rgb(255, 239, 227);
+					background-color: $scoreBoard-Table-DTBHK_backgroundColor;
 				}
 			}
 

@@ -33,9 +33,9 @@ export const GetMember = async (setProp) => {
 			phone: "0192847261",
 			fb: "userexamplefblink",
 			ins: "userexampleinslink",
+			score: 300,
 		},
 		{
-			class: "11.5",
 			role: "Cán bộ",
 			type: "Cá nhân",
 			name: "Trần Thị Bình",
@@ -47,6 +47,7 @@ export const GetMember = async (setProp) => {
 			phone: "0192847261",
 			fb: "userexamplefblink",
 			ins: "userexampleinslink",
+			score: 300,
 		},
 		{
 			class: "12.4",
@@ -61,10 +62,11 @@ export const GetMember = async (setProp) => {
 			phone: "0192847261",
 			fb: "userexamplefblink",
 			ins: "userexampleinslink",
+			score: 300,
 		},
 		{
 			class: "10.7",
-			role: "học sinh",
+			role: "Học sinh",
 			type: "Cá nhân",
 			name: "Phạm Thị Dũng",
 			id: "04",
@@ -75,6 +77,7 @@ export const GetMember = async (setProp) => {
 			phone: "0192847261",
 			fb: "userexamplefblink",
 			ins: "userexampleinslink",
+			score: 300,
 		},
 	]);
 };
@@ -94,6 +97,7 @@ export const GetStudent = async (setProp) => {
 			phone: "0123456789",
 			fb: "userexamplefblink1",
 			ins: "userexampleinslink1",
+			score: 400,
 		},
 		{
 			class: "12.2",
@@ -108,6 +112,7 @@ export const GetStudent = async (setProp) => {
 			phone: "0987654321",
 			fb: "userexamplefblink2",
 			ins: "userexampleinslink2",
+			score: 400,
 		},
 		{
 			class: "12.1",
@@ -122,6 +127,7 @@ export const GetStudent = async (setProp) => {
 			phone: "0129876543",
 			fb: "userexamplefblink3",
 			ins: "userexampleinslink3",
+			score: 400,
 		},
 		{
 			class: "12.8",
@@ -136,6 +142,7 @@ export const GetStudent = async (setProp) => {
 			phone: "0983216547",
 			fb: "userexamplefblink4",
 			ins: "userexampleinslink4",
+			score: 400,
 		},
 		{
 			class: "12.6",
@@ -150,6 +157,7 @@ export const GetStudent = async (setProp) => {
 			phone: "0938765432",
 			fb: "userexamplefblink5",
 			ins: "userexampleinslink5",
+			score: 400,
 		},
 		{
 			class: "12.9",
@@ -164,6 +172,7 @@ export const GetStudent = async (setProp) => {
 			phone: "0965432198",
 			fb: "userexamplefblink6",
 			ins: "userexampleinslink6",
+			score: 400,
 		},
 		{
 			class: "12.7",
@@ -178,6 +187,7 @@ export const GetStudent = async (setProp) => {
 			phone: "0865432179",
 			fb: "userexamplefblink16",
 			ins: "userexampleinslink16",
+			score: 400,
 		},
 		{
 			class: "12.3",
@@ -192,6 +202,7 @@ export const GetStudent = async (setProp) => {
 			phone: "0987654320",
 			fb: "userexamplefblink17",
 			ins: "userexampleinslink17",
+			score: 400,
 		},
 		{
 			class: "12.10",
@@ -206,6 +217,7 @@ export const GetStudent = async (setProp) => {
 			phone: "0938765431",
 			fb: "userexamplefblink18",
 			ins: "userexampleinslink18",
+			score: 400,
 		},
 		{
 			class: "12.5",
@@ -220,6 +232,7 @@ export const GetStudent = async (setProp) => {
 			phone: "0965432187",
 			fb: "userexamplefblink19",
 			ins: "userexampleinslink19",
+			score: 400,
 		},
 		{
 			class: "12.1",
@@ -234,6 +247,7 @@ export const GetStudent = async (setProp) => {
 			phone: "0865432165",
 			fb: "userexamplefblink20",
 			ins: "userexampleinslink20",
+			score: 400,
 		},
 		{
 			class: "12.8",
@@ -248,6 +262,7 @@ export const GetStudent = async (setProp) => {
 			phone: "0987654309",
 			fb: "userexamplefblink21",
 			ins: "userexampleinslink21",
+			score: 400,
 		},
 	]);
 };

@@ -2,7 +2,7 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { createContext, useState } from "react";
 
-import { score_all } from "./fakeData";
+import { score_all } from "../fakeData";
 import ScoreType1 from "./ScoreType1";
 import ScoreType2 from "./ScoreType2";
 

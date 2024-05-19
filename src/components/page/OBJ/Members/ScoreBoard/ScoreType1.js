@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { ScoreBoardContext } from "./ScoreBoard";
-import { score } from "./fakeData";
+import { score } from "../fakeData";
 
 function ScoreType1() {
     const {subjects, checkScore, hk} = useContext(ScoreBoardContext);

@@ -16,7 +16,7 @@ export const routes = [
 	{ id: "pageGroup", path: "/group", title: "NHÓM", Component: Group, Layout: Layout2 },
 	{ id: "pageLibary", path: "/library", title: "THƯ VIỆN", Component: Library, Layout: Layout2 },
 	{ id: "pageExam", path: "/exam", title: "BÀI KIỂM TRA", Component: Exam, Layout: Layout2 },
-	{ id: "pageRank", path: "/rank/*", title: "THI ĐUA", Component: Rank, Layout: Layout2 },
+	{ id: "pageRank", path: "/rank/*", title: "BẢNG XẾP HẠNG", Component: Rank, Layout: Layout2 },
 	{ id: "pageIntroduce", path: "/introduce", title: "GIỚI THIỆU", Component: Introduce, Layout: Layout2 },
 	{ id: "pageUpdate", path: "/update", title: "CẬP NHẬT THÔNG TIN", Component: Update, Layout: Layout2 },
 	{ id: "pageAction", path: "/", title: "HOẠT ĐỘNG ĐOÀN", Component: Home, Layout: Layout1 },

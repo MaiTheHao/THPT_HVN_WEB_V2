@@ -8,7 +8,7 @@ import "./Member.scss";
 import Document from "./Document";
 import useAppContext from "../../../../Context/UseAppContext";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
-import ScoreBoard from "./ScoreBoard";
+import ScoreBoard from "./ScoreBoard/ScoreBoard";
 
 const FilGender = () => (
 	<select className="scrollY">

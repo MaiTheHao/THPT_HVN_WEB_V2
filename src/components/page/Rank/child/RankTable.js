@@ -19,11 +19,11 @@ function RankTable({ field }) {
 	return (
 		<div id="rankTable" className="scrollY">
 			<div id="title">
-				<h2>DANH SÁCH XẾP HẠNG {(field==="member"?"THÀNH VIÊN":(field==="group")?"NHÓM":(field==="class")?"LỚP":null)}</h2>
+				<h2>DANH SÁCH XẾP HẠNG {(field==="member"?"THÀNH VIÊN":(field==="group")?"NHÓM":(field==="class")?"LỚP":(field==="student")?"HỌC SINH":null)}</h2>
 			</div>
 			<div id="table">
 				<ul>
-					{data.map((obj, index) => <Obj key={`${obj.type}_${index}`} top={index + 1} name={obj.name} type={obj.type} prop={obj.role}></Obj>)}
+					{data.map((obj, index) => <Obj key={`${obj.type}_${index}`} top={index + 1} name={obj.name} type={obj.type} prop={obj.role} score={obj?.score} studentClass={obj?.class}></Obj>)}
 				</ul>
 			</div>
 		</div>
