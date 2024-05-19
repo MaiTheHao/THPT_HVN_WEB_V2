@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 import USRAVT from "../../../pic/userPic.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
@@ -7,6 +7,7 @@ import { socialContactLinks } from "../../reusable-web-components";
 import "./Header.scss";
 import useAppContext from "../../../Context/UseAppContext";
 import { routes } from "../../../Routes";
+import HeaderMenu from "./HeaderMenu";
 
 function Part({ className, children }) {
 	return <div className={className}>{children}</div>;
@@ -25,9 +26,10 @@ function UserMenu() {
 				</div>
 			</div>
 
-			<button className="menu">
+			<button id="header-menu">
 				<FontAwesomeIcon icon={faBars} />
 			</button>
+			<HeaderMenu/>
 		</>
 	);
 }

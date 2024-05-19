@@ -31,37 +31,37 @@ function AuthUser() {
 			}
 			setIsLoad(false);
 		};
-		setAuth({
-			...{
-				userName: "Nguyễn Minh Đức", // More descriptive username
-				userSex: Math.random() < 0.5 ? "Nam" : "Nữ", // Random gender (Nam/Nữ)
-				userBirth: new Date(1990, Math.floor(Math.random() * 12), Math.floor(Math.random() * 28) + 1)
-					.toISOString()
-					.slice(0, 10), // Random birthdate within 1990-present range
-				userDoanVien: Math.random() < 0.5 ? true : false, // Random boolean for Đoàn viên
-				userEmail: "sample@example.com", // Placeholder email
-				userFb: "https://www.facebook.com/sampleuser", // Placeholder Facebook URL with validation (check for valid URL format)
-				userIns: "https://www.instagram.com/sampleuser", // Placeholder Instagram URL with validation
-				userPhone: "0912345678", // Placeholder phone number (consider phone number format restrictions)
-				userRole: "Học sinh", // Default role
-				userAvt: "https://via.placeholder.com/150", // Placeholder avatar URL
-			},
-			loginsuccess: true,
-		});
-		// fetchUserStatus();
+		// setAuth({
+		// 	...{
+		// 		userName: "Nguyễn Minh Đức", // More descriptive username
+		// 		userSex: Math.random() < 0.5 ? "Nam" : "Nữ", // Random gender (Nam/Nữ)
+		// 		userBirth: new Date(1990, Math.floor(Math.random() * 12), Math.floor(Math.random() * 28) + 1)
+		// 			.toISOString()
+		// 			.slice(0, 10), // Random birthdate within 1990-present range
+		// 		userDoanVien: Math.random() < 0.5 ? true : false, // Random boolean for Đoàn viên
+		// 		userEmail: "sample@example.com", // Placeholder email
+		// 		userFb: "https://www.facebook.com/sampleuser", // Placeholder Facebook URL with validation (check for valid URL format)
+		// 		userIns: "https://www.instagram.com/sampleuser", // Placeholder Instagram URL with validation
+		// 		userPhone: "0912345678", // Placeholder phone number (consider phone number format restrictions)
+		// 		userRole: "Học sinh", // Default role
+		// 		userAvt: "https://via.placeholder.com/150", // Placeholder avatar URL
+		// 	},
+		// 	loginsuccess: true,
+		// });
+		fetchUserStatus();
 		// eslint-disable-next-line
 	}, []);
 
 	return (
 		<>
-			{/* {isLoad ? (
+			{isLoad ? (
 				<h1>Loading</h1>
 			) : auth?.loginsuccess ? (
 				<Outlet />
 			) : (
 				<Navigate to="/login" state={{ from: location.pathname }} replace></Navigate>
-			)} */}
-			<Outlet />
+			)}
+			{/* <Outlet /> */}
 		</>
 	);
 }

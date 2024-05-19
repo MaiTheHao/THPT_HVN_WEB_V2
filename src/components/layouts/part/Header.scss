@@ -10,190 +10,249 @@ $webheader_icon_color: rgb(50, 50, 50);
 $webheader_content_grid_template_colums: 10% 50% 15% 25%;
 
 #webHeader {
-    position: relative;
-    height: var(--webheader_height);
-    display: flex;
-    flex-direction: column;
-    background-image: $webheader_background_color;
+	position: relative;
+	height: var(--webheader_height);
+	display: flex;
+	flex-direction: column;
+	background-image: $webheader_background_color;
 
-    color: var(--textcolor2);
-    font-size: var(--fontsize);
+	color: var(--textcolor2);
+	font-size: var(--fontsize);
 
-    .content {
-        position: relative;
-        height: $webheader_content_height;
-        display: grid;
-        grid-template-columns: $webheader_content_grid_template_colums;
+	.content {
+		position: relative;
+		height: $webheader_content_height;
+		display: grid;
+		grid-template-columns: $webheader_content_grid_template_colums;
 
-        .header-part {
-            height: $webheader_content_height;
-        }
+		.header-part {
+			height: $webheader_content_height;
+		}
 
-        .header-icon {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            width: 100%;
-            background-color: $webheader_icon_color;
-            border-radius: 0 2vw 0 0;
+		.header-icon {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+			width: 100%;
+			background-color: $webheader_icon_color;
+			border-radius: 0 2vw 0 0;
 
-            border-right: 0.2vw solid $webheader_iconborder_color;
+			border-right: 0.2vw solid $webheader_iconborder_color;
 
-            img {
-                position: relative;
-                height: 80%;
+			img {
+				position: relative;
+				height: 80%;
+			}
+		}
+
+		.header-title {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 1.2em;
+		}
+
+		.header-social {
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-wrap: nowrap;
+
+			a {
+				color: var(--textcolor2);
+				font-size: 1.4em;
+
+				transition: transform 0.1s, color 0.2s;
+			}
+
+			a + a {
+				margin-left: 10%;
+			}
+
+			a:hover {
+				cursor: pointer;
+				transform: scale(1.1);
+			}
+
+			a:active {
+				transform: scale(0.98);
+				color: black;
+			}
+		}
+
+		.header-user_menu {
+			position: relative;
+			display: grid;
+			grid-template-columns: 70% 30%;
+
+			.user_auth {
+				position: relative;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				.userName {
+					position: relative;
+					width: 70%;
+					text-wrap: nowrap;
+					text-align: right;
+					text-overflow: ellipsis;
+					overflow: hidden;
+
+					margin: 0 5%;
+				}
+
+				.userPic {
+					position: relative;
+					width: 30%;
+					height: 100%;
+
+					display: flex;
+					justify-content: center;
+					align-items: center;
+
+					img {
+						position: relative;
+						width: calc($webheader_content_height/1.5);
+						height: calc($webheader_content_height/1.5);
+						border-radius: 50%;
+
+						object-fit: cover;
+					}
+				}
+			}
+
+			#header-menu {
+				position: relative;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background-color: transparent;
+				color: inherit;
+				font-size: 2em;
+			}
+
+			#header-menu::after {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: calc($webheader_content_height * -1);
+                content: " ";
+                height: calc($webheader_content_height * 1.5);
+                z-index: 1;
+			}
+
+			#header-menu:hover + #menu-pannel {
+				display: block;
+			}
+
+			#menu-pannel {
+				display: none;
+				position: absolute;
+				width: 40%;
+				right: calc(var(--fontsize) * 0.2);
+				top: $webheader_content_height;
+				font-size: 1em;
+
+				z-index: 2;
+
+				background-color: white;
+				padding: 1% 2%;
+
+				border-radius: 0.2vw;
+
+				box-shadow: var(--boxShadow);
+				border: 0.1vw solid black;
+
+				ul {
+					display: flex;
+					flex-direction: column;
+					font-size: 1em;
+
+					button {
+						font-size: 1em;
+						font-weight: 500;
+						background-color: transparent;
+
+						transition: background-color 0.2s, color 0.2s;
+					}
+
+					button + button {
+						margin-top: 0.2em;
+					}
+
+					button:hover {
+						background-color: rgb(0, 0, 0, 0.6);
+						color: var(--textcolor2);
+					}
+				}
+			}
+
+            #menu-pannel:hover{
+                display: block;
             }
-        }
+		}
+	}
 
-        .header-title {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.2em;
-        }
+	.navbar {
+		background-color: $webheader_nav_background_color;
+		position: relative;
+		height: $webheader_nav_height;
 
-        .header-social {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: nowrap;
+		display: flex;
+		flex-wrap: nowrap;
 
-            a {
-                color: var(--textcolor2);
-                font-size: 1.4em;
+		overflow-x: scroll;
+		overflow-y: hidden;
 
-                transition: transform 0.1s, color 0.2s;
-            }
+		color: inherit;
+		font-size: 1em;
 
-            a+a {
-                margin-left: 10%;
-            }
+		.navbar__element {
+			position: relative;
+			width: max-content;
+			height: 100%;
 
-            a:hover {
-                cursor: pointer;
-                transform: scale(1.1);
-            }
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 0% 2%;
+			color: inherit;
+			font-size: 0.9em;
 
-            a:active {
-                transform: scale(0.98);
-                color: black
-            }
-        }
+			text-wrap: nowrap;
+			text-align: justify;
 
-        .header-user_menu {
-            position: relative;
-            display: grid;
-            grid-template-columns: 70% 30%;
+			transition: background-color 0.1s, color 0.1s, transition 0.1s;
+		}
 
-            .user_auth {
-                position: relative;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+		.navbar__element:hover {
+			cursor: pointer;
+			transform: scale(1.01);
+			background-color: rgba(185, 185, 185, 0.511);
+		}
 
-                .userName{
-                    position: relative;
-                    width: 70%;
-                    text-wrap: nowrap;
-                    text-align: right;
-                    text-overflow: ellipsis;
-                    overflow: hidden;
+		.navbar__element:active {
+			transform: scale(0.99);
+			background-color: rgb(255, 255, 255);
+			color: var(--textcolor1);
+		}
 
-                    margin: 0 5%;
-                }
+		.navbar__element + .navbar__element {
+			margin-left: calc(var(--fontsize) / 2);
+		}
+	}
 
-                .userPic{
-                    position: relative;
-                    width: 30%;
-                    height: 100%;
+	.navbar::-webkit-scrollbar {
+		background-color: rgb(98, 98, 98);
+		height: calc($webheader_nav_height/7);
+	}
 
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-
-                    img{
-                        position: relative;
-                        width: calc($webheader_content_height/1.5);
-                        height: calc($webheader_content_height/1.5);
-                        border-radius: 50%;
-
-                        object-fit: cover;
-                    }
-                }
-
-            }
-
-            .menu {
-                position: relative;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                background-color: transparent;
-                color: inherit;
-                font-size: 2em;
-            }
-        }
-    }
-
-    .navbar {
-        background-color: $webheader_nav_background_color;
-        position: relative;
-        height: $webheader_nav_height;
-
-        display: flex;
-        flex-wrap: nowrap;
-
-        overflow-x: scroll;
-        overflow-y: hidden;
-
-        color: inherit;
-        font-size: 1em;
-
-        .navbar__element {
-            position: relative;
-            width: max-content;
-            height: 100%;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 0% 2%;
-            color: inherit;
-            font-size: 0.9em;
-
-            text-wrap: nowrap;
-            text-align: justify;
-
-            transition: background-color 0.1s, color 0.1s, transition 0.1s;
-        }
-
-        .navbar__element:hover {
-            cursor: pointer;
-            transform: scale(1.01);
-            background-color: rgba(185, 185, 185, 0.511);
-        }
-
-        .navbar__element:active {
-            transform: scale(0.99);
-            background-color: rgb(255, 255, 255);
-            color: var(--textcolor1);
-        }
-
-        .navbar__element+.navbar__element {
-            margin-left: calc(var(--fontsize)/2);
-        }
-    }
-
-    .navbar::-webkit-scrollbar {
-        background-color: rgb(98, 98, 98);
-        height: calc($webheader_nav_height/7);
-    }
-
-    .navbar::-webkit-scrollbar-thumb {
-        background-color: var(--textcolor2);
-        border-radius: 0.5vw;
-        border: calc($webheader_nav_height/14) solid rgb(98, 98, 98);
-    }
+	.navbar::-webkit-scrollbar-thumb {
+		background-color: var(--textcolor2);
+		border-radius: 0.5vw;
+		border: calc($webheader_nav_height/14) solid rgb(98, 98, 98);
+	}
 }
