@@ -37,9 +37,17 @@ function Signin({ baseUrl, ICON, from }) {
 
             // Xử lý kết quả đăng nhập
             if (response?.data?.loginsuccess) {
-                setAuth({
-                    userName: response.data?.userName,
-                    loginsuccess: true,
+				setAuth({
+					userName: response.data?.userName,
+					userSex: response.data?.sex,
+					userBirth: response.data?.birth,
+					userDoanVien: response.data?.doanvien,
+					userEmail: response.data?.email,
+					userFb: response.data?.fb,
+					userIns: response.data?.ins,
+					userPhone: response.data?.phone,
+					userRole: response.data?.role,
+					loginsuccess: true,
                 })
                 navigate(from || "/home", { replace: true });
 

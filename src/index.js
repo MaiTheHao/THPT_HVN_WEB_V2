@@ -14,3 +14,4 @@ root.render(
 );
 
 // Quy ước đặt tên id cho thẻ định danh một component: comp_[name] (name viết hoa chữ cái đầu mỗi từ), VD: comp_Login, comp_ShowSubject.
+// "homepage": "http://MaiTheHao.github.io/THPT_HVN",

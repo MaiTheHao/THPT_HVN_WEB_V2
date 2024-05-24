@@ -2,10 +2,10 @@ import React from 'react'
 import useAppContext from '../../../Context/UseAppContext'
 
 function HeaderMenu() {
-    const {auth} = useAppContext();
+    const {setAuth} = useAppContext();
 
     const logout = () => {
-        auth.loginsuccess = false;
+      setAuth({ loginsuccess: false });
     }
   return (
     <div id="menu-pannel">

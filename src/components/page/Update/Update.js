@@ -1,11 +1,10 @@
-import React from 'react'
+import React from "react";
 
 function Update() {
-  return (
-    <div id="comp_Update">
-        <div></div>
-    </div>
-  )
+	return (
+		<div id="comp_Update">
+		</div>
+	);
 }
 
-export default Update
+export default Update;

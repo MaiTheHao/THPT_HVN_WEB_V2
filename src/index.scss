@@ -34,9 +34,11 @@ a {
 
 .scrollY{
 	overflow-y: auto;
+	padding-right: calc(var(--fontsize) * 0.3);
 }
 .scrollX{
 	overflow-x: auto;
+	padding-bottom: calc(var(--fontsize) * 0.35);
 }
 .paddingBottom{
 	padding-bottom: 50% !important;
@@ -52,6 +54,10 @@ a {
 	border-radius: 0.5vw;
 }
 
+.scrollY-hidden::-webkit-scrollbar {
+	width: 0
+}
+
 .scrollX::-webkit-scrollbar {
 	background-color: rgb(98, 98, 98);
 	height: calc(var(--fontsize) * 0.35);
@@ -63,11 +69,17 @@ a {
 	border: calc(var(--fontsize) * 0.1) solid rgb(98, 98, 98);
 }
 
+.scrollX-hidden::-webkit-scrollbar {
+	height: 0
+}
+
+
 .HIDE_SCHOOL_ICON{
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	overflow: hidden;
+	z-index: 0;
 	img{
 		width: 70%;
 		height: auto;

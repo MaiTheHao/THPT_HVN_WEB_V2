@@ -134,18 +134,17 @@ $webheader_content_grid_template_colums: 10% 50% 15% 25%;
 				font-size: 2em;
 			}
 
-			#header-menu::after {
-                position: absolute;
-                left: 0;
-                right: 0;
-                bottom: calc($webheader_content_height * -1);
-                content: " ";
-                height: calc($webheader_content_height * 1.5);
-                z-index: 1;
-			}
-
 			#header-menu:hover + #menu-pannel {
 				display: block;
+				::after {
+					position: absolute;
+					left: 0;
+					right: 0;
+					bottom: calc($webheader_content_height * -1);
+					content: " ";
+					height: calc($webheader_content_height * 1.5);
+					z-index: 1;
+				}
 			}
 
 			#menu-pannel {

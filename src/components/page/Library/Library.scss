@@ -63,11 +63,11 @@
 
 		#listDocument {
 			position: relative;
-			height: 120vh;
+			height: 80vh;
             overflow-y: auto;
 			font-size: 1em;
 			margin-top: 2em;
-			padding-bottom: 80%;
+			padding-bottom: var(--paddingbottom);
 
 			ul {
 				position: relative;
