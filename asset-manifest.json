@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/THPT_HVN/static/css/main.75008d47.css",
-    "main.js": "/THPT_HVN/static/js/main.6a258b5e.js",
+    "main.css": "/THPT_HVN/static/css/main.2220fe3b.css",
+    "main.js": "/THPT_HVN/static/js/main.02c799b3.js",
     "static/media/ACT_2.jpg": "/THPT_HVN/static/media/ACT_2.38dd83edf7b1d75d632d.jpg",
     "static/media/HVN_pic1.jpg": "/THPT_HVN/static/media/HVN_pic1.83944625bcd6dff31f25.jpg",
     "static/media/HVN_icon.jpg": "/THPT_HVN/static/media/HVN_icon.509919ef2598a92448f0.jpg",
@@ -9,11 +9,11 @@
     "static/media/HVN_banner-icon.jpg": "/THPT_HVN/static/media/HVN_banner-icon.83b0c3d02151740ad774.jpg",
     "static/media/HVN_banner-trs.jpg": "/THPT_HVN/static/media/HVN_banner-trs.bf02b84492021b80ba22.jpg",
     "index.html": "/THPT_HVN/index.html",
-    "main.75008d47.css.map": "/THPT_HVN/static/css/main.75008d47.css.map",
-    "main.6a258b5e.js.map": "/THPT_HVN/static/js/main.6a258b5e.js.map"
+    "main.2220fe3b.css.map": "/THPT_HVN/static/css/main.2220fe3b.css.map",
+    "main.02c799b3.js.map": "/THPT_HVN/static/js/main.02c799b3.js.map"
   },
   "entrypoints": [
-    "static/css/main.75008d47.css",
-    "static/js/main.6a258b5e.js"
+    "static/css/main.2220fe3b.css",
+    "static/js/main.02c799b3.js"
   ]
 }
