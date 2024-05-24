@@ -4,7 +4,7 @@ const apiKey = "AIzaSyAI53Zp_po4UxkhSh4qbr08uA1Ph6gjcfY";
 const genAI = new GoogleGenerativeAI(apiKey);
 
 const model = genAI.getGenerativeModel({
-	model: "gemini-1.5-flash",
+	model: "gemini-1.0-pro-001",
 });
 
 const generationConfig = {
@@ -42,14 +42,14 @@ var chatSession = model.startChat({
 
 async function ChatGemini(message, setState) {
 	try {
-		const response = await chatSession.sendMessage(`${message}. SỬ DỤNG TIẾNG VIỆT`);
+		const response = await chatSession.sendMessage(`${message}. PHẢN HỒI BẰNG TIẾNG VIỆT`);
 		let text = response.response.text();
 		// Enhanced response handling: Check for empty response and network errors
 		if (!response || !response.response || !response.response.text()) {
 			throw new Error("Empty response received from the model. Network issue?");
 		}
 
-		if (chatSession._history.length > 15) {
+		if (chatSession._history.length > 35) {
 			chatSession._history = [];
 			text = `${text} - ĐÃ RESET CUỘC TRÒ CHUYỆN VỚI GEMINI`;
 		}
@@ -71,6 +71,6 @@ async function ChatGemini(message, setState) {
 		setState((prevChatHistory) => [...prevChatHistory, { message: errorMessage, objectType: false, objectName: AiName }]); // Update database with a more informative message
 	}
 }
-const AiName = "Trợ lí ảo (mô hình thử nghiệm)";
+const AiName = "Trợ lí ảo (mô hình, sử dụng Gemini Api)";
 
-module.exports = {ChatGemini, AiName};
+module.exports = { ChatGemini, AiName };
