@@ -11,8 +11,8 @@ function Library() {
 				<div className="HIDE_SCHOOL_ICON" id="UNDERICON">
 					<img alt="under" src={HVNBANNER}></img>
 				</div>
-                <SearchDocument/>
-				<ListDocuments/>
+				<SearchDocument />
+				<ListDocuments />
 			</div>
 		</div>
 	);

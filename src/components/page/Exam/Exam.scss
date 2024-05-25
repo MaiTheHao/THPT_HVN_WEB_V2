@@ -1,14 +1,14 @@
 #comp_Exam {
-    position: relative;
+	position: relative;
 	display: flex;
 	justify-content: center;
 	font-size: var(--fontsize);
-    background-color: rgb(245, 245, 255);
+	background-color: rgb(245, 245, 255);
 
-    $container_backgroundColor: rgb(255, 255, 255);
+	$container_backgroundColor: rgb(255, 255, 255);
 	$searchForm_backgroundColor: rgb(255, 255, 255);
 	$exam_backgroundColor: rgb(210, 230, 255);
-    $exam-icon_backgroundColor:rgb(0, 30, 115);
+	$exam-icon_backgroundColor: rgb(0, 30, 115);
 
 	#UNDERICON {
 		position: absolute;
@@ -23,20 +23,20 @@
 	}
 
 	#examContainer {
-        position: relative;
+		position: relative;
 		width: 80%;
 		background-color: $container_backgroundColor;
-        box-shadow: var(--boxShadow);
+		box-shadow: var(--boxShadow);
 		font-size: 1em;
-        padding: 0.5% 1%;
+		padding: 0.5% 1%;
 
 		#searchExam {
 			display: flex;
 			justify-content: center;
-            align-items: center;
+			align-items: center;
 
 			font-size: 1em;
-            margin-top: 1em;
+			margin-top: 1em;
 
 			#searchForm {
 				position: relative;
@@ -48,13 +48,13 @@
 				border: 0.1vw solid black;
 				border-radius: 0.2vw;
 
-                font-size: 1em;
+				font-size: 1em;
 
 				input {
 					width: 85%;
 					background-color: transparent;
 					padding: 1% 2%;
-                    font-size: 1em;
+					font-size: 1em;
 				}
 				svg {
 					font-size: 1.2em;
@@ -62,88 +62,63 @@
 				}
 			}
 
-            #searchField {
-                color: var(--textcolor2);
-                background-color: blue;
-                margin-left: 1em;
-                text-align: center;
-                padding: 0.25% 0.5%;
-                border-radius: 0.2vw;
-                position: relative;
-                -webkit-appearance: none;
-                -moz-appearance: none;
-                appearance: none;
-                text-overflow: "";
-                font-size: 1em;
-
-                option{
-                    background-color: rgb(49, 49, 49);
-                    text-align: center;
-                    font-size: 0.8em;
-                }
-
-                option:hover{
-                    cursor: pointer;
-                }
-            }
-
-            #searchField:hover{
-                cursor: pointer;
-            }
+			.searchField {
+				font-size: 1em;
+			}
 		}
 
-        #listExams{
-            position: relative;
-            font-size: 1em;
-            padding: 1% 2%;
-            padding-bottom: var(--paddingbottom);
-            height: 80vh;
-            overflow-y: auto;
-            ul{
-                display: flex;
-                flex-wrap: wrap;
-                list-style: none;
-                font-size: 1em;
+		#listExams {
+			position: relative;
+			font-size: 1em;
+			padding: 1% 2%;
+			padding-bottom: var(--paddingbottom);
+			height: 80vh;
+			overflow-y: auto;
+			ul {
+				display: flex;
+				flex-wrap: wrap;
+				list-style: none;
+				font-size: 1em;
 
-                a.exam{
-                    position: relative;
-                    display: flex;
-                    width: 24%;
-                    margin: 0.5% calc(4%/8);
-                    padding: 0.25% 1%;
+				a.exam {
+					position: relative;
+					display: flex;
+					width: 24%;
+					margin: 0.5% calc(4% / 8);
+					padding: 0.25% 1%;
 
-                    border-radius: 0.2vw;
-                    border: 0.07vw solid black;
-                    
-                    background-color: $exam_backgroundColor;
-                    font-size: 1em;
-                    .exam-icon{
-                        position: relative;
-                        width: 10%;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        font-size: 2em;
+					border-radius: 0.2vw;
+					border: 0.07vw solid black;
 
-                        margin-right: 0.5em;
-                        color: $exam-icon_backgroundColor;
-                    }
+					background-color: $exam_backgroundColor;
+					font-size: 1em;
+					.exam-icon {
+						position: relative;
+						width: 10%;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						font-size: 2em;
 
-                    .exam-intro{
-                        width: 90%;
-                        display: flex;
-                        flex-direction: column;
-                        font-size: 0.8em;
-                        color: var(--textcolor1);
+						margin-right: 0.5em;
+						color: $exam-icon_backgroundColor;
+					}
 
-                        *{
-                            text-wrap: nowrap;
-                            overflow-x: hidden;
-                            text-overflow: ellipsis;
-                        }
-                    }
-                }
-            }
-        }
+					.exam-intro {
+						width: 90%;
+						display: flex;
+						flex-direction: column;
+						font-size: 0.8em;
+						color: var(--textcolor1);
+
+						* {
+							text-wrap: nowrap;
+							overflow-x: hidden;
+							text-overflow: ellipsis;
+						}
+					}
+				}
+			}
+		}
 	}
 }

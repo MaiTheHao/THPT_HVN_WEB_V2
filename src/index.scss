@@ -88,6 +88,59 @@ a {
 	}
 }
 
+.searchField {
+	position: relative;
+	height: 2em;
+	min-width: 5vw;
+	max-width: 10vw;
+	width: max-content;
+	padding: 0 calc(var(--fontsize) * 0.5);
+	color: var(--textcolor2);
+	background-color: blue;
+	margin-left: 1em;
+	text-align: center;
+	text-wrap: nowrap;
+	border-radius: 0.2vw;
+
+	overflow-x: hidden;
+	text-overflow: ellipsis;
+}
+
+.searchField:hover{
+	cursor: pointer;
+}
+
+.selectField-container{
+	position: relative;
+	min-width: 6vw;
+	max-width: 10vw;
+	width: max-content;
+	height: max-content;
+	max-height: 15vw;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	box-shadow: var(--boxShadow);
+	border: 0.02vw solid black;
+	background-color: white;
+	padding: 0.5vw 0.5vw;
+	z-index: 1;
+	overflow-x: hidden;
+	text-overflow: ellipsis;
+
+	span{
+		position: relative;
+		width: 100%;
+		text-align: center;
+		color: var(--textcolor1);
+		padding: 0.2em 0.5vw;
+	}
+
+	span:hover{
+		cursor: pointer;
+		background-color: rgb(220, 220, 220, 0.4);
+	}
+}
 
 .selectR{
 	-webkit-appearance: none;

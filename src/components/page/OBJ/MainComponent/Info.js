@@ -69,7 +69,7 @@ function Info({ setUpForm, setUpNav, avatar, name, role, fb, ins, email, setIsSe
 								</a>
 							) : null}
 							{email ? (
-								<a target="_blank" rel="noreferrer" href={ins} className="email btn">
+								<a target="_blank" rel="noreferrer" href={`https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=${email}`} className="email btn">
 									<FontAwesomeIcon icon={faEnvelope} />
 									<span>Email</span>
 								</a>

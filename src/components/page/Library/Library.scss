@@ -59,12 +59,16 @@
 					width: 15%;
 				}
 			}
+
+			.searchField {
+				font-size: 1em;
+			}
 		}
 
 		#listDocument {
 			position: relative;
 			height: 80vh;
-            overflow-y: auto;
+			overflow-y: auto;
 			font-size: 1em;
 			margin-top: 2em;
 			padding-bottom: var(--paddingbottom);
@@ -153,25 +157,25 @@
 							grid-template-columns: 50% 5% 45%;
 
 							.documentAction {
-                                display: flex;
-                                justify-content: space-evenly;
+								display: flex;
+								justify-content: space-evenly;
 
-                                button{ 
-                                    color: var(--textcolor2);
+								button {
+									color: var(--textcolor2);
 									text-align: center;
 									padding: 0.5% 2%;
 									border-radius: 0.2vw;
-                                }
+								}
 
 								.documentDownload {
-                                    width: 40%;
+									width: 40%;
 									background-color: blue;
 								}
 
-                                .documentMore{
-                                    width: 50%;
-                                    background-color: rgb(255, 155, 80);
-                                }
+								.documentMore {
+									width: 50%;
+									background-color: rgb(255, 155, 80);
+								}
 							}
 						}
 					}

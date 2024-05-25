@@ -2,17 +2,21 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { createContext, useState } from "react";
 
-import { score_all } from "../fakeData";
 import ScoreType1 from "./ScoreType1";
 import ScoreType2 from "./ScoreType2";
+import Tippy from "@tippyjs/react/headless";
 
 export const ScoreBoardContext = createContext();
 
 function ScoreBoard() {
 	const [hk, setHK] = useState("HK1"); // Initial state
-
-	const handleSelectChange = (event) => {
-		setHK(event.target.value);
+	const [filter, setFilter] = useState({visible: false, text: "Chọn học kì"});
+	const handleFilter = (type, value, selectedHK) => {
+		setFilter((prev) => ({...prev, [type]: value}));
+		if(type === "text"){
+			setHK(selectedHK);
+			handleFilter("visible", false);
+		}
 	};
 
 	const checkScore = (score) => {
@@ -46,14 +50,22 @@ function ScoreBoard() {
 			<h5>BẢNG ĐIỂM CỦA HỌC SINH</h5>
 			<ScoreBoardContext.Provider value={{ checkScore, subjects, hk }}>
 				<div id="lableChoseTable">
-					<div id="choseTable">
-						<select className="selectR" name="field" value={hk} onChange={handleSelectChange}>
-							<option value="HK1">Học kỳ 1</option>
-							<option value="HK2">Học kỳ 2</option>
-							<option value="ALL">Cả năm</option>
-						</select>
-						<FontAwesomeIcon icon={faBars} />
-					</div>
+					<Tippy
+					interactive
+						visible={filter.visible}
+						render={(attrs) => (
+							<div id="list_HK">
+								<span onClick={(e) => handleFilter("text", e.currentTarget.innerText, "HK1")} value="HK1">Học kỳ 1</span>
+								<span onClick={(e) => handleFilter("text", e.currentTarget.innerText, "HK2")} value="HK2">Học kỳ 2</span>
+								<span onClick={(e) => handleFilter("text", e.currentTarget.innerText, "ALL")} value="ALL">Cả năm</span>
+							</div>
+						)}
+					>
+						<button id="choseTable" onClick={() => handleFilter("visible", true)}>
+							{filter.text}
+							<FontAwesomeIcon icon={faBars} />
+						</button>
+					</Tippy>
 				</div>
 
 				{hk !== "ALL" ? (
@@ -84,7 +96,7 @@ function ScoreBoard() {
 							</tr>
 						</thead>
 						<tbody>
-						<ScoreType2/>
+							<ScoreType2 />
 						</tbody>
 					</table>
 				)}

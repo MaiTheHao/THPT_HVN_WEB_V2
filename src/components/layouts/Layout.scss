@@ -6,7 +6,7 @@ $web_sidebar_container_width: 15vw;
 	left: 0;
 	right: 0;
 
-	z-index: 1;
+	z-index: 9999;
 }
 
 #webBody {
@@ -40,7 +40,7 @@ $web_sidebar_container_width: 15vw;
 			background-color: rgb(245, 245, 245);
 			padding-bottom: calc(var(--webheader_height) * 333 / 100);
 
-			z-index: 1;
+			z-index: 9998;
 		}
 
 		#sidebar_container::-webkit-scrollbar {
@@ -121,7 +121,7 @@ $web_sidebar_container_width: 15vw;
 			background-color: white;
 			box-shadow: var(--boxShadow);
 			border: 0.05em solid black;
-			z-index: 1;
+			z-index: 9997;
 			.chat-exit {
 				position: relative;
 				display: flex;

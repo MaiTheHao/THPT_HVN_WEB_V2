@@ -99,7 +99,7 @@ function Search({ apiData, handleData, filter_children, placeholder, icon }) {
 						<FontAwesomeIcon icon={icon} />
 					</div>
 					<Form apiData={apiData} />
-					<button className="filter" onClick={() => setIsFil(!isFil)}>
+					<button className="searchField" onClick={() => setIsFil(!isFil)}>
 						Lọc Tìm Kiếm
 					</button>
 					<FilterPannel isFil={isFil} />

@@ -1,14 +1,14 @@
 #comp_Member {
 	$userAdvancedTable_maxHeight: 27vw;
 	$userAdvancedTable_backgroundColor: rgb(255, 255, 255);
-	$scoreBoard-choseTable_backgroundColor: rgb(77, 77, 77);
+	$scoreBoard-choseTable_backgroundColor: rgb(255, 255, 255);
 	$scoreBoard-choseTable-option_backgroundColor: rgb(24, 24, 24);
 	$scoreBoard-Table_backgroundColor: rgb(245, 250, 255);
 	$scoreBoard-Table-head_backgroundColor: rgb(12, 2, 205);
 	$scoreBoard-Table-caption_backgroundColor: rgb(0, 20, 110);
 	$scoreBoard-Table-subject_backgroundColor: rgb(225, 255, 241);
 	$scoreBoard-Table-DTBHK_backgroundColor: rgb(255, 239, 227);
-	$userGroup_backgroundColor: rgba(240, 240, 240, 0.5);
+	$userGroup_backgroundColor: linear-gradient(90deg, rgb(255, 255, 255), rgb(240, 254, 255));
 	.userAdvancedTable1 {
 		position: relative;
 		max-height: $userAdvancedTable_maxHeight;
@@ -26,7 +26,8 @@
 			display: flex;
 			padding: 0.5% 2%;
 			font-size: 0.9em;
-			background-color: $userGroup_backgroundColor;
+			background-image: $userGroup_backgroundColor;
+			box-shadow: var(--boxShadow);
 
 			.box-img {
 				position: relative;
@@ -90,26 +91,57 @@
 			font-size: 1em;
 
 			#choseTable {
+				position: relative;
+				width: 18%;
 				font-size: 1em;
 				background-color: $scoreBoard-choseTable_backgroundColor;
-				padding: 0.25% 2%;
+				border: 0.05em solid black;
+				text-align: center;
+				text-wrap: nowrap;
+				padding: 0.1% 1%;
+				color: var(--textcolor1);
+				transition:  background_color 0.2s, color 0.2s;
 
-				select{
-					option{
-						background-color: $scoreBoard-choseTable-option_backgroundColor;
-					}
+				svg{
+					margin-left: 1em;
+				}
+			}
 
-					margin-right: 1.5em;
+			#choseTable:hover{
+				cursor: pointer;
+				background-color: rgb(180, 180, 180);
+				color: var(--textcolor2);
+				transform: scale(1);
+			}
+
+			div[data-tippy-root]{
+				z-index: 1 !important;
+			}
+
+			#list_HK{
+				bottom: 0;
+				display: flex;
+				flex-direction: column;
+				height: max-content;
+				width: 11em;
+				background-color: rgb(255, 255, 255);
+				box-shadow: var(--boxShadow);
+				border: 0.05em solid black;
+				border-radius: 0.1vw;
+				padding: 0.25vw 0.5vw;
+
+				span{
+					text-align: center;
+					color: var(--textcolor1);
 				}
 
-				select:hover{
+				span:hover{
 					cursor: pointer;
+					background-color: rgb(240, 240, 240, 0.5);
 				}
 
-				* {
-					color: var(--textcolor2);
-					font-size: 1em;
-					background-color: transparent;
+				span:active{
+					background-color: rgb(230, 230, 230, 1);
 				}
 			}
 		}

@@ -1,7 +1,7 @@
 .obj_Component {
 	$inputFontSize: 0.8em;
 	$filterChoiceOption_title_backgroundColor: rgb(35, 80, 130);
-	$filterBoxs_backgroundColor: rgb(60, 95, 255);
+	$filterBoxs_backgroundColor: blue;
 	$filterPannel_backgroundColor: rgb(255, 255, 255);
 	$filterBox_breakLine_backgroundColor: rgb(0, 40, 170);
 	$acceptFilter_backgroundColor: rgb(75, 255, 75);
@@ -15,7 +15,7 @@
 	$container-child--row-child__space: calc(var(--fontsize) / 2.5);
 	$box-text__more_backgroundColor: rgba(207, 207, 207, 0.5);
 	$box-text__more_textColor: rgb(55, 30, 255);
-	$infoObjFormReturn_backgroundColor: rgb(255, 155, 25);
+	$infoObjFormReturn_backgroundColor: rgb(255, 166, 51);
 
 	font-size: var(--fontsize);
 	.UPDATELATER{
@@ -82,23 +82,16 @@
 				}
 			}
 
-			.filter {
+			.searchField {
 				font-size: $inputFontSize;
-				width: 22.5%;
-				color: var(--textcolor2);
-				background-color: $filterBoxs_backgroundColor;
-				padding: 1% 2%;
-				text-wrap: nowrap;
-				border-radius: 0.2vw;
-				margin-left: 1em;
 			}
-
+			
 			#filterPannel {
+				display: none;
 				position: absolute;
 				top: 100%;
 				left: 0;
 				right: 0;
-				display: none;
 				flex-direction: column;
 				background-color: $filterPannel_backgroundColor;
 				border-radius: 0.2vw;
@@ -286,14 +279,14 @@
 		font-size: 1em;
 
 		#infoObjFormReturn{
-			position: relative;
+			position: absolute;
+			right: 0;
 			font-size: 0.8em;
 			font-weight: 300;
 			background-color: $infoObjFormReturn_backgroundColor;
 			color: var(--textcolor2);
 			padding: 0.25% 1%;
-			border-radius: 0.2vw;
-			margin-top: 1em;
+			border-radius: 0.2vw 0 0 0.2vw;
 		}
 
 		.container {
