@@ -30,4 +30,4 @@ function Document({ document }) {
 	);
 }
 
-export default Document;
+export default React.memo(Document);

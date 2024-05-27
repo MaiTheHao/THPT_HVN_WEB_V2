@@ -20,4 +20,4 @@ function Container({title, listContext}) {
 	);
 }
 
-export default Container;
+export default React.memo(Container);

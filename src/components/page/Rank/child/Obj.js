@@ -34,4 +34,4 @@ function Obj({ top, avatar, name, type, prop, score, ...rest}) {
 	);
 }
 
-export default Obj;
+export default React.memo(Obj);

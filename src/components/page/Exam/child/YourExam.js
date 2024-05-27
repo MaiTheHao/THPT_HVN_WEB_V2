@@ -4,7 +4,7 @@ import { faFileLines } from "@fortawesome/free-solid-svg-icons";
 
 function YourExam({exam}) {
 	return (
-		<a className="exam btn">
+		<a href="testHref" className="exam btn">
 			<div className="exam-icon">
 				<FontAwesomeIcon icon={faFileLines} />
 			</div>
@@ -18,4 +18,4 @@ function YourExam({exam}) {
 	);
 }
 
-export default YourExam;
+export default React.memo(YourExam);

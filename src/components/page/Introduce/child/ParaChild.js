@@ -11,4 +11,4 @@ function ParaChild({id, title, description}) {
 	);
 }
 
-export default ParaChild;
+export default React.memo(ParaChild);

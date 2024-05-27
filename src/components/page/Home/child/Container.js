@@ -1,18 +1,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-	faCrown,
-	faFire,
-	faGraduationCap,
-	faNewspaper,
-	faRankingStar,
-	faStar,
-} from "@fortawesome/free-solid-svg-icons";
+import { faCrown, faFire, faGraduationCap, faNewspaper, faRankingStar, faStar } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import HVNBANNER from "../../../../pic/HVN_banner-trs.jpg";
 import ACT from "../../../../pic/ACT_1.jpg";
 import ACT2 from "../../../../pic/ACT_2.jpg";
+import React from "react";
 
-export const ContainerElementColumn = ({ type, id, inputIcon, title, children }) => {
+export const ContainerElementColumn = React.memo(({ type, id, inputIcon, title, children }) => {
 	return (
 		<div className="container-child--Column" id={id}>
 			<div className="child__header">
@@ -22,9 +16,9 @@ export const ContainerElementColumn = ({ type, id, inputIcon, title, children })
 			<div className="child__body scrollY">{children}</div>
 		</div>
 	);
-};
+});
 
-export const ContainerElementRow = ({ id, headerTitle, icon, sourceData }) => {
+export const ContainerElementRow = React.memo(({ id, headerTitle, icon, sourceData }) => {
 	const Header = ({ headerTitle, icon }) => (
 		<div className="child__header">
 			<FontAwesomeIcon icon={icon} />
@@ -44,9 +38,9 @@ export const ContainerElementRow = ({ id, headerTitle, icon, sourceData }) => {
 			</Body>
 		</div>
 	);
-};
+});
 
-export const ContainerNoticeElement = () => {
+export const ContainerNoticeElement = React.memo(() => {
 	const listNoticeContainer = [
 		{
 			id: "hoat_dong_noi_bat",
@@ -114,9 +108,9 @@ export const ContainerNoticeElement = () => {
 			))}
 		</>
 	);
-};
+});
 
-export const ContainerRankElement = () => {
+export const ContainerRankElement = React.memo(() => {
 	const classRanks = [
 		{ name: "12.9", score: 300 },
 		{ name: "10.10", score: 299 },
@@ -174,9 +168,7 @@ export const ContainerRankElement = () => {
 								<h4>{`TOP ${index + 1}`}</h4>
 								<FontAwesomeIcon icon={index < 3 ? faCrown : faStar} />
 							</div>
-							<Link to={null} className="rank__name">{`${
-								headName ? headName.toUpperCase() + " " : ""
-							}${name}`}</Link>
+							<Link to={null} className="rank__name">{`${headName ? headName.toUpperCase() + " " : ""}${name}`}</Link>
 							<span className="rank__score">ĐIỂM: {score}</span>
 						</li>
 					))
@@ -190,21 +182,15 @@ export const ContainerRankElement = () => {
 	return (
 		<>
 			{listRankContainer.map(({ id, headName, inputIcon, title, listObj }) => (
-				<ContainerElementColumn
-					key={`ContainerElementColumn_${id}`}
-					type="rank"
-					id={id}
-					inputIcon={inputIcon}
-					title={title}
-				>
+				<ContainerElementColumn key={`ContainerElementColumn_${id}`} type="rank" id={id} inputIcon={inputIcon} title={title}>
 					<CreateListRank headName={headName} listObj={listObj} />
 				</ContainerElementColumn>
 			))}
 		</>
 	);
-};
+});
 
-export const ContainerElementRowChild = ({ id, finalPath, title, description, picSrc, addClass = ""}) => {
+export const ContainerElementRowChild = React.memo(({ id, finalPath, title, description, picSrc, addClass = "" }) => {
 	const BoxImg = () => (
 		<div className="box-img">
 			<img alt={"Ảnh miêu tả"} src={picSrc || HVNBANNER}></img>
@@ -237,4 +223,4 @@ export const ContainerElementRowChild = ({ id, finalPath, title, description, pi
 			<BoxText></BoxText>
 		</div>
 	);
-};
+});

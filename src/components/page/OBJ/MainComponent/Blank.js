@@ -9,4 +9,4 @@ function Blank() {
 	);
 }
 
-export default Blank;
+export default React.memo(Blank);

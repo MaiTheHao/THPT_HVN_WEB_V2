@@ -103,4 +103,4 @@ function Info({ setUpForm, setUpNav, avatar, name, role, fb, ins, email, setIsSe
 }
 
 export { ObjProp };
-export default Info;
+export default React.memo(Info);

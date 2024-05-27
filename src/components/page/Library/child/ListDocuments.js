@@ -59,4 +59,4 @@ function ListDocuments() {
 	);
 }
 
-export default ListDocuments;
+export default React.memo(ListDocuments);

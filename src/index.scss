@@ -110,6 +110,10 @@ a {
 	cursor: pointer;
 }
 
+div[data-tippy-root]{
+	z-index: 9997 !important;
+}
+
 .selectField-container{
 	position: relative;
 	min-width: 6vw;

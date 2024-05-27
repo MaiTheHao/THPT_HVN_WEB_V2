@@ -15,4 +15,4 @@ function Para({title, listPara, icon}) {
 	);
 }
 
-export default Para;
+export default React.memo(Para);

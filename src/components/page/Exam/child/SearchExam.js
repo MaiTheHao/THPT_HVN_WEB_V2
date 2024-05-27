@@ -50,4 +50,4 @@ function SearchExam() {
 	);
 }
 
-export default SearchExam;
+export default React.memo(SearchExam);

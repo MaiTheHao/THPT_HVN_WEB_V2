@@ -1,4 +1,5 @@
 import Tippy from "@tippyjs/react/headless";
+import React from "react";
 
 function Wrapper({ buttonTitle, stateVisible, setState, ListRenderComponent, ...btnRest }) {
 	return (
@@ -10,4 +11,4 @@ function Wrapper({ buttonTitle, stateVisible, setState, ListRenderComponent, ...
 	);
 }
 
-export default Wrapper;
+export default React.memo(Wrapper);

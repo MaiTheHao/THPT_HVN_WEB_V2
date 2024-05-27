@@ -21,8 +21,6 @@ $web_sidebar_container_width: 15vw;
 }
 
 #ly1 {
-	#webHeader {
-	}
 
 	#webBody {
 		display: grid;
@@ -64,9 +62,6 @@ $web_sidebar_container_width: 15vw;
 }
 
 #ly2 {
-	#webHeader {
-	}
-
 	#webBody {
 		color: rgb(0, 0, 0);
 	}
@@ -80,6 +75,7 @@ $web_sidebar_container_width: 15vw;
 		right: 0;
 		margin: 1.5em;
 		font-size: 1em;
+		z-index: 9999;
 
 		.chat-pupple {
 			position: relative;

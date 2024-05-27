@@ -20,4 +20,4 @@ function ListExams() {
 	);
 }
 
-export default ListExams;
+export default React.memo(ListExams);
