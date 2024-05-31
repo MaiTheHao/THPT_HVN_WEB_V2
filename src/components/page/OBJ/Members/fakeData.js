@@ -175,20 +175,4 @@ export const score_all = {
 	cn: [score.HK1.cn.CK[0], score.HK2.cn.CK[0], ((score.HK1.cn.CK[0] + score.HK2.cn.CK[0]) / 2).toFixed(1)],
 	td: [score.HK1.td.CK[0], score.HK2.td.CK[0], ((score.HK1.td.CK[0] + score.HK2.td.CK[0]) / 2).toFixed(1)],
 	gdqp: [score.HK1.gdqp.CK[0], score.HK2.gdqp.CK[0], ((score.HK1.gdqp.CK[0] + score.HK2.gdqp.CK[0]) / 2).toFixed(1)],
-  };
-
-const subjects = [
-	"Toán học",
-	"Vật lí",
-	"Hóa học",
-	"Sinh học",
-	"Tin học",
-	"Ngữ văn",
-	"Lịch sử",
-	"Địa lí",
-	"Ngoại ngữ",
-	"GDCD",
-	"Công nghệ",
-	"Thể dục",
-	"GDQP và an ninh",
-];
+};

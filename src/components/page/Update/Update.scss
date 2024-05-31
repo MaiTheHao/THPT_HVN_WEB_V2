@@ -1,0 +1,68 @@
+#comp_Update {
+	display: flex;
+	height: 100vh;
+	font-size: var(--fonsize);
+	.sidebar {
+		position: relative;
+		height: 100vh;
+		.container {
+			position: fixed;
+			top: var(--webheader_height);
+			bottom: 0;
+			width: inherit;
+			background-color: rgb(255, 255, 255);
+			box-shadow: var(--boxShadow);
+			z-index: 1;
+
+			font-size: 1em;
+			.hotbar{
+				position: relative;
+				width: inherit;
+				display: flex;
+				background-color: rgb(250, 250, 250);
+				font-size: 1em;
+				
+				#searchForm{
+					width: inherit;
+					svg{
+						margin: 0 0.5em;
+					}
+				}
+				
+				.exitBtn{
+					transform: rotate(180deg);
+					border-radius: 0 0.5vw 0 0;
+					width: 20%;
+					font-size: 1.2em;
+				}
+			}
+		}
+	}
+	.sidebarActionBtn{
+		background-color: rgb(255, 153, 0);
+		color: var(--textcolor2);
+	}
+	.openBtn {
+		position: fixed;
+		padding: 0.5% 1%;
+		top: var(--webheader_height);
+		z-index: 1;
+		font-size: 1em;
+		border-radius: 0 0 0.5vw 0;
+		box-shadow: var(--boxShadow);
+
+		svg + svg{
+			margin-left: 0.6em;
+		}
+	}
+
+	.bodyContainer{
+		position: relative;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		.content{
+			width: 80%;
+		}
+	}
+}

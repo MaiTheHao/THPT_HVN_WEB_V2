@@ -39,27 +39,10 @@
 			margin-top: 1em;
 
 			#searchForm {
-				position: relative;
 				width: 30%;
-				display: flex;
-				justify-content: center;
-				align-items: center;
 				background-color: $searchForm_backgroundColor;
 				border: 0.1vw solid black;
 				border-radius: 0.2vw;
-
-				font-size: 1em;
-
-				input {
-					width: 85%;
-					background-color: transparent;
-					padding: 1% 2%;
-					font-size: 1em;
-				}
-				svg {
-					font-size: 1.2em;
-					width: 15%;
-				}
 			}
 
 			.searchField {

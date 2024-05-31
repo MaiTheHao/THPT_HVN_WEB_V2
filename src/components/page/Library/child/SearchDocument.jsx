@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import Input1 from "../../../reusable-components/Input1";
 import Wrapper from "../../../Wrapper/Wrapper";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 function SearchDocument() {
 	const [selectField, setSelectField] = useState("Chọn lĩnh vực");
@@ -24,7 +25,10 @@ function SearchDocument() {
 	);
 	return (
 		<div id="searchDocument">
-			<Input1 inputId={"search"} placeholder={"Tìm tài liệu"} />
+			<div id="searchForm" className="input_component">
+				<input placeholder={"Tìm tài liệu"} />
+				<FontAwesomeIcon icon={faMagnifyingGlass} onClick={() => {}} />
+			</div>
 			<Wrapper buttonTitle={selectField} setState={setVisible} stateVisible={visible} ListRenderComponent={ListSubject} className="searchField"></Wrapper>
 		</div>
 	);

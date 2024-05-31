@@ -18,6 +18,15 @@ export const routes = [
 	{ id: "pageExam", path: "/exam", title: "BÀI KIỂM TRA", Component: Exam, Layout: Layout2 },
 	{ id: "pageRank", path: "/rank/*", title: "BẢNG XẾP HẠNG", Component: Rank, Layout: Layout2 },
 	{ id: "pageIntroduce", path: "/introduce", title: "GIỚI THIỆU", Component: Introduce, Layout: Layout2 },
-	{ id: "pageUpdate", path: "/update", title: "CẬP NHẬT THÔNG TIN", Component: Update, Layout: Layout2 },
+	{
+		id: "pageUpdate",
+		path: "/update/*",
+		title: "CẬP NHẬT THÔNG TIN",
+		Component: Update,
+		Layout: Layout2,
+		children: [{ id: "Update-check", path: "check", props:{
+			title: "Kiểm tra đối tượng"
+		}},],
+	},
 	{ id: "pageAction", path: "/", title: "HOẠT ĐỘNG ĐOÀN", Component: Home, Layout: Layout1 },
 ];

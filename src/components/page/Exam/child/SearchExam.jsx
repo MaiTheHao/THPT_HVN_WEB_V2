@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import Input1 from "../../../reusable-components/Input1";
 import Wrapper from "../../../Wrapper/Wrapper";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 function SearchExam() {
 	const [selectField, setSelectField] = useState("Chọn môn học");
@@ -38,7 +39,10 @@ function SearchExam() {
 	);
 	return (
 		<div id="searchExam">
-			<Input1 inputId={"search"} placeholder={"Tìm bài kiểm tra"} />
+			<div id="searchForm" className="input_component">
+				<input placeholder="Tìm bài kiểm tra" />
+				<FontAwesomeIcon icon={faMagnifyingGlass} />
+			</div>
 			<Wrapper
 			buttonTitle={selectField}
 			stateVisible={visible}

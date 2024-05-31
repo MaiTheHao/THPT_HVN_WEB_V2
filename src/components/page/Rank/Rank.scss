@@ -5,6 +5,15 @@
 	font-size: var(--fontsize);
 
 	$obj_backgroundColor: linear-gradient(45deg, rgb(255, 255, 255), rgb(255, 255, 230));
+	$rankContainer_backgroundColor: rgb(255, 255, 255);
+	$searchForm_backgroundColor: rgb(255, 255, 255);
+	$objTop_backgroundColor: rgb(244, 255, 237);
+	$objTop-1_backgroundColor: rgb(255, 89, 52);
+	$objTop-2_backgroundColor: rgb(56, 142, 255);
+	$objTop-3_backgroundColor: rgb(89, 255, 52);
+	$objTop-1_color: rgb(255, 255, 40);
+	$objTop-2_color: rgb(255, 255, 255);
+	$objTop-3_color: rgb(255, 170, 23);
 
 	#UNDERICON {
 		position: absolute;
@@ -21,7 +30,7 @@
 	#rankContainer {
 		position: relative;
 		width: 80%;
-		background-color: rgb(255, 255, 255);
+		background-color: $rankContainer_backgroundColor;
 		box-shadow: var(--boxShadow);
 		font-size: 1em;
 
@@ -33,26 +42,12 @@
 			margin-top: 1em;
 
 			#searchForm {
-				position: relative;
 				width: 30%;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				background-color: white;
+				background-color: $searchForm_backgroundColor;
 				border: 0.1vw solid black;
 				border-radius: 0.2vw;
-
-				input {
-					width: 85%;
-					background-color: transparent;
-					padding: 1% 2%;
-					font-size: 1em;
-				}
-				svg {
-					font-size: 1.2em;
-					width: 15%;
-				}
 			}
+
 
 			.searchField {
 				font-size: 1em;
@@ -99,23 +94,23 @@
 							align-items: center;
 							font-size: 2em;
 							font-weight: 700;
-							background-color: rgb(254, 255, 244);
+							background-color: $objTop_backgroundColor;
 							border-right: 0.2vw solid black;
 
 							border-radius: 0.2vw 0 0 0.2vw;
 						}
 
 						.box-top.top1 {
-							background-color: rgb(255, 89, 52);
-							color: rgb(255, 255, 40);
+							background-color: $objTop-1_backgroundColor;
+							color: $objTop-1_color;
 						}
 						.box-top.top2 {
-							background-color: rgb(56, 142, 255);
-							color: white;
+							background-color: $objTop-2_backgroundColor;
+							color: $objTop-2_color;
 						}
 						.box-top.top3 {
-							background-color: rgb(89, 255, 52);
-							color: rgb(255, 160, 71);
+							background-color: $objTop-3_backgroundColor;
+							color: $objTop-3_color;
 						}
 
 						.box-img {

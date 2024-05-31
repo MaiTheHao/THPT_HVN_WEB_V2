@@ -84,7 +84,6 @@ function Introduce() {
 							{
 								title: " ",
 								description: [
-									,
 									"Nhà cách mạng, nhà thơ, Anh hùng LLVT, Giải thưởng Nhà nước về nghệ thuật (1914-1977).",
 									"Không chỉ là một chỉ huy quân sự tài ba, ông còn là một nhà thơ nổi tiếng.",
 									'Đồng đội và nhân dân miền Nam gọi ông là "Thi tướng rừng xanh"',

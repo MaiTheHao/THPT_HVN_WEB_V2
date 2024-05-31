@@ -10,34 +10,6 @@ import useAppContext from "../../../../Context/UseAppContext";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import ScoreBoard from "./ScoreBoard/ScoreBoard";
 
-const FilGender = () => (
-	<select className="scrollY">
-		<option value="nam">Nam</option>
-		<option value="nu">Nữ</option>
-	</select>
-);
-
-const FilDoanVien = () => (
-	<select className="scrollY">
-		<option value="co">Là đoàn viên</option>
-		<option value="khong">Không phải đoàn viên</option>
-	</select>
-);
-
-const FilBirth = () => {
-	const listYearAcceptable = Array.from({ length: new Date().getFullYear() - 2000 + 1 }, (_, i) => 2000 + i);
-
-	return (
-		<select className="scrollY">
-			{listYearAcceptable.reverse().map((year, index) => (
-				<option key={`listYearAcceptable_${index}`} value={year}>
-					{year}
-				</option>
-			))}
-		</select>
-	);
-};
-
 function Member() {
 	const { auth } = useAppContext();
 	const apiData = "/member";
@@ -53,19 +25,39 @@ function Member() {
 		fb: auth?.userFb,
 		ins: auth?.userIns,
 	});
+
+	const FilGender = () => (
+		<select className="scrollY">
+			<option value="nam">Nam</option>
+			<option value="nu">Nữ</option>
+		</select>
+	);
+
+	const FilDoanVien = () => (
+		<select className="scrollY">
+			<option value="co">Là đoàn viên</option>
+			<option value="khong">Không phải đoàn viên</option>
+		</select>
+	);
+
+	const FilBirth = () => {
+		const listYearAcceptable = Array.from({ length: new Date().getFullYear() - 2000 + 1 }, (_, i) => 2000 + i);
+
+		return (
+			<select className="scrollY">
+				{listYearAcceptable.reverse().map((year, index) => (
+					<option key={`listYearAcceptable_${index}`} value={year}>
+						{year}
+					</option>
+				))}
+			</select>
+		);
+	};
+
 	const filterOption = [
-		{
-			title: "Giới tính",
-			children: <FilGender />,
-		},
-		{
-			title: "Đoàn viên",
-			children: <FilDoanVien />,
-		},
-		{
-			title: "Năm sinh",
-			children: <FilBirth />,
-		},
+		{ title: "Giới tính", children: <FilGender /> },
+		{ title: "Đoàn viên", children: <FilDoanVien /> },
+		{ title: "Năm sinh", children: <FilBirth /> },
 	];
 
 	const handleData = (obj) => {
@@ -83,9 +75,9 @@ function Member() {
 	];
 
 	const advancedInfo = [
-		{ title: "Hoạt động gần đây", component: <UserRecentAct />},
-		{ title: "Nhóm", component: <UserGroups />},
-		{ title: "Bảng điểm", component: <ScoreBoard/>, accept: "Học sinh" },
+		{ title: "Hoạt động gần đây", component: <UserRecentAct /> },
+		{ title: "Nhóm", component: <UserGroups /> },
+		{ title: "Bảng điểm", component: <ScoreBoard />, accept: "Học sinh" },
 		{ title: "Tài liệu", component: <Document />, accept: "Học sinh" },
 	];
 

@@ -18,6 +18,7 @@ $webheader_content_grid_template_colums: 10% 50% 15% 25%;
 
 	color: var(--textcolor2);
 	font-size: var(--fontsize);
+	z-index: 9999;
 
 	.content {
 		position: relative;

@@ -10,6 +10,7 @@ $webfooter_background_color: linear-gradient(0, rgb(18, 15, 105), rgb(30, 26, 14
 	color: var(--textcolor2);
 
 	font-size: var(--fontsize);
+	z-index: 9999;
 
 	#webFooter-top {
 		position: relative;

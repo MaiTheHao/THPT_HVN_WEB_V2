@@ -13,13 +13,13 @@ function App() {
 				<Route path="/" element={<Navigate to="/home" ></Navigate>}></Route>
 				<Route path="/login/*" element={<Login baseUrl={"/login/"} ICON={ICON} />}></Route>
 				<Route element={<AuthUser />}>
-					{routes.map(({ path, Component, Layout }) => (
+					{routes.map(({ path, Component, Layout, children }) => (
 						<Route
 							key={path}
 							path={path}
 							element={
 								<Layout>
-									<Component></Component>
+									<Component childUrl={children}></Component>
 								</Layout>
 							}
 						></Route>

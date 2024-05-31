@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import Input1 from "../../../reusable-components/Input1";
 import Wrapper from "../../../Wrapper/Wrapper";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 function RankSearch({ field, setField }) {
 	const [selectedValue, setSelectedValue] = useState("Thành viên"); // Initial state
 	const [visible, setVisible] = useState(false);
 
 	const handleSelectChange = (event) => {
-		const value = event.target.id
+		const value = event.target.id;
 		setSelectedValue(event.currentTarget.innerText.trim());
 		setField(value);
 		setVisible(false);
@@ -38,7 +39,10 @@ function RankSearch({ field, setField }) {
 
 	return (
 		<div id="searchObj">
-			<Input1 inputId={"search"} placeholder={targetText[field] || "Tìm kiếm"} />
+			<div id="searchForm" className="input_component">
+				<input placeholder={targetText[field] || "Tìm kiếm"} />
+				<FontAwesomeIcon icon={faMagnifyingGlass} onClick={() => {}} />
+			</div>
 			<Wrapper buttonTitle={selectedValue} setState={setVisible} stateVisible={visible} ListRenderComponent={ListObjType} className="searchField"></Wrapper>
 		</div>
 	);

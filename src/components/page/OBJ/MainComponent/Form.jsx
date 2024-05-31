@@ -17,7 +17,7 @@ function Form({ apiData }) {
 	};
 
 	const handleSearch = async (e) => {
-		const inputValue = e.target.value;
+		const inputValue = e?.target?.value || e?.value || "";
 		setSearchName(inputValue);
 
 		if (!TEST) {
@@ -440,9 +440,9 @@ function Form({ apiData }) {
 
 	return (
 		<div className="input_form">
-			<div>
-				<input type="text" onChange={handleSearch} value={searchName} placeholder={container.placeholder}></input>
-				<FontAwesomeIcon icon={container.icon} />
+			<div id="searchForm" className="input_component">
+				<input placeholder={container.placeholder} value={searchName} onChange={handleSearch} />
+				<FontAwesomeIcon icon={faMagnifyingGlass} onClick={() => {}} />
 			</div>
 		</div>
 	);
