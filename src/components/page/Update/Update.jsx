@@ -24,12 +24,15 @@ function Update() {
 				<Sidebar />
 				<div className="bodyContainer">
 					<div className="content">
-						<h2>DEV TABLE - SHOW STATUS</h2>
+						<h2 style={{color: "red"}}>DEV TABLE - SHOW STATUS</h2>
 						<span>
-							**Sidebar Visible:** {sidebarVisible ? "Yes" : "No"}
+							<strong>**Sidebar Visible:</strong> {sidebarVisible ? "Yes" : "No"}
 							<br />
-							**Search Value:** {searchValue.value}
+							<strong>**Search Value:</strong> {searchValue.value || "null"}
+							<br/>
+							<strong>**Sidebar Max Width:</strong> {SIDEBAR_MAXWIDTH}
 						</span>
+						<h2 style={{color: "yellowgreen"}}>THIS PAGE COMPONENT IN TEST</h2>
 					</div>
 				</div>
 			</div>
