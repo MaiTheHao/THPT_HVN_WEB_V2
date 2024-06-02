@@ -4,7 +4,7 @@ import Content from "./Child/Content";
 
 function Container() {
 	return (
-		<div className="container">
+		<div className="container scrollY paddingBottom">
 			<HotBar />
 			<Content />
 		</div>

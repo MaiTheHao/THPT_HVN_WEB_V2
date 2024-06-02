@@ -16,6 +16,8 @@
 	$box-text__more_backgroundColor: rgba(207, 207, 207, 0.5);
 	$box-text__more_textColor: rgb(55, 30, 255);
 	$infoObjFormReturn_backgroundColor: rgb(255, 166, 51);
+	$AdvancedTable_maxHeight: 27vw;
+	$AdvancedTable_backgroundColor: rgb(255, 255, 255);
 
 	font-size: var(--fontsize);
 	.UPDATELATER {
@@ -440,6 +442,17 @@
 				}
 
 				#container-right-context {
+					.AdvancedTable1 {
+						position: relative;
+						max-height: $AdvancedTable_maxHeight;
+						background-color: $AdvancedTable_backgroundColor;
+						padding: .2em 2%;
+						border: 0.05em solid black;
+						margin-top: .25em;
+						overflow-y: auto;
+				
+						font-size: 1em;
+					}
 					.linkbox {
 						font-size: 1em;
 						display: grid;

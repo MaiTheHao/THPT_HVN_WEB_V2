@@ -6,14 +6,14 @@ import ACT from "../../../../pic/ACT_1.jpg";
 import ACT2 from "../../../../pic/ACT_2.jpg";
 import React from "react";
 
-export const ContainerElementColumn = React.memo(({ type, id, inputIcon, title, children }) => {
+export const ContainerElementColumn = React.memo(({ type, id, inputIcon, title, scroll = true, children}) => {
 	return (
 		<div className="container-child--Column" id={id}>
 			<div className="child__header">
 				<FontAwesomeIcon className={`${type}Icon`} icon={inputIcon} />
 				<h3>{title}</h3>
 			</div>
-			<div className="child__body scrollY">{children}</div>
+			<div className={`child__body ${scroll ? 'scrollY' : ''}`}>{children}</div>
 		</div>
 	);
 });
@@ -182,7 +182,7 @@ export const ContainerRankElement = React.memo(() => {
 	return (
 		<>
 			{listRankContainer.map(({ id, headName, inputIcon, title, listObj }) => (
-				<ContainerElementColumn key={`ContainerElementColumn_${id}`} type="rank" id={id} inputIcon={inputIcon} title={title}>
+				<ContainerElementColumn key={`ContainerElementColumn_${id}`} type="rank" id={id} inputIcon={inputIcon} title={title} scroll={false}>
 					<CreateListRank headName={headName} listObj={listObj} />
 				</ContainerElementColumn>
 			))}

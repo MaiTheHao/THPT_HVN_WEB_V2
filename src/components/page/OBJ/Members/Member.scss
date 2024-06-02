@@ -1,6 +1,4 @@
 #comp_Member {
-	$userAdvancedTable_maxHeight: 27vw;
-	$userAdvancedTable_backgroundColor: rgb(255, 255, 255);
 	$scoreBoard-choseTable_backgroundColor: rgb(255, 255, 255);
 	$scoreBoard-choseTable-option_backgroundColor: rgb(24, 24, 24);
 	$scoreBoard-Table_backgroundColor: rgb(245, 250, 255);
@@ -9,16 +7,7 @@
 	$scoreBoard-Table-subject_backgroundColor: rgb(225, 255, 241);
 	$scoreBoard-Table-DTBHK_backgroundColor: rgb(255, 239, 227);
 	$userGroup_backgroundColor: linear-gradient(90deg, rgb(255, 255, 255), rgb(240, 254, 255));
-	.userAdvancedTable1 {
-		position: relative;
-		max-height: $userAdvancedTable_maxHeight;
-		background-color: $userAdvancedTable_backgroundColor;
-		border-radius: 0.5vw;
-		padding: 1% 2%;
-		overflow-y: auto;
 
-		font-size: 1em;
-	}
 	#userGroups {
 		.userGroup {
 			position: relative;

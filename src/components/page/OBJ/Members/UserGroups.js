@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import HVNBANNER from "../../../../pic/HVN_banner-icon.jpg";
+import Advanced from "../MainComponent/child/Info/Advanced";
 
 function UserGroups() {
 	const usergroups = [
@@ -14,7 +15,7 @@ function UserGroups() {
 		{ role: null, type: "Nhóm", name: "Bộ Ba Siêu Quậy", score: 133, id: "421" },
 	];
 	return (
-		<div id="userGroups" className="userAdvancedTable1 scrollY">
+		<Advanced id="userGroups">
 			{usergroups.map((group, index) => (
 				<Link key={`userGroups_${index}`} className="userGroup">
 					<div className="box-img">
@@ -31,7 +32,7 @@ function UserGroups() {
 					</div>
 				</Link>
 			))}
-		</div>
+		</Advanced>
 	);
 }
 

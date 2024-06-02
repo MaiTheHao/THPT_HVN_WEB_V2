@@ -204,9 +204,6 @@ $webheader_content_grid_template_colums: 10% 50% 15% 25%;
 		display: flex;
 		flex-wrap: nowrap;
 
-		overflow-x: scroll;
-		overflow-y: hidden;
-
 		color: inherit;
 		font-size: 1em;
 
@@ -243,16 +240,5 @@ $webheader_content_grid_template_colums: 10% 50% 15% 25%;
 		.navbar__element + .navbar__element {
 			margin-left: calc(var(--fontsize) / 2);
 		}
-	}
-
-	.navbar::-webkit-scrollbar {
-		background-color: rgb(98, 98, 98);
-		height: calc($webheader_nav_height/7);
-	}
-
-	.navbar::-webkit-scrollbar-thumb {
-		background-color: var(--textcolor2);
-		border-radius: 0.5vw;
-		border: calc($webheader_nav_height/14) solid rgb(98, 98, 98);
 	}
 }

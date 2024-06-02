@@ -3,52 +3,13 @@ import HVNBANNER from "../../../../pic/HVN_banner-trs.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSquareFacebook, faSquareInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-
-const Avatar = ({ avatar }) => {
-	return (
-		<div className="box-img">
-			<img alt="none" src={avatar || HVNBANNER} />
-		</div>
-	);
-};
-
-const Details = ({ name, role }) => {
-	return (
-		<div className="box-text">
-			<p id="obj-name">{name || ""}</p>
-			<p id="obj-role">{role || "Không xác dịnh"}</p>
-		</div>
-	);
-};
-
-const ObjProp = ({ title, value }) => (
-	<div className="ObjProp">
-		<h5>{title || null}</h5>
-		<p>{value || null}</p>
-	</div>
-);
-
-const ContainerInfo = ({ avatar, name, role, setUpForm }) => {
-	return (
-		<div id="container-info" className="container">
-			<div className="container-left">
-				<Avatar avatar={avatar} />
-				<Details name={name} role={role} />
-			</div>
-			<div className="container-right">
-				{setUpForm.map((obj) => (
-					<ObjProp key={obj.id || Math.random()} {...obj} />
-				))}
-			</div>
-		</div>
-	);
-};
+import Container from "./child/Info/Container";
 
 function Info({ setUpForm, setUpNav, avatar, name, role, fb, ins, email, setIsSearch }) {
 	const [advancedPage, setAdvancedPage] = useState(null);
 	return (
 		<div id="infoObjForm">
-			<ContainerInfo setUpForm={setUpForm} avatar={avatar || HVNBANNER} name={name} role={role} />
+			<Container setUpForm={setUpForm} avatar={avatar || HVNBANNER} name={name} role={role} />
 
 			<div id="container-advanced" className="container">
 				<div className="container-left">
@@ -102,5 +63,4 @@ function Info({ setUpForm, setUpNav, avatar, name, role, fb, ins, email, setIsSe
 	);
 }
 
-export { ObjProp };
 export default React.memo(Info);

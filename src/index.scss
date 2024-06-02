@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Sedan+SC&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Sedan+SC&display=swap");
 
 * {
 	margin: 0;
@@ -32,55 +32,62 @@ a {
 	text-decoration: none;
 }
 
-.scrollY{
+*::-webkit-scrollbar-thumb {
+	background-color: rgb(120, 120, 120);
+	background-clip: content-box;
+	&:hover {
+		cursor: pointer;
+		background-color: #a2a2a2 !important;
+	}
+}
+
+*::-webkit-scrollbar-track {
+	background-color: rgb(235, 235, 235);
+}
+
+.scrollY {
 	overflow-y: auto;
-	padding-right: calc(var(--fontsize) * 0.3);
 }
-.scrollX{
+.scrollX {
 	overflow-x: auto;
-	padding-bottom: calc(var(--fontsize) * 0.35);
 }
-.paddingBottom{
-	padding-bottom: 50% !important;
+.paddingBottom {
+	padding-bottom: 30% !important;
 }
 
 .scrollY::-webkit-scrollbar {
-	width: calc(var(--fontsize) * 0.3);
-	background-color: rgb(230, 230, 230);
+	width: calc(var(--fontsize) * 0.4);
 }
 
 .scrollY::-webkit-scrollbar-thumb {
-	background-color: rgb(135, 135, 135);
-	border-radius: 0.5vw;
+	border-radius: 0.2vw;
+	border: calc(var(--fontsize) * 0.08) solid transparent;
 }
 
 .scrollY-hidden::-webkit-scrollbar {
-	width: 0
+	width: 0;
 }
 
 .scrollX::-webkit-scrollbar {
-	background-color: rgb(98, 98, 98);
 	height: calc(var(--fontsize) * 0.35);
 }
 
 .scrollX::-webkit-scrollbar-thumb {
-	background-color: var(--textcolor2);
-	border-radius: 0.5vw;
-	border: calc(var(--fontsize) * 0.1) solid rgb(98, 98, 98);
+	border-radius: 0.2vw;
+	border: calc(var(--fontsize) * 0.08) solid transparent;
 }
 
 .scrollX-hidden::-webkit-scrollbar {
-	height: 0
+	height: 0;
 }
 
-
-.HIDE_SCHOOL_ICON{
+.HIDE_SCHOOL_ICON {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	overflow: hidden;
 	z-index: 0;
-	img{
+	img {
 		width: 70%;
 		height: auto;
 		object-fit: cover;
@@ -106,15 +113,15 @@ a {
 	text-overflow: ellipsis;
 }
 
-.searchField:hover{
+.searchField:hover {
 	cursor: pointer;
 }
 
-div[data-tippy-root]{
+div[data-tippy-root] {
 	z-index: 9997 !important;
 }
 
-.selectField-container{
+.selectField-container {
 	position: relative;
 	min-width: 6vw;
 	max-width: 10vw;
@@ -132,7 +139,7 @@ div[data-tippy-root]{
 	overflow-x: hidden;
 	text-overflow: ellipsis;
 
-	span{
+	span {
 		position: relative;
 		width: 100%;
 		text-align: center;
@@ -140,13 +147,13 @@ div[data-tippy-root]{
 		padding: 0.2em 0.5vw;
 	}
 
-	span:hover{
+	span:hover {
 		cursor: pointer;
 		background-color: rgb(220, 220, 220, 0.4);
 	}
 }
 
-.selectR{
+.selectR {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
@@ -155,7 +162,7 @@ div[data-tippy-root]{
 	text-overflow: ""; /*Removes default arrow from firefox*/
 }
 
-.input_component{
+.input_component {
 	position: relative;
 	display: flex;
 	align-items: center;
@@ -163,25 +170,25 @@ div[data-tippy-root]{
 	width: 80%;
 	font-size: 1em;
 
-	input{
+	input {
 		font-size: 1em;
 		width: 90%;
 		background-color: transparent;
 		padding: 0.2em 0.25em;
 		padding-right: 0;
 	}
-	svg{
+	svg {
 		font-size: 1.1em;
 		width: 10%;
 		background-color: transparent;
 		transition: transform 0.2s, opacity 0.2s;
 	}
-	svg:hover{
+	svg:hover {
 		cursor: pointer;
 		transform: scale(1.1);
 		opacity: 0.9;
 	}
-	svg:active{
+	svg:active {
 		transform: scale(0.95);
 		opacity: 0.7;
 	}

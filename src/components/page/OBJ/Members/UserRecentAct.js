@@ -1,6 +1,7 @@
 import React from "react";
 import { ContainerElementRowChild } from "../../Home/child/Container";
 import HVNBANNER from "../../../../pic/HVN_banner-trs.jpg";
+import Advanced from "../MainComponent/child/Info/Advanced";
 
 function UserRecentAct() {
 	const recentActivities = [
@@ -27,11 +28,11 @@ function UserRecentAct() {
 		},
 	];
 	return (
-		<div id="userRecentActs" className="userAdvancedTable1 scrollY">
+		<Advanced id="userRecentActs">
 			{recentActivities.map((activity, index) => (
 				<ContainerElementRowChild addClass="userRecentAct" key={` UserRecentAct_${index}`} {...activity} />
 			))}
-		</div>
+		</Advanced>
 	);
 }
 

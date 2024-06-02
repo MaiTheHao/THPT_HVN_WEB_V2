@@ -58,12 +58,12 @@
 			display: flex;
 			flex-wrap: wrap;
 			padding: 1% 2%;
-			font-size: 1em;
+			font-size: 1.4em;
 
 			.container-child--Column {
 				position: relative;
 				width: $container-child--column_width;
-				height: 25vw;
+				height: max-content;
 				display: flex;
 				flex-direction: column;
 
@@ -80,7 +80,7 @@
 					flex-direction: column;
 					justify-content: center;
 					align-items: center;
-					padding: 2%;
+					padding: 2% 0 0 0;
 
 					background-color: rgb(75, 105, 190);
 					font-size: 1em;
@@ -115,17 +115,16 @@
 					display: flex;
 					justify-content: center;
 					font-size: 0.85em;
-					padding: 2% 5%;
+					padding: 0% 5%;
 					background-color: rgb(255, 255, 255);
-					overflow-x: hidden;
-					overflow-y: scroll;
 
 					ul {
 						text-align: center;
 						width: 100%;
 
 						li {
-							margin-top: 2.5em;
+							margin-top: 1em;
+							
 						}
 
 						li.top {
@@ -230,6 +229,9 @@
 						margin: $container-child--row-child__space;
 						margin-bottom: calc($container-child--row-child__space/2);
 						border: calc(var(--fontsize) / 10) solid gray;
+						::-webkit-scrollbar-thumb{
+							border-radius: 0 !important;
+						}
 
 						background-color: white;
 						.box-img {
@@ -280,7 +282,7 @@
 									font-size: 0.85em;
 
 									color: var(--textcolor1);
-									padding: 0 0;
+									padding: 0 .5em;
 									text-align: justify;
 								}
 							}

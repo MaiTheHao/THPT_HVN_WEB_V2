@@ -4,7 +4,7 @@ import Sidebar from "./Sidebar/Child/Sidebar/Sidebar";
 
 export const UpdateContext = createContext();
 
-const SIDEBAR_MAXWIDTH = `15vw`;
+const SIDEBAR_MAXWIDTH = `17vw`;
 
 function Update() {
 	const [sidebarVisible, setSidebarVisible] = useState(true);

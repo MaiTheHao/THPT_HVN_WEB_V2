@@ -5,15 +5,16 @@ import React, { createContext, useState } from "react";
 import ScoreType1 from "./ScoreType1";
 import ScoreType2 from "./ScoreType2";
 import Tippy from "@tippyjs/react/headless";
+import Advanced from "../../MainComponent/child/Info/Advanced";
 
 export const ScoreBoardContext = createContext();
 
 function ScoreBoard() {
 	const [hk, setHK] = useState("HK1"); // Initial state
-	const [filter, setFilter] = useState({visible: false, text: "Chọn học kì"});
+	const [filter, setFilter] = useState({ visible: false, text: "Học kỳ 1" });
 	const handleFilter = (type, value, selectedHK) => {
-		setFilter((prev) => ({...prev, [type]: value}));
-		if(type === "text"){
+		setFilter((prev) => ({ ...prev, [type]: value }));
+		if (type === "text") {
 			setHK(selectedHK);
 			handleFilter("visible", false);
 		}
@@ -46,18 +47,24 @@ function ScoreBoard() {
 	};
 
 	return (
-		<div id="userScoreBoard" className="userAdvancedTable1 scrollY">
+		<Advanced id="userScoreBoard">
 			<h5>BẢNG ĐIỂM CỦA HỌC SINH</h5>
 			<ScoreBoardContext.Provider value={{ checkScore, subjects, hk }}>
 				<div id="lableChoseTable">
 					<Tippy
-					interactive
+						interactive
 						visible={filter.visible}
 						render={(attrs) => (
 							<div id="list_HK">
-								<span onClick={(e) => handleFilter("text", e.currentTarget.innerText, "HK1")} value="HK1">Học kỳ 1</span>
-								<span onClick={(e) => handleFilter("text", e.currentTarget.innerText, "HK2")} value="HK2">Học kỳ 2</span>
-								<span onClick={(e) => handleFilter("text", e.currentTarget.innerText, "ALL")} value="ALL">Cả năm</span>
+								<span onClick={(e) => handleFilter("text", e.currentTarget.innerText, "HK1")} value="HK1">
+									Học kỳ 1
+								</span>
+								<span onClick={(e) => handleFilter("text", e.currentTarget.innerText, "HK2")} value="HK2">
+									Học kỳ 2
+								</span>
+								<span onClick={(e) => handleFilter("text", e.currentTarget.innerText, "ALL")} value="ALL">
+									Cả năm
+								</span>
 							</div>
 						)}
 					>
@@ -101,7 +108,7 @@ function ScoreBoard() {
 					</table>
 				)}
 			</ScoreBoardContext.Provider>
-		</div>
+		</Advanced>
 	);
 }
 

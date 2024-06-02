@@ -62,7 +62,7 @@ function NavBar() {
 	const navBarElementClassName = "navbar__element";
 	const Links = routes.map((route) => ({ props: { to: route.path, id: route.id }, title: route.title }));
 	return (
-		<div className="navbar">
+		<div className="navbar scrollX">
 			{Links.map((link) => (
 				<Link
 					key={link.title}
