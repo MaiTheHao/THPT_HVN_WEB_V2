@@ -82,7 +82,7 @@ function Member() {
 	];
 
 	return (
-		<div id="comp_Member" className="obj_Component">
+		<div id="comp_Member" className="obj_Component web_Component">
 			{isSearch ? (
 				<Search
 					handleData={handleData}

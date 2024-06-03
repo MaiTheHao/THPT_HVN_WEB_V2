@@ -10,7 +10,7 @@ function Update() {
 	const [sidebarVisible, setSidebarVisible] = useState(true);
 	const [searchValue, setSearchValue] = useState({ value: "" });
 
-	const provider = {
+	const PROVIDER = {
 		sidebarVisible,
 		setSidebarVisible,
 		SIDEBAR_MAXWIDTH,
@@ -19,21 +19,25 @@ function Update() {
 		setSearchValue,
 	};
 	return (
-		<UpdateContext.Provider value={provider}>
-			<div id="comp_Update">
+		<UpdateContext.Provider value={PROVIDER}>
+			<div id="comp_Update" className="web_Component">
 				<Sidebar />
 				<div className="bodyContainer">
-					<div className="content">
-						<h2 style={{color: "red"}}>DEV TABLE - SHOW STATUS</h2>
-						<span>
-							<strong>**Sidebar Visible:</strong> {sidebarVisible ? "Yes" : "No"}
-							<br />
-							<strong>**Search Value:</strong> {searchValue.value || "null"}
-							<br/>
-							<strong>**Sidebar Max Width:</strong> {SIDEBAR_MAXWIDTH}
-						</span>
-						<h2 style={{color: "yellowgreen"}}>THIS PAGE COMPONENT IN TEST</h2>
-					</div>
+					{Array(15)
+						.fill(
+							<div className="content">
+								<h2 style={{ color: "red" }}>DEV TABLE - SHOW STATUS</h2>
+								<span>
+									<strong>**Sidebar Visible:</strong> {sidebarVisible ? "Yes" : "No"}
+									<br />
+									<strong>**Search Value:</strong> {searchValue.value || "null"}
+									<br />
+									<strong>**Sidebar Max Width:</strong> {SIDEBAR_MAXWIDTH}
+								</span>
+								<h2 style={{ color: "yellowgreen" }}>THIS PAGE COMPONENT IN TEST</h2>
+							</div>
+						)
+						.map((element, index) => element)}
 				</div>
 			</div>
 		</UpdateContext.Provider>

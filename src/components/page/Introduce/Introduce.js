@@ -145,7 +145,7 @@ function Introduce() {
 		},
 	];
 	return (
-		<div id="comp_Introduce">
+		<div id="comp_Introduce" className="web_Component">
 			{data?.map((obj, index) => (
 				<Container key={`IntroduceContainer_${index}`} title={obj?.title} listContext={obj?.listContext} />
 			))}

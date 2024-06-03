@@ -8,7 +8,6 @@
 	$unacceptFilter_backgroundColor: rgb(255, 140, 70);
 	$boxShadow: 0 0 0.5vw 0 rgba(0, 0, 0, 0.2);
 	$containerResult_maxHeight: 80%;
-	$infoObjForm_backgroundColor: rgb(245, 245, 255);
 	$infoObjForm_tableSpace: calc(var(--fontsize));
 	$infoObjForm_advanced_navbarBtn_backgroundColor: rgb(42, 113, 255);
 	$container-child--row-child_maxHeight: 10vw;
@@ -264,7 +263,6 @@
 
 		align-items: center;
 		padding: 1% 0;
-		background-color: $infoObjForm_backgroundColor;
 		font-size: 1em;
 
 		#infoObjFormReturn {

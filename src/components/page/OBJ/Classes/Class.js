@@ -60,7 +60,7 @@ function Class() {
 	];
 
 	return (
-		<div id="comp_Class" className="obj_Component">
+		<div id="comp_Class" className="obj_Component web_Component">
 			{isSearch ? (
 				<Search
 					handleData={handleData}

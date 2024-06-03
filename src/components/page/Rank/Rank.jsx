@@ -7,7 +7,7 @@ import RankSearch from "./child/RankSearch";
 function Rank() {
 	const [field, setField] = useState("member");
 	return (
-		<div id="comp_Rank">
+		<div id="comp_Rank" className="web_Component">
 			<div id="rankContainer">
 				<div className="HIDE_SCHOOL_ICON" id="UNDERICON">
 					<img alt="under" src={HVNBANNER}></img>

@@ -35,7 +35,7 @@ function Container() {
 
 function Home() {
 	return (
-		<div id="comp_Home">
+		<div id="comp_Home" className="web_Component">
 			<HomeHeader />
 			<div className="body">
 				<Container />

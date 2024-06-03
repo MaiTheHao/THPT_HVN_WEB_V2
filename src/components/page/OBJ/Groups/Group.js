@@ -56,7 +56,7 @@ function Group() {
 	];
 
 	return (
-		<div id="comp_Group" className="obj_Component">
+		<div id="comp_Group" className="obj_Component web_Component">
 			{isSearch ? (
 				<Search
 					handleData={handleData}

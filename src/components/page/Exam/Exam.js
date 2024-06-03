@@ -7,7 +7,7 @@ import ListExams from "./child/ListExams";
 function Exam() {
 
 	return (
-		<div id="comp_Exam">
+		<div id="comp_Exam" className="web_Component">
 			<div id="examContainer">
 				<div className="HIDE_SCHOOL_ICON" id="UNDERICON">
 					<img alt="under" src={HVNBANNER}></img>

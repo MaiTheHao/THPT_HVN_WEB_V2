@@ -6,7 +6,7 @@ import ListDocuments from "./child/ListDocuments";
 
 function Library() {
 	return (
-		<div id="comp_Library">
+		<div id="comp_Library" className="web_Component">
 			<div id="libraryContainer">
 				<div className="HIDE_SCHOOL_ICON" id="UNDERICON">
 					<img alt="under" src={HVNBANNER}></img>
