@@ -1,0 +1,22 @@
+[
+	{
+		"title": "Thành viên",
+		"id": "tv",
+		"icon": "faUser"
+	},
+	{
+		"title": "Lớp",
+		"id": "lp",
+		"icon": "faPeopleRoof"
+	},
+	{
+		"title": "Nhóm",
+		"id": "nh",
+		"icon": "faPeopleGroup"
+	},
+	{
+		"title": "Hoạt động",
+		"id": "hd",
+		"icon": "faFire"
+	}
+]

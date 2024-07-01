@@ -1,43 +1,54 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useReducer } from "react";
 import "./Update.scss";
 import Sidebar from "./Sidebar/Child/Sidebar/Sidebar";
+import MainForm from "./Body/Child/Form/Container";
 
-export const UpdateContext = createContext();
+const initValues = {
+	SIDEBAR_MAXWIDTH: `20vw`,
+	sidebarVisible: true,
+	searchValue: {},
+	target: {},
+};
 
-const SIDEBAR_MAXWIDTH = `17vw`;
+export const UpdateContext = createContext(initValues);
+
+function reducer(state, action) {
+	let update = {};
+	switch (action.type) {
+		case "setSidebarVisible":
+			update.sidebarVisible = action?.value || !state.sidebarVisible;
+			break;
+
+		case "setSearchValue":
+			update.searchValue = { ...state.searchValue, ...action.value };
+			break;
+
+		case "setTarget":
+			update.target = { ...state.target, ...action.value };
+			break;
+
+		default:
+			throw new Error("WHAT THE FUCK AMIGO?");
+	}
+
+	return {...state, ...update}
+}
 
 function Update() {
-	const [sidebarVisible, setSidebarVisible] = useState(true);
-	const [searchValue, setSearchValue] = useState({ value: "" });
+	const [provider, dispatch] = useReducer(reducer, initValues);
+	const proviAction = (type, value) => dispatch({type, value})
 
 	const PROVIDER = {
-		sidebarVisible,
-		setSidebarVisible,
-		SIDEBAR_MAXWIDTH,
-		obj: null,
-		searchValue,
-		setSearchValue,
-	};
+		...provider,
+		proviAction
+	}
+
 	return (
 		<UpdateContext.Provider value={PROVIDER}>
 			<div id="comp_Update" className="web_Component">
 				<Sidebar />
 				<div className="bodyContainer">
-					{Array(15)
-						.fill(
-							<div className="content">
-								<h2 style={{ color: "red" }}>DEV TABLE - SHOW STATUS</h2>
-								<span>
-									<strong>**Sidebar Visible:</strong> {sidebarVisible ? "Yes" : "No"}
-									<br />
-									<strong>**Search Value:</strong> {searchValue.value || "null"}
-									<br />
-									<strong>**Sidebar Max Width:</strong> {SIDEBAR_MAXWIDTH}
-								</span>
-								<h2 style={{ color: "yellowgreen" }}>THIS PAGE COMPONENT IN TEST</h2>
-							</div>
-						)
-						.map((element, index) => element)}
+					<MainForm />
 				</div>
 			</div>
 		</UpdateContext.Provider>

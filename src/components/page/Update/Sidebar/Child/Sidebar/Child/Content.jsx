@@ -1,29 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import ListElement from "./ListElement";
 
 function Content() {
+
 	return (
 		<div className="body">
 			<div className="content-element">
-				<h3 className="element-title">Xin chào</h3>
-				<Link to="hello" className="element-link">
-					link here
-				</Link>
-				<Link to="hello" className="element-link">
-					link here
-				</Link>
-				<Link to="hello" className="element-link">
-					link here
-				</Link>
-				<Link to="hello" className="element-link">
-					link here
-				</Link>
-				<Link to="hello" className="element-link">
-					link here
-				</Link>
-				<Link to="hello" className="element-link">
-					link here
-				</Link>
+				<ListElement/>
 			</div>
 		</div>
 	);

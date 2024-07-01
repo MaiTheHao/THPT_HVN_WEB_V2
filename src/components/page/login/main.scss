@@ -12,7 +12,7 @@ div#comp_Login {
     justify-content: center;
     align-items: center;
 
-    background-color: $background_color;
+    background-color: $background_color !important;
 
     font-size: var(--fontsize);
     color: var(--textcolor1);
