@@ -30,7 +30,7 @@ function RankSearch({ field, setField }) {
 	const ListObjType = ({ attrs }) => (
 		<div {...attrs} className="selectField-container scrollY">
 			{listObj.map((obj) => (
-				<span onClick={(e) => handleSelectChange(e)} key={obj?.name} id={obj?.value}>
+				<span className="element" onClick={(e) => handleSelectChange(e)} key={obj?.name} id={obj?.value}>
 					{obj.name}
 				</span>
 			))}

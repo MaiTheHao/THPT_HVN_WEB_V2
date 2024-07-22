@@ -13,7 +13,7 @@ function ListElement() {
 		<>
 			{listElement.map((element, index) =>
 				searchText.trim() === "" || (searchText?.length > 0 && element.title.trim().toLowerCase().includes(searchText.toLowerCase())) ? (
-					<Link className="element" id={element.id} key={`content-element${index}`} onClick={(e) => proviAction("setTarget", { id: element.id })}>
+					<Link className="element" id={element.id} key={`content-element${index}`} onClick={(e) => proviAction("setTarget", { id: element?.id, title: element?.title })}>
 						<div className="element-icon">
 							<FontAwesomeIcon icon={Icon[element.icon]} style={element?.style} />
 						</div>

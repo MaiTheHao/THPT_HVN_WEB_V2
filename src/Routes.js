@@ -9,6 +9,8 @@ import Member from "./components/page/OBJ/Members/Member";
 import Rank from "./components/page/Rank/Rank";
 import Update from "./components/page/Update/Update";
 
+import PageNotFound from "./components/Except/PageNotFound";
+
 export const routes = [
 	{ id: "pageHome", path: "/home", title: "TRANG CHỦ", Component: Home, Layout: Layout2 },
 	{ id: "pageMember", path: "/member", title: "THÀNH VIÊN", Component: Member, Layout: Layout2 },
@@ -24,9 +26,15 @@ export const routes = [
 		title: "CẬP NHẬT THÔNG TIN",
 		Component: Update,
 		Layout: Layout2,
-		children: [{ id: "Update-check", path: "check", props:{
-			title: "Kiểm tra đối tượng"
-		}},],
+		children: [
+			{
+				id: "Update-check",
+				path: "check",
+				props: {
+					title: "Kiểm tra đối tượng",
+				},
+			},
+		],
 	},
-	{ id: "pageAction", path: "/", title: "HOẠT ĐỘNG ĐOÀN", Component: Home, Layout: Layout1 },
+	{ id: "pageHDD", path: "/hoat_dong_doan", title: "HOẠT ĐỘNG ĐOÀN", Component: PageNotFound, Layout: Layout2 },
 ];

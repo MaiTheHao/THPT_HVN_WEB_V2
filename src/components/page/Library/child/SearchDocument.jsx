@@ -17,7 +17,7 @@ function SearchDocument() {
 	const ListSubject = ({ attrs }) => (
 		<div className="selectField-container scrollY" {...attrs}>
 			{listFields.map((field) => (
-				<span key={field.name} onClick={handleSelectField}>
+				<span className="element" key={field.name} onClick={handleSelectField}>
 					{field.name}
 				</span>
 			))}

@@ -4,10 +4,10 @@ import Sidebar from "./Sidebar/Child/Sidebar/Sidebar";
 import MainForm from "./Body/Child/Form/Container";
 
 const initValues = {
-	SIDEBAR_MAXWIDTH: `20vw`,
+	SIDEBAR_MAXWIDTH: `17vw`,
 	sidebarVisible: true,
 	searchValue: {},
-	target: {},
+	target: {id: "tv", title: "thành viên"},
 };
 
 export const UpdateContext = createContext(initValues);

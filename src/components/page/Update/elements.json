@@ -18,5 +18,10 @@
 		"title": "Hoạt động",
 		"id": "hd",
 		"icon": "faFire"
+	},
+	{
+		"title": "Đoàn viên",
+		"id": "dv",
+		"icon": ""
 	}
 ]
