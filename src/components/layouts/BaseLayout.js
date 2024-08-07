@@ -15,7 +15,7 @@ function BaseLayout({ id, sidebar=null, children }) {
 					<Footer/>
 				</div>
 			</div>
-			<SupportAI/>
+			// <SupportAI/>
 		</div>
 	);
 }
