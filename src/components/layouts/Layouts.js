@@ -15,4 +15,4 @@ function Layout2({ children }) {
 	return <BaseLayout id="ly2">{children}</BaseLayout>;
 }
 
-export {Layout1, Layout2};
+export { Layout1, Layout2 };

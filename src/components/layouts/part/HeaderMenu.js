@@ -6,6 +6,7 @@ function HeaderMenu() {
 
     const logout = () => {
       setAuth({ loginsuccess: false });
+      window.location.href = '/THPT_HVN/login';
     }
   return (
     <div id="menu-pannel">
